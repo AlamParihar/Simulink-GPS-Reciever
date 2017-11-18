@@ -6,16 +6,22 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2"
-    NumModelReferences	    3
+    ComputedModelVersion    "1.4"
+    NumModelReferences	    5
     ModelReference {
-      ModelRefBlockPath	      "Main_Reciever/Model|Acquisition"
+      ModelRefBlockPath	      "Main_Reciever/Acquisition|Acquisition"
     }
     ModelReference {
-      ModelRefBlockPath	      "Main_Reciever/Model1|Tracking"
+      ModelRefBlockPath	      "Main_Reciever/Demodulation Carrier|Demodulation_Carrier"
     }
     ModelReference {
-      ModelRefBlockPath	      "Main_Reciever/Model2|Pseudorange_and_Position_Calculation"
+      ModelRefBlockPath	      "Main_Reciever/Despreading Code|Dispreading_Code"
+    }
+    ModelReference {
+      ModelRefBlockPath	      "Main_Reciever/Pseudorange and Postion|Pseudorange_and_Position_Calculation"
+    }
+    ModelReference {
+      ModelRefBlockPath	      "Main_Reciever/Tracking|Tracking"
     }
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -88,8 +94,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1322.0, 603.0]
-	ZoomFactor		[1.0]
-	Offset			[0.0, 0.0]
+	ZoomFactor		[1.25]
+	Offset			[-5.0839773312720808, -85.10780525502264]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -123,9 +129,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Alam"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 17 19:21:26 2017"
-  RTWModifiedTimeStamp	  432843345
-  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  LastModifiedDate	  "Fri Nov 17 22:45:55 2017"
+  RTWModifiedTimeStamp	  432859553
+  ModelVersionFormat	  "1.%<AutoIncrement:4>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -157,7 +163,7 @@ Model {
   ToolBar		  on
   StatusBar		  on
   BrowserShowLibraryLinks off
-  FunctionConnectors	  off
+  FunctionConnectors	  on
   BrowserLookUnderMasks	  off
   SimulationMode	  "normal"
   VisualizeLoggedSignalsWhenLoggingToFile off
@@ -178,7 +184,7 @@ Model {
     $ObjectID		    8
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "Main_Reciever"
-    overrideMode_	    [0U]
+    overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
@@ -1005,12 +1011,12 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "17"
+    SIDHighWatermark	    "19"
     Block {
       BlockType		      ModelReference
-      Name		      "Model"
+      Name		      "Acquisition"
       SID		      "15"
       Ports		      []
       Position		      [230, 203, 372, 248]
@@ -1028,12 +1034,48 @@ Model {
     }
     Block {
       BlockType		      ModelReference
-      Name		      "Model1"
-      SID		      "16"
+      Name		      "Demodulation Carrier"
+      SID		      "19"
       Ports		      []
-      Position		      [425, 203, 567, 248]
-      ZOrder		      7
-      ModelNameDialog	      "Tracking.mdl"
+      Position		      [77, 288, 219, 333]
+      ZOrder		      10
+      ModelNameDialog	      "Demodulation_Carrier.slx"
+      SimulationMode	      "Normal"
+      Variant		      off
+      ModelReferenceVersion   "1.3"
+      List {
+	ListType		OutputPortUnitExprs
+      }
+      List {
+	ListType		InputPortUnitExprs
+      }
+    }
+    Block {
+      BlockType		      ModelReference
+      Name		      "Despreading Code"
+      SID		      "18"
+      Ports		      []
+      Position		      [77, 117, 219, 162]
+      ZOrder		      9
+      ModelNameDialog	      "Dispreading_Code.mdl"
+      SimulationMode	      "Normal"
+      Variant		      off
+      ModelReferenceVersion   "1.3"
+      List {
+	ListType		OutputPortUnitExprs
+      }
+      List {
+	ListType		InputPortUnitExprs
+      }
+    }
+    Block {
+      BlockType		      ModelReference
+      Name		      "Pseudorange and Postion"
+      SID		      "17"
+      Ports		      []
+      Position		      [630, 203, 772, 248]
+      ZOrder		      8
+      ModelNameDialog	      "Pseudorange_and_Position_Calculation.slx"
       SimulationMode	      "Normal"
       Variant		      off
       ModelReferenceVersion   "1.0"
@@ -1046,12 +1088,12 @@ Model {
     }
     Block {
       BlockType		      ModelReference
-      Name		      "Model2"
-      SID		      "17"
+      Name		      "Tracking"
+      SID		      "16"
       Ports		      []
-      Position		      [630, 203, 772, 248]
-      ZOrder		      8
-      ModelNameDialog	      "Pseudorange_and_Position_Calculation.slx"
+      Position		      [425, 203, 567, 248]
+      ZOrder		      7
+      ModelNameDialog	      "Tracking.mdl"
       SimulationMode	      "Normal"
       Variant		      off
       ModelReferenceVersion   "1.0"

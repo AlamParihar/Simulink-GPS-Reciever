@@ -1,5 +1,5 @@
 Model {
-  Name			  "cacode"
+  Name			  "Dispreading_Code"
   Version		  8.9
   SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
@@ -43,7 +43,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1382.0, 784.0]
+      Location		      [-8.0, -8.0, 1376.0, 784.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -67,7 +67,7 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1328.0, 603.0]
+	Extents			[1322.0, 603.0]
 	ZoomFactor		[1.0]
 	Offset			[0.0, 0.0]
       }
@@ -89,11 +89,11 @@ Model {
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
       "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABjAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAAKwD///8AAAVWAAAClAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAAKwD///8AAAVQAAAClAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAB5/////wAAAAAAAAAA/////wEAAADa/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFT/////wAAAAAAAAAA/"
       "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAL9/////wAAAAAAAAAA/"
-      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
+      "////wEAAAMs/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
     }
   }
   HideAutomaticNames	  on
@@ -101,11 +101,12 @@ Model {
   Creator		  "Ahmed Sami"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Ahmed Sami"
+  LastModifiedBy	  "Alam"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 17 20:30:28 2017"
+  LastModifiedDate	  "Fri Nov 17 22:39:39 2017"
   RTWModifiedTimeStamp	  432851427
   ModelVersionFormat	  "1.%<AutoIncrement:3>"
+  ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -156,12 +157,12 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "cacode"
+    model_		    "Dispreading_Code"
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "cacode"
+      Cell		      "Dispreading_Code"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -216,6 +217,7 @@ Model {
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
 	  MaxOrder		  5
 	  ZcThreshold		  "auto"
 	  ConsecutiveZCsStepRelTol "10*128*eps"
@@ -679,14 +681,17 @@ Model {
 	      CommentStyle	      "Auto"
 	      IgnoreCustomStorageClasses on
 	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
 	      MaxIdLength	      31
 	      PreserveName	      off
 	      PreserveNameWithParent  off
 	      ShowEliminatedStatement off
 	      OperatorAnnotations     off
+	      IncAutoGenComments      off
 	      SimulinkDataObjDesc     off
 	      SFDataObjDesc	      off
 	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
 	      MangleLength	      1
 	      CustomSymbolStrGlobalVar "$R$N$M"
 	      CustomSymbolStrType     "$N$R$M_T"
@@ -768,6 +773,7 @@ Model {
 	      CombineOutputUpdateFcns on
 	      CombineSignalStateStructs	off
 	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
 	      IncludeFileDelimiter    "Auto"
 	      ERTCustomFileBanners    off
 	      SupportAbsoluteTime     on
@@ -989,7 +995,6 @@ Model {
       OutputWhenDisabled      "held"
       InitialOutput	      "[]"
       MustResolveToSignalObject	off
-      OutputWhenUnConnected   off
     }
     Block {
       BlockType		      S-Function
@@ -1039,9 +1044,9 @@ Model {
     }
   }
   System {
-    Name		    "cacode"
-    Location		    [-8, -8, 1374, 776]
-    Open		    off
+    Name		    "Dispreading_Code"
+    Location		    [-8, -8, 1368, 776]
+    Open		    on
     PortBlocksUseCompactNotation off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1130,7 +1135,7 @@ Model {
 	  BlockType		  S-Function
 	  Name			  " SFunction "
 	  SID			  "10::19"
-	  Tag			  "Stateflow S-Function cacode 2"
+	  Tag			  "Stateflow S-Function Dispreading_Code 2"
 	  Ports			  [2, 2]
 	  Position		  [180, 100, 230, 160]
 	  ZOrder		  10
@@ -1208,7 +1213,7 @@ Model {
       ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true),extmgr.Configuration('Visuals','Time Domain',true),extmgr.Configuration('Tools','P"
-      "lot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2017b')),'Version','2017b','Po"
+      "lot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2017a')),'Version','2017a','Po"
       "sition',[768 -30 560 420],'VisibleAtModelOpen','on')"
       NumInputPorts	      "1"
     }
@@ -1239,13 +1244,13 @@ Model {
 }
 #Finite State Machines
 #
-#   Stateflow 80000012
+#   Stateflow 80000011
 #
 #
 Stateflow {
   machine {
     id			    1
-    name		    "cacode"
+    name		    "Dispreading_Code"
     created		    "17-Nov-2017 20:03:30"
     isLibrary		    0
     sfVersion		    80000011
