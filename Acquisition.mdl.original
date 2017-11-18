@@ -6,11 +6,8 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3"
-    NumModelReferences	    1
-    ModelReference {
-      ModelRefBlockPath	      "Acquisition/Model|CAcode"
-    }
+    ComputedModelVersion    "1.0"
+    NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
     NumRequiredFunctions    0
@@ -83,7 +80,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1322.0, 603.0]
 	ZoomFactor		[1.0]
-	Offset			[-146.59999918341566, 8.7875035941603414]
+	Offset			[0.0, 0.0]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -117,9 +114,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Alam"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Nov 18 17:01:36 2017"
-  RTWModifiedTimeStamp	  432925031
-  ModelVersionFormat	  "1.%<AutoIncrement:3>"
+  LastModifiedDate	  "Fri Nov 17 18:08:05 2017"
+  RTWModifiedTimeStamp	  391365631
+  ModelVersionFormat	  "1.%<AutoIncrement: 0 >"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -172,7 +169,7 @@ Model {
     $ObjectID		    8
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "Acquisition"
-    overrideMode_	    [0.0]
+    overrideMode_	    [0U]
     Array {
       Type		      "Cell"
       Dimension		      1
@@ -972,57 +969,6 @@ Model {
     ToolTip		    "on"
   }
   BlockParameterDefaults {
-    Block {
-      BlockType		      Abs
-      ZeroCross		      on
-      SampleTime	      "-1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-    }
-    Block {
-      BlockType		      Math
-      Operator		      "exp"
-      OutputSignalType	      "auto"
-      SampleTime	      "-1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as first input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-      IntermediateResultsDataTypeStr "Inherit: Inherit via internal rule"
-      AlgorithmType	      "Newton-Raphson"
-      Iterations	      "3"
-    }
-    Block {
-      BlockType		      ModelReference
-      SimulationMode	      "Accelerator"
-      ShowModelInitializePort off
-      ShowModelResetPorts     off
-      ShowModelTerminatePort  off
-      CodeInterface	      "Model reference"
-      GeneratePreprocessorConditionals off
-      ContentPreviewEnabled   off
-      CopyOfModelProtected    off
-    }
-    Block {
-      BlockType		      Mux
-      Inputs		      "4"
-      DisplayOption	      "none"
-      UseBusObject	      off
-      BusObject		      "BusObject"
-      NonVirtualBus	      off
-    }
-    Block {
-      BlockType		      RealImagToComplex
-      Input		      "Real and imag"
-      ConstantPart	      "0"
-      SampleTime	      "-1"
-    }
   }
   System {
     Name		    "Acquisition"
@@ -1041,339 +987,6 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "14"
-    Block {
-      BlockType		      Abs
-      Name		      "Abs"
-      SID		      "6"
-      Position		      [660, 165, 690, 195]
-      ZOrder		      18
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "FFT"
-      SID		      "2"
-      Ports		      [1, 1]
-      Position		      [275, 151, 315, 189]
-      ZOrder		      14
-      LibraryVersion	      "1.525"
-      SourceBlock	      "dspxfrm3/FFT"
-      SourceType	      "FFT"
-      SourceProductName	      "DSP System Toolbox"
-      SourceProductBaseCode   "DS"
-      FFTImplementation	      "Auto"
-      CompMethod	      "Table lookup"
-      TableOpt		      "NEW"
-      TableOptActive	      "Speed"
-      BitRevOrder	      off
-      Normalize		      off
-      InheritFFTLength	      on
-      FFTLength		      "64"
-      WrapInput		      on
-      roundingMode	      "Floor"
-      overflowMode	      off
-      firstCoeffMode	      "Same word length as input"
-      firstCoeffWordLength    "16"
-      firstCoeffFracLength    "15"
-      firstCoeffDataTypeStr   "Inherit: Same word length as input"
-      firstCoeffLastDataTypeStr	"Inherit: Same word length as input"
-      prodOutputMode	      "Inherit via internal rule"
-      prodOutputWordLength    "32"
-      prodOutputFracLength    "30"
-      prodOutputDataTypeStr   "Inherit: Inherit via internal rule"
-      prodOutputLastDataTypeStr	"Inherit: Inherit via internal rule"
-      accumMode		      "Inherit via internal rule"
-      accumWordLength	      "32"
-      accumFracLength	      "30"
-      accumDataTypeStr	      "Inherit: Inherit via internal rule"
-      accumLastDataTypeStr    "Inherit: Inherit via internal rule"
-      outputMode	      "Inherit via internal rule"
-      outputWordLength	      "16"
-      outputFracLength	      "15"
-      outputDataTypeStr	      "Inherit: Inherit via internal rule"
-      outputMin		      "[]"
-      outputMax		      "[]"
-      outputLastDataTypeStr   "Inherit: Inherit via internal rule"
-      LockScale		      off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "FFT1"
-      SID		      "3"
-      Ports		      [1, 1]
-      Position		      [441, 355, 479, 395]
-      ZOrder		      15
-      BlockRotation	      270
-      LibraryVersion	      "1.525"
-      SourceBlock	      "dspxfrm3/FFT"
-      SourceType	      "FFT"
-      SourceProductName	      "DSP System Toolbox"
-      SourceProductBaseCode   "DS"
-      FFTImplementation	      "Auto"
-      CompMethod	      "Table lookup"
-      TableOpt		      "NEW"
-      TableOptActive	      "Speed"
-      BitRevOrder	      off
-      Normalize		      off
-      InheritFFTLength	      on
-      FFTLength		      "64"
-      WrapInput		      on
-      roundingMode	      "Floor"
-      overflowMode	      off
-      firstCoeffMode	      "Same word length as input"
-      firstCoeffWordLength    "16"
-      firstCoeffFracLength    "15"
-      firstCoeffDataTypeStr   "Inherit: Same word length as input"
-      firstCoeffLastDataTypeStr	"Inherit: Same word length as input"
-      prodOutputMode	      "Inherit via internal rule"
-      prodOutputWordLength    "32"
-      prodOutputFracLength    "30"
-      prodOutputDataTypeStr   "Inherit: Inherit via internal rule"
-      prodOutputLastDataTypeStr	"Inherit: Inherit via internal rule"
-      accumMode		      "Inherit via internal rule"
-      accumWordLength	      "32"
-      accumFracLength	      "30"
-      accumDataTypeStr	      "Inherit: Inherit via internal rule"
-      accumLastDataTypeStr    "Inherit: Inherit via internal rule"
-      outputMode	      "Inherit via internal rule"
-      outputWordLength	      "16"
-      outputFracLength	      "15"
-      outputDataTypeStr	      "Inherit: Inherit via internal rule"
-      outputMin		      "[]"
-      outputMax		      "[]"
-      outputLastDataTypeStr   "Inherit: Inherit via internal rule"
-      LockScale		      off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "IFFT"
-      SID		      "5"
-      Ports		      [1, 1]
-      Position		      [530, 161, 570, 199]
-      ZOrder		      17
-      LibraryVersion	      "1.525"
-      SourceBlock	      "dspxfrm3/IFFT"
-      SourceType	      "IFFT"
-      SourceProductName	      "DSP System Toolbox"
-      SourceProductBaseCode   "DS"
-      FFTImplementation	      "Auto"
-      CompMethod	      "Table lookup"
-      TableOpt		      "NEW"
-      TableOptActive	      "Speed"
-      BitRevOrder	      off
-      cs_in		      off
-      Normalize		      on
-      InheritFFTLength	      on
-      FFTLength		      "64"
-      WrapInput		      on
-      mode		      "Complex"
-      outSamplingMode	      "Sample based"
-      roundingMode	      "Floor"
-      overflowMode	      off
-      firstCoeffMode	      "Same word length as input"
-      firstCoeffWordLength    "16"
-      firstCoeffFracLength    "15"
-      firstCoeffDataTypeStr   "Inherit: Same word length as input"
-      firstCoeffLastDataTypeStr	"Inherit: Same word length as input"
-      prodOutputMode	      "Inherit via internal rule"
-      prodOutputWordLength    "32"
-      prodOutputFracLength    "30"
-      prodOutputDataTypeStr   "Inherit: Inherit via internal rule"
-      prodOutputLastDataTypeStr	"Inherit: Inherit via internal rule"
-      accumMode		      "Inherit via internal rule"
-      accumWordLength	      "32"
-      accumFracLength	      "30"
-      accumDataTypeStr	      "Inherit: Inherit via internal rule"
-      accumLastDataTypeStr    "Inherit: Inherit via internal rule"
-      outputMode	      "Inherit via internal rule"
-      outputWordLength	      "16"
-      outputFracLength	      "15"
-      outputDataTypeStr	      "Inherit: Inherit via internal rule"
-      outputMin		      "[]"
-      outputMax		      "[]"
-      outputLastDataTypeStr   "Inherit: Inherit via internal rule"
-      LockScale		      off
-    }
-    Block {
-      BlockType		      Math
-      Name		      "Math\nFunction"
-      SID		      "4"
-      Ports		      [1, 1]
-      Position		      [445, 260, 475, 290]
-      ZOrder		      16
-      BlockRotation	      270
-      Operator		      "conj"
-    }
-    Block {
-      BlockType		      ModelReference
-      Name		      "Model"
-      SID		      "12"
-      Ports		      [1, 1]
-      Position		      [240, 492, 380, 538]
-      ZOrder		      33
-      ModelNameDialog	      "CAcode.mdl"
-      SimulationMode	      "Normal"
-      Variant		      off
-      ModelReferenceVersion   "1.2"
-      List {
-	ListType		InputPortNames
-	port0			"In1"
-      }
-      List {
-	ListType		OutputPortNames
-	port0			"Out1"
-      }
-      List {
-	ListType		OutputPortOutputBusAsStructs
-	port0			"off"
-      }
-      List {
-	ListType		OutputPortSignalNames
-	port0			"g"
-      }
-      List {
-	ListType		InputPortLatchByCopyingInsideSignal
-	port0			"off"
-      }
-      List {
-	ListType		OutputPortUnitExprs
-	port0			"inherit"
-      }
-      List {
-	ListType		InputPortUnitExprs
-	port0			"inherit"
-      }
-      List {
-	ListType		InputPortLatchByDelayingOutsideSignal
-	port0			"off"
-      }
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux"
-      SID		      "8"
-      Ports		      [2, 1]
-      Position		      [105, 211, 110, 249]
-      ZOrder		      29
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux1"
-      SID		      "9"
-      Ports		      [2, 1]
-      Position		      [470, 161, 475, 199]
-      ZOrder		      30
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux2"
-      SID		      "10"
-      Ports		      [2, 1]
-      Position		      [160, 111, 165, 149]
-      ZOrder		      31
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      RealImagToComplex
-      Name		      "Real-Imag to\nComplex"
-      SID		      "11"
-      Ports		      [2, 1]
-      Position		      [225, 153, 255, 182]
-      ZOrder		      32
-    }
-    Line {
-      ZOrder		      9
-      SrcBlock		      "FFT1"
-      SrcPort		      1
-      DstBlock		      "Math\nFunction"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      10
-      SrcBlock		      "Math\nFunction"
-      SrcPort		      1
-      Points		      [0, -65]
-      DstBlock		      "Mux1"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      11
-      SrcBlock		      "Mux1"
-      SrcPort		      1
-      DstBlock		      "IFFT"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      12
-      SrcBlock		      "IFFT"
-      SrcPort		      1
-      DstBlock		      "Abs"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      13
-      SrcBlock		      "Abs"
-      SrcPort		      1
-      Points		      [77, 0]
-    }
-    Line {
-      ZOrder		      14
-      SrcBlock		      "FFT"
-      SrcPort		      1
-      DstBlock		      "Mux1"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      15
-      SrcBlock		      "Real-Imag to\nComplex"
-      SrcPort		      1
-      DstBlock		      "FFT"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      16
-      SrcBlock		      "Mux2"
-      SrcPort		      1
-      Points		      [25, 0; 0, 30]
-      DstBlock		      "Real-Imag to\nComplex"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      17
-      SrcBlock		      "Mux"
-      SrcPort		      1
-      Points		      [60, 0; 0, -55]
-      DstBlock		      "Real-Imag to\nComplex"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      30
-      Points		      [-6, 140]
-      DstBlock		      "Mux2"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      26
-      Points		      [-6, 220]
-      DstBlock		      "Mux"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      29
-      SrcBlock		      "Model"
-      SrcPort		      1
-      Points		      [75, 0]
-      DstBlock		      "FFT1"
-      DstPort		      1
-    }
+    SIDHighWatermark	    "1"
   }
 }

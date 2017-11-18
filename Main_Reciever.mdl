@@ -123,7 +123,7 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Alam"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 17 19:21:26 2017"
+  LastModifiedDate	  "Sat Nov 18 16:51:12 2017"
   RTWModifiedTimeStamp	  432843345
   ModelVersionFormat	  "1.%<AutoIncrement:2>"
   ConfigurationManager	  "none"
@@ -178,7 +178,7 @@ Model {
     $ObjectID		    8
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "Main_Reciever"
-    overrideMode_	    [0U]
+    overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
@@ -1018,7 +1018,7 @@ Model {
       ModelNameDialog	      "Acquisition.mdl"
       SimulationMode	      "Normal"
       Variant		      off
-      ModelReferenceVersion   "1.0"
+      ModelReferenceVersion   "1.2"
       List {
 	ListType		OutputPortUnitExprs
       }

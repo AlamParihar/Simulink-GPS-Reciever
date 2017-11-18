@@ -1,12 +1,25 @@
 Model {
-  Name			  "Dispreading_Code"
+  Name			  "CAcode"
   Version		  8.9
   SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
-    NumRootInports	    0
-    NumRootOutports	    0
+    NumRootInports	    1
+    Inport {
+      Name		      "In1"
+      BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
+    }
+    NumRootOutports	    1
+    Outport {
+      Name		      "Out1"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      SignalName	      "g"
+      UnitExpr		      "inherit"
+    }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3"
+    ComputedModelVersion    "1.2"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -97,15 +110,15 @@ Model {
     }
   }
   HideAutomaticNames	  on
-  Created		  "Fri Nov 17 19:54:43 2017"
-  Creator		  "Ahmed Sami"
+  Created		  "Sat Nov 18 16:42:24 2017"
+  Creator		  "Alam"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Alam"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 17 22:39:39 2017"
-  RTWModifiedTimeStamp	  432851427
-  ModelVersionFormat	  "1.%<AutoIncrement:3>"
+  LastModifiedDate	  "Sat Nov 18 16:46:39 2017"
+  RTWModifiedTimeStamp	  432924366
+  ModelVersionFormat	  "1.%<AutoIncrement:2>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -157,12 +170,12 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "Dispreading_Code"
-    overrideMode_	    [0.0]
+    model_		    "CAcode"
+    overrideMode_	    [0U]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "Dispreading_Code"
+      Cell		      "CAcode"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -867,7 +880,7 @@ Model {
       Name		      "Configuration"
       ExtraOptions	      ""
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition    [ 180, 192, 1100, 832 ]
+      ConfigPrmDlgPosition    [ 145, 177, 1135, 847 ]
     }
     PropName		    "ConfigurationSets"
   }
@@ -901,8 +914,8 @@ Model {
     BlockMirror		    off
   }
   AnnotationDefaults {
-    HorizontalAlignment	    "left"
-    VerticalAlignment	    "top"
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
     ForegroundColor	    "black"
     BackgroundColor	    "white"
     DropShadow		    off
@@ -1003,11 +1016,6 @@ Model {
       PortCounts	      "[]"
     }
     Block {
-      BlockType		      Scope
-      DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
-      Floating		      off
-    }
-    Block {
       BlockType		      SubSystem
       ShowPortLabels	      "FromPortIcon"
       Permissions	      "ReadWrite"
@@ -1044,7 +1052,7 @@ Model {
     }
   }
   System {
-    Name		    "Dispreading_Code"
+    Name		    "CAcode"
     Location		    [-8, -8, 1368, 776]
     Open		    on
     PortBlocksUseCompactNotation off
@@ -1060,28 +1068,22 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "13"
+    SIDHighWatermark	    "4"
     Block {
-      BlockType		      Constant
-      Name		      "Constant"
-      SID		      "11"
-      Position		      [245, 155, 275, 185]
-      ZOrder		      11
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant1"
-      SID		      "12"
-      Position		      [245, 205, 275, 235]
-      ZOrder		      12
+      BlockType		      Inport
+      Name		      "In1"
+      SID		      "2"
+      Position		      [245, 243, 275, 257]
+      ZOrder		      2
+      IconDisplay	      "Port number"
     }
     Block {
       BlockType		      SubSystem
-      Name		      "MATLAB Function"
-      SID		      "10"
+      Name		      "CA Code Generator"
+      SID		      "1"
       Ports		      [2, 1]
-      Position		      [335, 159, 405, 206]
-      ZOrder		      10
+      Position		      [450, 239, 520, 286]
+      ZOrder		      1
       ErrorFcn		      "Stateflow.Translate.translate"
       PermitHierarchicalResolution "ExplicitOnly"
       TreatAsAtomicUnit	      on
@@ -1089,7 +1091,7 @@ Model {
       SFBlockType	      "MATLAB Function"
       Variant		      off
       System {
-	Name			"MATLAB Function"
+	Name			"CA Code Generator"
 	Location		[223, 338, 826, 833]
 	Open			off
 	PortBlocksUseCompactNotation off
@@ -1108,7 +1110,7 @@ Model {
 	Block {
 	  BlockType		  Inport
 	  Name			  "sv"
-	  SID			  "10::1"
+	  SID			  "1::1"
 	  Position		  [20, 101, 40, 119]
 	  ZOrder		  -1
 	  IconDisplay		  "Port number"
@@ -1116,7 +1118,7 @@ Model {
 	Block {
 	  BlockType		  Inport
 	  Name			  "fs"
-	  SID			  "10::22"
+	  SID			  "1::22"
 	  Position		  [20, 136, 40, 154]
 	  ZOrder		  13
 	  Port			  "2"
@@ -1125,7 +1127,7 @@ Model {
 	Block {
 	  BlockType		  Demux
 	  Name			  " Demux "
-	  SID			  "10::20"
+	  SID			  "1::20"
 	  Ports			  [1, 1]
 	  Position		  [270, 230, 320, 270]
 	  ZOrder		  11
@@ -1134,15 +1136,15 @@ Model {
 	Block {
 	  BlockType		  S-Function
 	  Name			  " SFunction "
-	  SID			  "10::19"
-	  Tag			  "Stateflow S-Function Dispreading_Code 2"
+	  SID			  "1::19"
+	  Tag			  "Stateflow S-Function CAcode 2"
 	  Ports			  [2, 2]
 	  Position		  [180, 100, 230, 160]
 	  ZOrder		  10
 	  FunctionName		  "sf_sfun"
 	  PortCounts		  "[2 2]"
 	  SFunctionDeploymentMode off
-	  EnableBusSupport	  on
+	  EnableBusSupport	  off
 	  SFcnIsStateOwnerBlock	  off
 	  Port {
 	    PortNumber		    2
@@ -1152,14 +1154,14 @@ Model {
 	Block {
 	  BlockType		  Terminator
 	  Name			  " Terminator "
-	  SID			  "10::21"
+	  SID			  "1::21"
 	  Position		  [460, 241, 480, 259]
 	  ZOrder		  12
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "g"
-	  SID			  "10::5"
+	  SID			  "1::5"
 	  Position		  [460, 101, 480, 119]
 	  ZOrder		  -5
 	  IconDisplay		  "Port number"
@@ -1204,40 +1206,40 @@ Model {
       }
     }
     Block {
-      BlockType		      Scope
-      Name		      "Scope"
-      SID		      "13"
-      Ports		      [1]
-      Position		      [485, 164, 515, 196]
-      ZOrder		      13
-      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
-      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
-      "ources','WiredSimulink',true),extmgr.Configuration('Visuals','Time Domain',true),extmgr.Configuration('Tools','P"
-      "lot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2017a')),'Version','2017a','Po"
-      "sition',[768 -30 560 420],'VisibleAtModelOpen','on')"
-      NumInputPorts	      "1"
+      BlockType		      Constant
+      Name		      "Constant"
+      SID		      "3"
+      Position		      [245, 330, 275, 360]
+      ZOrder		      3
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "Out1"
+      SID		      "4"
+      Position		      [735, 258, 765, 272]
+      ZOrder		      4
+      IconDisplay	      "Port number"
     }
     Line {
       ZOrder		      1
-      SrcBlock		      "Constant"
+      SrcBlock		      "In1"
       SrcPort		      1
-      DstBlock		      "MATLAB Function"
+      DstBlock		      "CA Code Generator"
       DstPort		      1
     }
     Line {
-      ZOrder		      3
-      SrcBlock		      "Constant1"
+      ZOrder		      2
+      SrcBlock		      "Constant"
       SrcPort		      1
-      Points		      [20, 0; 0, -25]
-      DstBlock		      "MATLAB Function"
+      Points		      [79, 0; 0, -70]
+      DstBlock		      "CA Code Generator"
       DstPort		      2
     }
     Line {
-      ZOrder		      4
-      SrcBlock		      "MATLAB Function"
+      ZOrder		      3
+      SrcBlock		      "CA Code Generator"
       SrcPort		      1
-      Points		      [30, 0; 0, -5]
-      DstBlock		      "Scope"
+      DstBlock		      "Out1"
       DstPort		      1
     }
   }
@@ -1250,8 +1252,8 @@ Model {
 Stateflow {
   machine {
     id			    1
-    name		    "Dispreading_Code"
-    created		    "17-Nov-2017 20:03:30"
+    name		    "CAcode"
+    created		    "18-Nov-2017 16:42:52"
     isLibrary		    0
     sfVersion		    80000011
     firstTarget		    10
@@ -1259,12 +1261,15 @@ Stateflow {
   chart {
     id			    2
     machine		    1
-    name		    "MATLAB Function"
+    name		    "CA Code Generator"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 3 0 0]
     viewObj		    2
+    visible		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    6
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -1427,7 +1432,7 @@ Stateflow {
   instance {
     id			    9
     machine		    1
-    name		    "MATLAB Function"
+    name		    "CA Code Generator"
     chart		    2
   }
   target {
