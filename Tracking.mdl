@@ -1,22 +1,13 @@
 Model {
-  Name			  "Main_Reciever"
+  Name			  "Tracking"
   Version		  8.9
   SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2"
-    NumModelReferences	    3
-    ModelReference {
-      ModelRefBlockPath	      "Main_Reciever/Model|Acquisition"
-    }
-    ModelReference {
-      ModelRefBlockPath	      "Main_Reciever/Model1|Tracking"
-    }
-    ModelReference {
-      ModelRefBlockPath	      "Main_Reciever/Model2|Pseudorange_and_Position_Calculation"
-    }
+    ComputedModelVersion    "1.0"
+    NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
     NumRequiredFunctions    0
@@ -33,17 +24,6 @@ Model {
   DiagnosticSuppressor	  "on"
   SuppressorTable	  "22 serialization::archive 11 0 6 0 0 0 8 0"
   SLCCPlugin		  "on"
-  slprops.hdlmdlprops {
-    $PropName		    "HDLParams"
-    $ObjectID		    1
-    Array {
-      Type		      "Cell"
-      Dimension		      2
-      Cell		      "HDLSubsystem"
-      Cell		      "$bdroot"
-      PropName		      "mdlProps"
-    }
-  }
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
   DisableAllScopes	  off
@@ -56,17 +36,17 @@ Model {
   LastSavedArchitecture	  "win64"
   Object {
     $PropName		    "BdWindowsInfo"
-    $ObjectID		    2
+    $ObjectID		    1
     $ClassName		    "Simulink.BDWindowsInfo"
     Object {
       $PropName		      "WindowsInfo"
-      $ObjectID		      3
+      $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1376.0, 784.0]
+      Location		      [93.0, 84.0, 814.0, 533.0]
       Object {
 	$PropName		"ModelBrowserInfo"
-	$ObjectID		4
+	$ObjectID		3
 	$ClassName		"Simulink.ModelBrowserInfo"
 	Visible			[0]
 	DockPosition		"Left"
@@ -76,24 +56,24 @@ Model {
       }
       Object {
 	$PropName		"ExplorerBarInfo"
-	$ObjectID		5
+	$ObjectID		4
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
       Object {
 	$PropName		"EditorsInfo"
-	$ObjectID		6
+	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1322.0, 603.0]
+	Extents			[760.0, 352.0]
 	ZoomFactor		[1.0]
 	Offset			[0.0, 0.0]
       }
       Object {
 	$PropName		"DockComponentsInfo"
-	$ObjectID		7
+	$ObjectID		6
 	$ClassName		"Simulink.DockComponentInfo"
 	Type			"GLUE2:PropertyInspector"
 	ID			"Property Inspector"
@@ -109,29 +89,29 @@ Model {
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
       "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABjAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAAKwD///8AAAVQAAAClAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAAKwD///8AAAMeAAABmQAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAB5/////wAAAAAAAAAA/////wEAAADa/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFT/////wAAAAAAAAAA/"
-      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAL9/////wAAAAAAAAAA/"
-      "////wEAAAMs/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
+      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAALA/////wAAAAAAAAAA/"
+      "////wEAAALv/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
     }
   }
   HideAutomaticNames	  on
-  Created		  "Fri Nov 17 15:55:30 2017"
+  Created		  "Fri Nov 17 18:12:51 2017"
   Creator		  "Alam"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Alam"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 17 19:21:26 2017"
-  RTWModifiedTimeStamp	  432843345
-  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  LastModifiedDate	  "Fri Nov 17 18:13:05 2017"
+  RTWModifiedTimeStamp	  0
+  ModelVersionFormat	  "1.%<AutoIncrement: 0 >"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
   WideLines		  off
-  ShowLineDimensions	  on
+  ShowLineDimensions	  off
   ShowPortDataTypes	  off
   PortDataTypeDisplayFormat "AliasTypeOnly"
   ShowEditTimeErrors	  on
@@ -175,14 +155,14 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    8
+    $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "Main_Reciever"
+    model_		    "Tracking"
     overrideMode_	    [0U]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "Main_Reciever"
+      Cell		      "Tracking"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -220,20 +200,20 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      9
+      $ObjectID		      8
       Version		      "1.17.0"
       DisabledProps	      []
       Description	      ""
       Array {
 	Type			"Handle"
-	Dimension		10
+	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  10
+	  $ObjectID		  9
 	  Version		  "1.17.0"
 	  DisabledProps		  []
 	  Description		  ""
 	  StartTime		  "0.0"
-	  StopTime		  "inf"
+	  StopTime		  "10.0"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -251,24 +231,24 @@ Model {
 	  EnableMultiTasking	  off
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
-	  Solver		  "FixedStepDiscrete"
-	  SolverName		  "FixedStepDiscrete"
+	  Solver		  "VariableStepAuto"
+	  SolverName		  "VariableStepAuto"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "UseLocalSettings"
 	  ZeroCrossAlgorithm	  "Nonadaptive"
 	  AlgebraicLoopSolver	  "TrustRegion"
-	  SolverInfoToggleStatus  on
+	  SolverInfoToggleStatus  off
 	  IsAutoAppliedInSIP	  off
 	  SolverResetMethod	  "Fast"
 	  PositivePriorityOrder	  off
-	  AutoInsertRateTranBlk	  on
+	  AutoInsertRateTranBlk	  off
 	  SampleTimeConstraint	  "Unconstrained"
 	  InsertRTBMode		  "Whenever possible"
 	  SampleTimeProperty	  []
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  11
+	  $ObjectID		  10
 	  Version		  "1.17.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -276,7 +256,7 @@ Model {
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
 	  InitialState		  "xInitial"
-	  LimitDataPoints	  on
+	  LimitDataPoints	  off
 	  MaxDataPoints		  "1000"
 	  LoadExternalInput	  off
 	  LoadInitialState	  off
@@ -284,15 +264,15 @@ Model {
 	  SaveCompleteFinalSimState off
 	  SaveFormat		  "Dataset"
 	  SignalLoggingSaveFormat "Dataset"
-	  SaveOutput		  off
+	  SaveOutput		  on
 	  SaveState		  off
-	  SignalLogging		  off
+	  SignalLogging		  on
 	  DSMLogging		  on
 	  InspectSignalLogs	  off
 	  VisualizeSimOutput	  on
 	  StreamToWorkspace	  off
 	  StreamVariableName	  "streamout"
-	  SaveTime		  off
+	  SaveTime		  on
 	  ReturnWorkspaceOutputs  off
 	  StateSaveName		  "xout"
 	  TimeSaveName		  "tout"
@@ -309,7 +289,7 @@ Model {
 	  LoggingIntervals	  "[-inf, inf]"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  12
+	  $ObjectID		  11
 	  Version		  "1.17.0"
 	  Array {
 	    Type		    "Cell"
@@ -360,7 +340,7 @@ Model {
 	  NoFixptDivByZeroProtection off
 	  EfficientFloat2IntCast  off
 	  EfficientMapNaN2IntZero on
-	  LifeSpan		  "inf"
+	  LifeSpan		  "auto"
 	  MaxStackSize		  "Inherit from target"
 	  BufferReusableBoundary  on
 	  SimCompilerOptimization "off"
@@ -370,7 +350,7 @@ Model {
 	  BusAssignmentInplaceUpdate on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  13
+	  $ObjectID		  12
 	  Version		  "1.17.0"
 	  Array {
 	    Type		    "Cell"
@@ -387,7 +367,7 @@ Model {
 	  ReadBeforeWriteMsg	  "UseLocalSettings"
 	  WriteAfterWriteMsg	  "UseLocalSettings"
 	  WriteAfterReadMsg	  "UseLocalSettings"
-	  AlgebraicLoopMsg	  "error"
+	  AlgebraicLoopMsg	  "warning"
 	  ArtificialAlgebraicLoopMsg "warning"
 	  SaveWithDisabledLinksMsg "warning"
 	  SaveWithParameterizedLinksMsg	"warning"
@@ -408,7 +388,7 @@ Model {
 	  MultiTaskDSMMsg	  "error"
 	  MultiTaskCondExecSysMsg "error"
 	  MultiTaskRateTransMsg	  "error"
-	  SingleTaskRateTransMsg  "error"
+	  SingleTaskRateTransMsg  "none"
 	  TasksWithSamePriorityMsg "warning"
 	  SigSpecEnsureSampleTimeMsg "warning"
 	  CheckMatrixSingularityMsg "none"
@@ -438,7 +418,7 @@ Model {
 	  BusObjectLabelMismatch  "warning"
 	  RootOutportRequireBusObject "warning"
 	  AssertControl		  "UseLocalSettings"
-	  AllowSymbolicDim	  off
+	  AllowSymbolicDim	  on
 	  RowMajorDimensionSupport off
 	  ModelReferenceIOMsg	  "none"
 	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
@@ -461,9 +441,9 @@ Model {
 	  SymbolicDimsDataTypeCodeGenerationDiagnostic "error"
 	  BlockIODiagnostic	  "none"
 	  SFUnusedDataAndEventsDiag "warning"
-	  SFUnexpectedBacktrackingDiag "warning"
+	  SFUnexpectedBacktrackingDiag "error"
 	  SFInvalidInputDataAccessInChartInitDiag "warning"
-	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "error"
 	  SFTransitionOutsideNaturalParentDiag "warning"
 	  SFUnreachableExecutionPathDiag "warning"
 	  SFUndirectedBroadcastEventsDiag "warning"
@@ -471,7 +451,7 @@ Model {
 	  SFOutputUsedAsStateInMooreChartDiag "error"
 	  SFTemporalDelaySmallerThanSampleTimeDiag "warning"
 	  SFSelfTransitionDiag	  "warning"
-	  SFExecutionAtInitializationDiag "none"
+	  SFExecutionAtInitializationDiag "warning"
 	  SFMachineParentedDataDiag "warning"
 	  IntegerSaturationMsg	  "warning"
 	  AllowedUnitSystems	  "all"
@@ -480,7 +460,7 @@ Model {
 	  UnitDatabase		  ""
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  14
+	  $ObjectID		  13
 	  Version		  "1.17.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -528,7 +508,7 @@ Model {
 	  UseSimulinkCoderFeatures on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  15
+	  $ObjectID		  14
 	  Version		  "1.17.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -547,7 +527,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  16
+	  $ObjectID		  15
 	  Version		  "1.17.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -577,11 +557,11 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  17
+	  $ObjectID		  16
 	  Version		  "1.17.0"
 	  Array {
 	    Type		    "Cell"
-	    Dimension		    16
+	    Dimension		    13
 	    Cell		    "IncludeHyperlinkInReport"
 	    Cell		    "GenerateTraceInfo"
 	    Cell		    "GenerateTraceReport"
@@ -592,12 +572,9 @@ Model {
 	    Cell		    "GenerateWebview"
 	    Cell		    "GenerateCodeMetricsReport"
 	    Cell		    "GenerateCodeReplacementReport"
+	    Cell		    "GenerateMissedCodeReplacementReport"
 	    Cell		    "GenerateErtSFunction"
 	    Cell		    "CreateSILPILBlock"
-	    Cell		    "CodeExecutionProfiling"
-	    Cell		    "CodeProfilingSaveOptions"
-	    Cell		    "CodeProfilingInstrumentation"
-	    Cell		    "GenerateMissedCodeReplacementReport"
 	    PropName		    "DisabledProps"
 	  }
 	  SystemTargetFile	  "grt.tlc"
@@ -663,13 +640,12 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      18
+	      $ObjectID		      17
 	      Version		      "1.17.0"
 	      Array {
 		Type			"Cell"
-		Dimension		29
+		Dimension		27
 		Cell			"IgnoreCustomStorageClasses"
-		Cell			"ParameterTuningSideEffectCode"
 		Cell			"IgnoreTestpoints"
 		Cell			"InsertBlockDesc"
 		Cell			"InsertPolySpaceComments"
@@ -686,17 +662,16 @@ Model {
 		Cell			"CustomSymbolStrType"
 		Cell			"CustomSymbolStrField"
 		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrModelFcn"
 		Cell			"CustomSymbolStrFcnArg"
 		Cell			"CustomSymbolStrBlkIO"
 		Cell			"CustomSymbolStrTmpVar"
 		Cell			"CustomSymbolStrMacro"
 		Cell			"CustomSymbolStrUtil"
-		Cell			"ReqsInCode"
-		Cell			"CustomUserTokenString"
-		Cell			"CustomSymbolStrSimulinkFcn"
-		Cell			"CustomSymbolStrModelFcn"
 		Cell			"CustomSymbolStrEmxType"
 		Cell			"CustomSymbolStrEmxFcn"
+		Cell			"CustomUserTokenString"
+		Cell			"ReqsInCode"
 		PropName		"DisabledProps"
 	      }
 	      Description	      ""
@@ -752,16 +727,16 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      19
+	      $ObjectID		      18
 	      Version		      "1.17.0"
 	      Array {
 		Type			"Cell"
-		Dimension		16
-		Cell			"GeneratePreprocessorConditionals"
+		Dimension		15
 		Cell			"IncludeMdlTerminateFcn"
 		Cell			"SuppressErrorStatus"
 		Cell			"ERTCustomFileBanners"
 		Cell			"GenerateSampleERTMain"
+		Cell			"ExistingSharedCode"
 		Cell			"GenerateTestInterfaces"
 		Cell			"ModelStepFunctionPrototypeControlCompliant"
 		Cell			"GenerateAllocFcn"
@@ -770,7 +745,6 @@ Model {
 		Cell			"SupportAbsoluteTime"
 		Cell			"SupportContinuousTime"
 		Cell			"SupportNonInlinedSFcns"
-		Cell			"ExistingSharedCode"
 		Cell			"RemoveDisableFunc"
 		Cell			"RemoveResetFunc"
 		PropName		"DisabledProps"
@@ -780,7 +754,7 @@ Model {
 	      TargetLibSuffix	      ""
 	      TargetPreCompLibLocation ""
 	      GenFloatMathFcnCalls    "NOT IN USE"
-	      TargetLangStandard      "C89/C90 (ANSI)"
+	      TargetLangStandard      "C99 (ISO)"
 	      CodeReplacementLibrary  "None"
 	      UtilityFuncGeneration   "Auto"
 	      MultiwordTypeDef	      "System defined"
@@ -795,7 +769,7 @@ Model {
 	      CompOptLevelCompliant   on
 	      ConcurrentExecutionCompliant on
 	      IncludeMdlTerminateFcn  on
-	      GeneratePreprocessorConditionals "Disable all"
+	      GeneratePreprocessorConditionals "Use local settings"
 	      CombineOutputUpdateFcns on
 	      CombineSignalStateStructs	off
 	      SuppressErrorStatus     off
@@ -849,7 +823,7 @@ Model {
 	  }
 	}
 	SlCovCC.ConfigComp {
-	  $ObjectID		  20
+	  $ObjectID		  19
 	  Version		  "1.17.0"
 	  DisabledProps		  []
 	  Description		  "Simulink Coverage Configuration Component"
@@ -888,36 +862,22 @@ Model {
 	  CovStopTime		  0
 	  CovMcdcMode		  "Masking"
 	}
-	hdlcoderui.hdlcc {
-	  $ObjectID		  21
-	  Version		  "1.17.0"
-	  DisabledProps		  []
-	  Description		  "HDL Coder custom configuration component"
-	  Name			  "HDL Coder"
-	  Array {
-	    Type		    "Cell"
-	    Dimension		    1
-	    Cell		    " "
-	    PropName		    "HDLConfigFile"
-	  }
-	  HDLCActiveTab		  "0"
-	}
 	PropName		"Components"
       }
       Name		      "Configuration"
       ExtraOptions	      ""
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition    [ 0, 0, 1096, 678 ]
+      ConfigPrmDlgPosition    [ 145, 177, 1135, 847 ]
     }
     PropName		    "ConfigurationSets"
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    9
+    $ObjectID		    8
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    22
+    $ObjectID		    20
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -978,21 +938,10 @@ Model {
     ToolTip		    "on"
   }
   BlockParameterDefaults {
-    Block {
-      BlockType		      ModelReference
-      SimulationMode	      "Accelerator"
-      ShowModelInitializePort off
-      ShowModelResetPorts     off
-      ShowModelTerminatePort  off
-      CodeInterface	      "Model reference"
-      GeneratePreprocessorConditionals off
-      ContentPreviewEnabled   off
-      CopyOfModelProtected    off
-    }
   }
   System {
-    Name		    "Main_Reciever"
-    Location		    [-8, -8, 1368, 776]
+    Name		    "Tracking"
+    Location		    [93, 84, 907, 617]
     Open		    on
     PortBlocksUseCompactNotation off
     ModelBrowserVisibility  off
@@ -1007,60 +956,5 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "17"
-    Block {
-      BlockType		      ModelReference
-      Name		      "Model"
-      SID		      "15"
-      Ports		      []
-      Position		      [230, 203, 372, 248]
-      ZOrder		      6
-      ModelNameDialog	      "Acquisition.mdl"
-      SimulationMode	      "Normal"
-      Variant		      off
-      ModelReferenceVersion   "1.0"
-      List {
-	ListType		OutputPortUnitExprs
-      }
-      List {
-	ListType		InputPortUnitExprs
-      }
-    }
-    Block {
-      BlockType		      ModelReference
-      Name		      "Model1"
-      SID		      "16"
-      Ports		      []
-      Position		      [425, 203, 567, 248]
-      ZOrder		      7
-      ModelNameDialog	      "Tracking.mdl"
-      SimulationMode	      "Normal"
-      Variant		      off
-      ModelReferenceVersion   "1.0"
-      List {
-	ListType		OutputPortUnitExprs
-      }
-      List {
-	ListType		InputPortUnitExprs
-      }
-    }
-    Block {
-      BlockType		      ModelReference
-      Name		      "Model2"
-      SID		      "17"
-      Ports		      []
-      Position		      [630, 203, 772, 248]
-      ZOrder		      8
-      ModelNameDialog	      "Pseudorange_and_Position_Calculation.slx"
-      SimulationMode	      "Normal"
-      Variant		      off
-      ModelReferenceVersion   "1.0"
-      List {
-	ListType		OutputPortUnitExprs
-      }
-      List {
-	ListType		InputPortUnitExprs
-      }
-    }
   }
 }

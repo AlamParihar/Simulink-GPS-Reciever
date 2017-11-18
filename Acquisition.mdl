@@ -1,22 +1,13 @@
 Model {
-  Name			  "Main_Reciever"
+  Name			  "Acquisition"
   Version		  8.9
   SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2"
-    NumModelReferences	    3
-    ModelReference {
-      ModelRefBlockPath	      "Main_Reciever/Model|Acquisition"
-    }
-    ModelReference {
-      ModelRefBlockPath	      "Main_Reciever/Model1|Tracking"
-    }
-    ModelReference {
-      ModelRefBlockPath	      "Main_Reciever/Model2|Pseudorange_and_Position_Calculation"
-    }
+    ComputedModelVersion    "1.0"
+    NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
     NumRequiredFunctions    0
@@ -117,15 +108,15 @@ Model {
     }
   }
   HideAutomaticNames	  on
-  Created		  "Fri Nov 17 15:55:30 2017"
+  Created		  "Fri Nov 17 18:06:20 2017"
   Creator		  "Alam"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Alam"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 17 19:21:26 2017"
-  RTWModifiedTimeStamp	  432843345
-  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  LastModifiedDate	  "Fri Nov 17 18:08:05 2017"
+  RTWModifiedTimeStamp	  391365631
+  ModelVersionFormat	  "1.%<AutoIncrement: 0 >"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -177,12 +168,12 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    8
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "Main_Reciever"
+    model_		    "Acquisition"
     overrideMode_	    [0U]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "Main_Reciever"
+      Cell		      "Acquisition"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -978,20 +969,9 @@ Model {
     ToolTip		    "on"
   }
   BlockParameterDefaults {
-    Block {
-      BlockType		      ModelReference
-      SimulationMode	      "Accelerator"
-      ShowModelInitializePort off
-      ShowModelResetPorts     off
-      ShowModelTerminatePort  off
-      CodeInterface	      "Model reference"
-      GeneratePreprocessorConditionals off
-      ContentPreviewEnabled   off
-      CopyOfModelProtected    off
-    }
   }
   System {
-    Name		    "Main_Reciever"
+    Name		    "Acquisition"
     Location		    [-8, -8, 1368, 776]
     Open		    on
     PortBlocksUseCompactNotation off
@@ -1007,60 +987,6 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "17"
-    Block {
-      BlockType		      ModelReference
-      Name		      "Model"
-      SID		      "15"
-      Ports		      []
-      Position		      [230, 203, 372, 248]
-      ZOrder		      6
-      ModelNameDialog	      "Acquisition.mdl"
-      SimulationMode	      "Normal"
-      Variant		      off
-      ModelReferenceVersion   "1.0"
-      List {
-	ListType		OutputPortUnitExprs
-      }
-      List {
-	ListType		InputPortUnitExprs
-      }
-    }
-    Block {
-      BlockType		      ModelReference
-      Name		      "Model1"
-      SID		      "16"
-      Ports		      []
-      Position		      [425, 203, 567, 248]
-      ZOrder		      7
-      ModelNameDialog	      "Tracking.mdl"
-      SimulationMode	      "Normal"
-      Variant		      off
-      ModelReferenceVersion   "1.0"
-      List {
-	ListType		OutputPortUnitExprs
-      }
-      List {
-	ListType		InputPortUnitExprs
-      }
-    }
-    Block {
-      BlockType		      ModelReference
-      Name		      "Model2"
-      SID		      "17"
-      Ports		      []
-      Position		      [630, 203, 772, 248]
-      ZOrder		      8
-      ModelNameDialog	      "Pseudorange_and_Position_Calculation.slx"
-      SimulationMode	      "Normal"
-      Variant		      off
-      ModelReferenceVersion   "1.0"
-      List {
-	ListType		OutputPortUnitExprs
-      }
-      List {
-	ListType		InputPortUnitExprs
-      }
-    }
+    SIDHighWatermark	    "1"
   }
 }
