@@ -6,10 +6,19 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3"
-    NumModelReferences	    1
+    ComputedModelVersion    "1.8"
+    NumModelReferences	    4
     ModelReference {
       ModelRefBlockPath	      "Acquisition/Model|CAcode"
+    }
+    ModelReference {
+      ModelRefBlockPath	      "Acquisition/Model1|Resample_Block"
+    }
+    ModelReference {
+      ModelRefBlockPath	      "Acquisition/Model2|Resample_Block"
+    }
+    ModelReference {
+      ModelRefBlockPath	      "Acquisition/Model3|Resample_Block"
     }
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -83,7 +92,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1322.0, 603.0]
 	ZoomFactor		[1.0]
-	Offset			[-146.59999918341566, 8.7875035941603414]
+	Offset			[-192.79999918341684, 29.387503594161331]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -117,9 +126,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Alam"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Nov 18 17:01:36 2017"
-  RTWModifiedTimeStamp	  432925031
-  ModelVersionFormat	  "1.%<AutoIncrement:3>"
+  LastModifiedDate	  "Sat Nov 18 22:08:06 2017"
+  RTWModifiedTimeStamp	  432943195
+  ModelVersionFormat	  "1.%<AutoIncrement:8>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1041,7 +1050,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "14"
+    SIDHighWatermark	    "17"
     Block {
       BlockType		      Abs
       Name		      "Abs"
@@ -1210,12 +1219,12 @@ Model {
       Name		      "Model"
       SID		      "12"
       Ports		      [1, 1]
-      Position		      [240, 492, 380, 538]
+      Position		      [145, 502, 285, 548]
       ZOrder		      33
       ModelNameDialog	      "CAcode.mdl"
       SimulationMode	      "Normal"
       Variant		      off
-      ModelReferenceVersion   "1.2"
+      ModelReferenceVersion   "1.5"
       List {
 	ListType		InputPortNames
 	port0			"In1"
@@ -1231,6 +1240,138 @@ Model {
       List {
 	ListType		OutputPortSignalNames
 	port0			"g"
+      }
+      List {
+	ListType		InputPortLatchByCopyingInsideSignal
+	port0			"off"
+      }
+      List {
+	ListType		OutputPortUnitExprs
+	port0			"inherit"
+      }
+      List {
+	ListType		InputPortUnitExprs
+	port0			"inherit"
+      }
+      List {
+	ListType		InputPortLatchByDelayingOutsideSignal
+	port0			"off"
+      }
+    }
+    Block {
+      BlockType		      ModelReference
+      Name		      "Model1"
+      SID		      "15"
+      Ports		      [1, 1]
+      Position		      [-155, 117, -15, 163]
+      ZOrder		      34
+      ModelNameDialog	      "Resample_Block.mdl"
+      SimulationMode	      "Normal"
+      Variant		      off
+      ModelReferenceVersion   "1.6"
+      List {
+	ListType		InputPortNames
+	port0			"In1"
+      }
+      List {
+	ListType		OutputPortNames
+	port0			"Out1"
+      }
+      List {
+	ListType		OutputPortOutputBusAsStructs
+	port0			"off"
+      }
+      List {
+	ListType		OutputPortSignalNames
+	port0			"reSampled"
+      }
+      List {
+	ListType		InputPortLatchByCopyingInsideSignal
+	port0			"off"
+      }
+      List {
+	ListType		OutputPortUnitExprs
+	port0			"inherit"
+      }
+      List {
+	ListType		InputPortUnitExprs
+	port0			"inherit"
+      }
+      List {
+	ListType		InputPortLatchByDelayingOutsideSignal
+	port0			"off"
+      }
+    }
+    Block {
+      BlockType		      ModelReference
+      Name		      "Model2"
+      SID		      "16"
+      Ports		      [1, 1]
+      Position		      [295, 427, 435, 473]
+      ZOrder		      35
+      ModelNameDialog	      "Resample_Block.mdl"
+      SimulationMode	      "Normal"
+      Variant		      off
+      ModelReferenceVersion   "1.6"
+      List {
+	ListType		InputPortNames
+	port0			"In1"
+      }
+      List {
+	ListType		OutputPortNames
+	port0			"Out1"
+      }
+      List {
+	ListType		OutputPortOutputBusAsStructs
+	port0			"off"
+      }
+      List {
+	ListType		OutputPortSignalNames
+	port0			"reSampled"
+      }
+      List {
+	ListType		InputPortLatchByCopyingInsideSignal
+	port0			"off"
+      }
+      List {
+	ListType		OutputPortUnitExprs
+	port0			"inherit"
+      }
+      List {
+	ListType		InputPortUnitExprs
+	port0			"inherit"
+      }
+      List {
+	ListType		InputPortLatchByDelayingOutsideSignal
+	port0			"off"
+      }
+    }
+    Block {
+      BlockType		      ModelReference
+      Name		      "Model3"
+      SID		      "17"
+      Ports		      [1, 1]
+      Position		      [-155, 197, -15, 243]
+      ZOrder		      36
+      ModelNameDialog	      "Resample_Block.mdl"
+      SimulationMode	      "Normal"
+      Variant		      off
+      ModelReferenceVersion   "1.6"
+      List {
+	ListType		InputPortNames
+	port0			"In1"
+      }
+      List {
+	ListType		OutputPortNames
+	port0			"Out1"
+      }
+      List {
+	ListType		OutputPortOutputBusAsStructs
+	port0			"off"
+      }
+      List {
+	ListType		OutputPortSignalNames
+	port0			"reSampled"
       }
       List {
 	ListType		InputPortLatchByCopyingInsideSignal
@@ -1356,23 +1497,45 @@ Model {
       DstPort		      2
     }
     Line {
-      ZOrder		      30
-      Points		      [-6, 140]
+      ZOrder		      33
+      Points		      [77, 374; 0, -134]
+      DstBlock		      "Mux"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      34
+      Points		      [131, 373; 0, -253]
+      DstBlock		      "Mux2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      37
+      SrcBlock		      "Model"
+      SrcPort		      1
+      Points		      [0, -75]
+      DstBlock		      "Model2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      38
+      SrcBlock		      "Model2"
+      SrcPort		      1
+      Points		      [20, 0]
+      DstBlock		      "FFT1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      39
+      SrcBlock		      "Model1"
+      SrcPort		      1
       DstBlock		      "Mux2"
       DstPort		      2
     }
     Line {
-      ZOrder		      26
-      Points		      [-6, 220]
-      DstBlock		      "Mux"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      29
-      SrcBlock		      "Model"
+      ZOrder		      40
+      SrcBlock		      "Model3"
       SrcPort		      1
-      Points		      [75, 0]
-      DstBlock		      "FFT1"
+      DstBlock		      "Mux"
       DstPort		      1
     }
   }

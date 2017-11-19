@@ -1,25 +1,12 @@
 Model {
-  Name			  "CAcode"
+  Name			  "Frequency_Generator"
   Version		  8.9
   SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
-    NumRootInports	    1
-    Inport {
-      Name		      "In1"
-      BusObject		      ""
-      OutputFunctionCall      "off"
-      UnitExpr		      "inherit"
-    }
-    NumRootOutports	    1
-    Outport {
-      Name		      "Out1"
-      BusObject		      ""
-      BusOutputAsStruct	      "off"
-      SignalName	      "g"
-      UnitExpr		      "inherit"
-    }
+    NumRootInports	    0
+    NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.11"
+    ComputedModelVersion    "1.1"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -110,15 +97,15 @@ Model {
     }
   }
   HideAutomaticNames	  on
-  Created		  "Sat Nov 18 16:42:24 2017"
+  Created		  "Sat Nov 18 19:12:25 2017"
   Creator		  "Alam"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Alam"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Nov 18 22:15:54 2017"
-  RTWModifiedTimeStamp	  432944153
-  ModelVersionFormat	  "1.%<AutoIncrement:11>"
+  LastModifiedDate	  "Sat Nov 18 19:46:33 2017"
+  RTWModifiedTimeStamp	  432933258
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -170,12 +157,12 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "CAcode"
-    overrideMode_	    [0.0]
+    model_		    "Frequency_Generator"
+    overrideMode_	    [0U]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "CAcode"
+      Cell		      "Frequency_Generator"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -952,19 +939,6 @@ Model {
   }
   BlockParameterDefaults {
     Block {
-      BlockType		      Constant
-      Value		      "1"
-      VectorParams1D	      on
-      SamplingMode	      "Sample based"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
-      LockScale		      off
-      SampleTime	      "inf"
-      FramePeriod	      "inf"
-      PreserveConstantTs      off
-    }
-    Block {
       BlockType		      Demux
       Outputs		      "4"
       DisplayOption	      "none"
@@ -1052,7 +1026,7 @@ Model {
     }
   }
   System {
-    Name		    "CAcode"
+    Name		    "Frequency_Generator"
     Location		    [-8, -8, 1368, 776]
     Open		    on
     PortBlocksUseCompactNotation off
@@ -1068,21 +1042,13 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "4"
-    Block {
-      BlockType		      Inport
-      Name		      "In1"
-      SID		      "2"
-      Position		      [245, 243, 275, 257]
-      ZOrder		      2
-      IconDisplay	      "Port number"
-    }
+    SIDHighWatermark	    "1"
     Block {
       BlockType		      SubSystem
-      Name		      "CA Code Generator"
+      Name		      "MATLAB Function"
       SID		      "1"
       Ports		      [2, 1]
-      Position		      [450, 239, 520, 286]
+      Position		      [615, 184, 685, 231]
       ZOrder		      1
       ErrorFcn		      "Stateflow.Translate.translate"
       PermitHierarchicalResolution "ExplicitOnly"
@@ -1091,7 +1057,7 @@ Model {
       SFBlockType	      "MATLAB Function"
       Variant		      off
       System {
-	Name			"CA Code Generator"
+	Name			"MATLAB Function"
 	Location		[223, 338, 826, 833]
 	Open			off
 	PortBlocksUseCompactNotation off
@@ -1109,7 +1075,7 @@ Model {
 	SIDHighWatermark	"22"
 	Block {
 	  BlockType		  Inport
-	  Name			  "sv"
+	  Name			  "step"
 	  SID			  "1::1"
 	  Position		  [20, 101, 40, 119]
 	  ZOrder		  -1
@@ -1117,7 +1083,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Inport
-	  Name			  "fs"
+	  Name			  "carrier"
 	  SID			  "1::22"
 	  Position		  [20, 136, 40, 154]
 	  ZOrder		  13
@@ -1137,18 +1103,18 @@ Model {
 	  BlockType		  S-Function
 	  Name			  " SFunction "
 	  SID			  "1::19"
-	  Tag			  "Stateflow S-Function CAcode 2"
+	  Tag			  "Stateflow S-Function Frequency_Generator 2"
 	  Ports			  [2, 2]
 	  Position		  [180, 100, 230, 160]
 	  ZOrder		  10
 	  FunctionName		  "sf_sfun"
 	  PortCounts		  "[2 2]"
 	  SFunctionDeploymentMode off
-	  EnableBusSupport	  on
+	  EnableBusSupport	  off
 	  SFcnIsStateOwnerBlock	  off
 	  Port {
 	    PortNumber		    2
-	    Name		    "g"
+	    Name		    "y"
 	  }
 	}
 	Block {
@@ -1160,7 +1126,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "g"
+	  Name			  "y"
 	  SID			  "1::5"
 	  Position		  [460, 101, 480, 119]
 	  ZOrder		  -5
@@ -1168,25 +1134,25 @@ Model {
 	}
 	Line {
 	  ZOrder		  9
-	  SrcBlock		  "sv"
+	  SrcBlock		  "step"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  1
 	}
 	Line {
 	  ZOrder		  10
-	  SrcBlock		  "fs"
+	  SrcBlock		  "carrier"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  2
 	}
 	Line {
-	  Name			  "g"
+	  Name			  "y"
 	  ZOrder		  11
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  2
-	  DstBlock		  "g"
+	  DstBlock		  "y"
 	  DstPort		  1
 	}
 	Line {
@@ -1205,44 +1171,6 @@ Model {
 	}
       }
     }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant"
-      SID		      "3"
-      Position		      [245, 330, 275, 360]
-      ZOrder		      3
-      Value		      "(37+1/3)"
-    }
-    Block {
-      BlockType		      Outport
-      Name		      "Out1"
-      SID		      "4"
-      Position		      [735, 258, 765, 272]
-      ZOrder		      4
-      IconDisplay	      "Port number"
-    }
-    Line {
-      ZOrder		      1
-      SrcBlock		      "In1"
-      SrcPort		      1
-      DstBlock		      "CA Code Generator"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      2
-      SrcBlock		      "Constant"
-      SrcPort		      1
-      Points		      [79, 0; 0, -70]
-      DstBlock		      "CA Code Generator"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      3
-      SrcBlock		      "CA Code Generator"
-      SrcPort		      1
-      DstBlock		      "Out1"
-      DstPort		      1
-    }
   }
 }
 #Finite State Machines
@@ -1253,8 +1181,8 @@ Model {
 Stateflow {
   machine {
     id			    1
-    name		    "CAcode"
-    created		    "18-Nov-2017 16:42:52"
+    name		    "Frequency_Generator"
+    created		    "18-Nov-2017 19:13:25"
     isLibrary		    0
     sfVersion		    80000011
     firstTarget		    10
@@ -1262,7 +1190,7 @@ Stateflow {
   chart {
     id			    2
     machine		    1
-    name		    "CA Code Generator"
+    name		    "MATLAB Function"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
@@ -1277,7 +1205,7 @@ Stateflow {
     chartFileNumber	    2
     disableImplicitCasting  1
     eml {
-      name		      "cacode"
+      name		      "freqGen"
     }
     firstData		    4
     firstTransition	    8
@@ -1297,41 +1225,14 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "    function g=cacode(sv,fs)\n    coder.extrinsic('warning') \n% function G=CACODE(SV,FS) \n% Gen"
-      "erates 1023 length C/A Codes for GPS PRNs 1-37\n%\n% \n% g: nx1023 matrix- with each PRN in each row with symbol"
-      "s 1 and 0\n% sv: a row or column vector of the SV's to be generated\n% 	 valid entries are 1 to 37\n% fs: option"
-      "al number of samples per chip (defaults to 1), fractional samples allowed, must be 1 or greater.\n%\n% For multi"
-      "ple samples per chip, function is a zero order hold. \n%\n%\n% For example to generate the C/A codes for PRN 6 a"
-      "nd PRN 12 use:\n% g=cacode([6 12]),\n% and to generate the C/A codes for PRN 6 and PRN 12 at 5 MHz use\n% g=caco"
-      "de([6 12],5/1.023)\n% \n%\n% For more information refer to the \"GPS SPS Signal Specification\"\n% http://www.na"
-      "vcen.uscg.gov/pubs/gps/sigspec/default.htm\n%\n% Dan Boschen 12-30-2007\n% boschen@loglin.com\n\n% Revision Hist"
-      "ory\n% rev 1.0 Dan Boschen 4-15-2007  Initial Release\n%\n% rev 1.1 Dan Boschen 7-15-2007  Corrected error with "
-      "taps for PRN30, should be [2,7] was \n% 					incorrect as [1 7]. Thank you Jadah Zak for finding this.\n%\n%\n% "
-      "rev 1.2 Dan Boschen 12-26-2007 Fixed column index error when ceil ~ L \n%				Thank you Jared Meadows for finding"
-      " this.\n%\n% rev 1.3 Dan Boschen 12-30-2007 Changed comment \"first order hold\" to\n% \"zero order hold\".\n%\n"
-      "% rev 1.4 Dan Boschen 6-1-2010   Updated email address in comments\n\n\n\nif nargin<2\n	fs=1;\nend\n\n\nif (max("
-      "sv)>37) || (min(sv)<1) || (min(size(sv))~=1)\n	error('sv must be a row or column vector with integers between 1 "
-      "and 37\\n')\nend\n\nif fs<1\n	error('fs must be 1 or greater\\n')\nend	\n\n% force integers\ntestint=round(sv)-s"
-      "v;\nif testint ~= 0 \n	warning('non-integer value entered for sv, rounding to closest integer\\n');\n	sv = round"
-      "(sv);\nend\n\n\n% table of C/A Code Tap Selection (sets delay for G2 generator)\ntap=[2 6;\n    3 7;\n    4 8;\n"
-      "    5 9;\n    1 9;\n    2 10;\n    1 8;\n    2 9;\n    3 10;\n    2 3;\n    3 4;\n    5 6;\n    6 7;\n    7 8;\n"
-      "    8 9;\n    9 10;\n    1 4;\n    2 5;\n    3 6;\n    4 7;\n    5 8;\n    6 9;\n    1 3;\n    4 6;\n    5 7;\n "
-      "   6 8;\n    7 9;\n    8 10;\n    1 6;\n    2 7;\n    3 8;\n    4 9\n    5 10\n    4 10\n    1 7\n    2 8\n    4"
-      " 10];\n\n% G1 LFSR: x^10+x^3+1\ns=[0 0 1 0 0 0 0 0 0 1];\nn=length(s);\ng1=ones(1,n);	%initialization vector for"
-      " G1\ng2=ones(1,n);\ng = ones(1,38192);\ngfs= ones(1, 38192);\nL=2^n-1;\n\n% G2j LFSR: x^10+x^9+x^8+x^6+x^3+x^2+1"
-      "\nt=[0 1 1 0 0 1 0 1 1 1];\nq=ones(1,n);	%initialization vector for G2\n\n% generate C/A Code sequences:\ntap_se"
-      "l=tap(sv,:);\nfor inc=1:L\n    g2(:,inc)=mod(sum(q(tap_sel),2),2);\n    g(:,inc)=mod(g1(n)+g2(:,inc),2);\n   g1="
-      "[mod(sum(g1.*s),2) g1(1:n-1)];\n   q=[mod(sum(q.*t),2) q(1:n-1)];\nend\n\n%upsample to desired rate\nif fs~=1\n	"
-      "%fractional upsampling with zero order hold\n	index=0;\n	for cnt = 1/fs:1/fs:L\n		index=index+1;\n		if ceil(cnt)"
-      " > L   %traps a floating point error in index\n			gfs(:,index)=g(:,L);\n		else\n			gfs(:,index)=g(:,ceil(cnt));\n"
-      "		end\n	end \n	g=gfs;\nend"
+      script		      "function y = freqGen(step, carrier)\n\ny = sin();\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
     id			    4
     ssIdNumber		    4
-    name		    "sv"
+    name		    "step"
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -1353,7 +1254,7 @@ Stateflow {
   data {
     id			    5
     ssIdNumber		    5
-    name		    "g"
+    name		    "y"
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -1376,7 +1277,7 @@ Stateflow {
   data {
     id			    6
     ssIdNumber		    6
-    name		    "fs"
+    name		    "carrier"
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -1434,7 +1335,7 @@ Stateflow {
   instance {
     id			    9
     machine		    1
-    name		    "CA Code Generator"
+    name		    "MATLAB Function"
     chart		    2
   }
   target {

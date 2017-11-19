@@ -1,4 +1,4 @@
-function g=cacode(sv,fs)
+function g=CAcode(sv,fs)
 % function G=CACODE(SV,FS) 
 % Generates 1023 length C/A Codes for GPS PRNs 1-37
 %
