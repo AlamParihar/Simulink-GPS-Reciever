@@ -19,7 +19,7 @@ Model {
       UnitExpr		      "inherit"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.28"
+    ComputedModelVersion    "1.31"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -116,9 +116,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Alam"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Nov 19 18:50:15 2017"
-  RTWModifiedTimeStamp	  433018204
-  ModelVersionFormat	  "1.%<AutoIncrement:28>"
+  LastModifiedDate	  "Mon Nov 20 02:22:54 2017"
+  RTWModifiedTimeStamp	  433045369
+  ModelVersionFormat	  "1.%<AutoIncrement:31>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -244,8 +244,8 @@ Model {
 	  EnableMultiTasking	  off
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
-	  Solver		  "VariableStepAuto"
-	  SolverName		  "VariableStepAuto"
+	  Solver		  "FixedStepAuto"
+	  SolverName		  "FixedStepAuto"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "UseLocalSettings"
@@ -880,7 +880,7 @@ Model {
       Name		      "Configuration"
       ExtraOptions	      ""
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition    [ 145, 177, 1135, 847 ]
+      ConfigPrmDlgPosition    [ 260, 97, 1101, 648 ]
     }
     PropName		    "ConfigurationSets"
   }
@@ -1212,6 +1212,7 @@ Model {
       SID		      "3"
       Position		      [285, 330, 315, 360]
       ZOrder		      3
+      Value		      "64"
     }
     Block {
       BlockType		      Outport
@@ -1220,7 +1221,7 @@ Model {
       Position		      [740, 258, 770, 272]
       ZOrder		      9
       IconDisplay	      "Port number"
-      PortDimensions	      "[1 1023]"
+      PortDimensions	      "[1 65536]"
     }
     Line {
       ZOrder		      11
@@ -1269,9 +1270,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 3 0 0]
     viewObj		    2
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    6
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -1319,13 +1317,13 @@ Stateflow {
       "    9 10;\n    1 4;\n    2 5;\n    3 6;\n    4 7;\n    5 8;\n    6 9;\n    1 3;\n    4 6;\n    5 7;\n    6 8;\n "
       "   7 9;\n    8 10;\n    1 6;\n    2 7;\n    3 8;\n    4 9\n    5 10\n    4 10\n    1 7\n    2 8\n    4 10];\n\n%"
       " G1 LFSR: x^10+x^3+1\ns=[0 0 1 0 0 0 0 0 0 1];\nn=length(s);\ng1=ones(1,n);	%initialization vector for G1\n\n%g="
-      "ones(1,38192);\n%g2=ones(1,38192);\n%gfs=ones(1,38192);\n\ng=ones(1,1023);\ng2=ones(1,1023);\ngfs=ones(1,1023);\n"
-      "\nL=2^n-1;\n\n% G2j LFSR: x^10+x^9+x^8+x^6+x^3+x^2+1\nt=[0 1 1 0 0 1 0 1 1 1];\nq=ones(1,n);	%initialization vec"
-      "tor for G2\n\n% generate C/A Code sequences:\ntap_sel=tap(sv,:);\nfor inc=1:L\n    g2(:,inc)=mod(sum(q(tap_sel),"
-      "2),2);\n    g(:,inc)=mod(g1(n)+g2(:,inc),2);\n   g1=[mod(sum(g1.*s),2) g1(1:n-1)];\n   q=[mod(sum(q.*t),2) q(1:n"
-      "-1)];\nend\n\n%upsample to desired rate\nif fs~=1\n	%fractional upsampling with zero order hold\n	index=0;\n	for"
-      " cnt = 1/fs:1/fs:L\n		index=index+1;\n		if ceil(cnt) > L   %traps a floating point error in index\n			gfs(:,inde"
-      "x)=g(:,L);\n		else\n			gfs(:,index)=g(:,ceil(cnt));\n		end\n	end \n	g=gfs;\nend"
+      "ones(1,38192);\n%g2=ones(1,38192);\n%gfs=ones(1,38192);\n\ng=ones(1,65536);\ng2=ones(1,65536);\ngfs=ones(1,65536"
+      ");\n\nL=2^n-1;\n\n% G2j LFSR: x^10+x^9+x^8+x^6+x^3+x^2+1\nt=[0 1 1 0 0 1 0 1 1 1];\nq=ones(1,n);	%initialization"
+      " vector for G2\n\n% generate C/A Code sequences:\ntap_sel=tap(sv,:);\nfor inc=1:L\n    g2(:,inc)=mod(sum(q(tap_s"
+      "el),2),2);\n    g(:,inc)=mod(g1(n)+g2(:,inc),2);\n   g1=[mod(sum(g1.*s),2) g1(1:n-1)];\n   q=[mod(sum(q.*t),2) q"
+      "(1:n-1)];\nend\n\n%upsample to desired rate\nif fs~=1\n	%fractional upsampling with zero order hold\n	index=0;\n"
+      "	for cnt = 1/fs:1/fs:L\n		index=index+1;\n		if ceil(cnt) > L   %traps a floating point error in index\n			gfs(:,"
+      "index)=g(:,L);\n		else\n			gfs(:,index)=g(:,ceil(cnt));\n		end\n	end \n	g=gfs;\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }

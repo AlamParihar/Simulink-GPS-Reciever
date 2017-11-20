@@ -1,27 +1,21 @@
 Model {
-  Name			  "Acquisition"
+  Name			  "Main_Reciever"
   Version		  8.9
   SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
-    NumRootInports	    1
-    Inport {
-      Name		      "In1"
-      BusObject		      ""
-      OutputFunctionCall      "off"
-      UnitExpr		      "inherit"
-    }
+    NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.22"
+    ComputedModelVersion    "1.2"
     NumModelReferences	    3
     ModelReference {
-      ModelRefBlockPath	      "Acquisition/CAcode|CAcode"
+      ModelRefBlockPath	      "Main_Reciever/Model|Acquisition"
     }
     ModelReference {
-      ModelRefBlockPath	      "Acquisition/Oscillator 0 shift|Local_Oscillator"
+      ModelRefBlockPath	      "Main_Reciever/Model1|Tracking"
     }
     ModelReference {
-      ModelRefBlockPath	      "Acquisition/Oscillator 90 shift|Local_Oscillator"
+      ModelRefBlockPath	      "Main_Reciever/Model2|Pseudorange_and_Position_Calculation"
     }
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -95,7 +89,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1322.0, 603.0]
 	ZoomFactor		[1.0]
-	Offset			[-307.86558564114057, 253.20714213848203]
+	Offset			[0.0, 0.0]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -123,15 +117,15 @@ Model {
     }
   }
   HideAutomaticNames	  on
-  Created		  "Fri Nov 17 18:06:20 2017"
+  Created		  "Fri Nov 17 15:55:30 2017"
   Creator		  "Alam"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Alam"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Nov 20 15:18:52 2017"
-  RTWModifiedTimeStamp	  433091904
-  ModelVersionFormat	  "1.%<AutoIncrement:22>"
+  LastModifiedDate	  "Mon Nov 20 03:35:45 2017"
+  RTWModifiedTimeStamp	  432843345
+  ModelVersionFormat	  "1.%<AutoIncrement:2>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -183,12 +177,12 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    8
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "Acquisition"
+    model_		    "Main_Reciever"
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "Acquisition"
+      Cell		      "Main_Reciever"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -239,7 +233,7 @@ Model {
 	  DisabledProps		  []
 	  Description		  ""
 	  StartTime		  "0.0"
-	  StopTime		  "0.001"
+	  StopTime		  "inf"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -985,79 +979,6 @@ Model {
   }
   BlockParameterDefaults {
     Block {
-      BlockType		      Abs
-      ZeroCross		      on
-      SampleTime	      "-1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-    }
-    Block {
-      BlockType		      Buffer
-      N			      "64"
-      V			      "0"
-      ic		      "0"
-      HasFrameUpgradeWarning  on
-      OutputFrames	      on
-      InheritSize	      off
-      OverlapPercent	      "0"
-    }
-    Block {
-      BlockType		      ComplexToRealImag
-      Output		      "Real and imag"
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      Constant
-      Value		      "1"
-      VectorParams1D	      on
-      SamplingMode	      "Sample based"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
-      LockScale		      off
-      SampleTime	      "inf"
-      FramePeriod	      "inf"
-      PreserveConstantTs      off
-    }
-    Block {
-      BlockType		      Inport
-      Port		      "1"
-      OutputFunctionCall      off
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: auto"
-      LockScale		      off
-      BusOutputAsStruct	      off
-      Unit		      "inherit"
-      PortDimensions	      "-1"
-      VarSizeSig	      "Inherit"
-      SampleTime	      "-1"
-      SignalType	      "auto"
-      SamplingMode	      "auto"
-      LatchByDelayingOutsideSignal off
-      LatchInputForFeedbackSignals off
-      Interpolate	      on
-    }
-    Block {
-      BlockType		      Math
-      Operator		      "exp"
-      OutputSignalType	      "auto"
-      SampleTime	      "-1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as first input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-      IntermediateResultsDataTypeStr "Inherit: Inherit via internal rule"
-      AlgorithmType	      "Newton-Raphson"
-      Iterations	      "3"
-    }
-    Block {
       BlockType		      ModelReference
       SimulationMode	      "Accelerator"
       ShowModelInitializePort off
@@ -1068,79 +989,9 @@ Model {
       ContentPreviewEnabled   off
       CopyOfModelProtected    off
     }
-    Block {
-      BlockType		      Product
-      Inputs		      "2"
-      Multiplication	      "Element-wise(.*)"
-      CollapseMode	      "All dimensions"
-      CollapseDim	      "1"
-      InputSameDT	      on
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as first input"
-      LockScale		      off
-      RndMeth		      "Zero"
-      SaturateOnIntegerOverflow	on
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      RateTransition
-      Integrity		      on
-      Deterministic	      on
-      X0		      "0"
-      OutPortSampleTimeOpt    "Specify"
-      OutPortSampleTimeMultiple	"1"
-      OutPortSampleTime	      "-1"
-    }
-    Block {
-      BlockType		      RealImagToComplex
-      Input		      "Real and imag"
-      ConstantPart	      "0"
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      Reshape
-      OutputDimensionality    "1-D array"
-      OutputDimensions	      "[1,1]"
-    }
-    Block {
-      BlockType		      SpectrumAnalyzer
-      DefaultConfigurationName "spbscopes.SpectrumAnalyzerBlockCfg"
-    }
-    Block {
-      BlockType		      Sum
-      IconShape		      "rectangular"
-      Inputs		      "++"
-      CollapseMode	      "All dimensions"
-      CollapseDim	      "1"
-      InputSameDT	      on
-      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as first input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      ToWorkspace
-      VariableName	      "simulink_output"
-      MaxDataPoints	      "1000"
-      Decimation	      "1"
-      SaveFormat	      "Array"
-      Save2DSignal	      "Inherit from input (this choice will be removed - see release notes)"
-      FixptAsFi		      off
-      NumInputs		      "1"
-      SampleTime	      "0"
-    }
-    Block {
-      BlockType		      ZeroOrderHold
-      SampleTime	      "1"
-    }
   }
   System {
-    Name		    "Acquisition"
+    Name		    "Main_Reciever"
     Location		    [-8, -8, 1368, 776]
     Open		    on
     PortBlocksUseCompactNotation off
@@ -1156,794 +1007,73 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "67"
-    Block {
-      BlockType		      Inport
-      Name		      "In1"
-      SID		      "18"
-      Position		      [-405, 118, -375, 132]
-      ZOrder		      37
-      IconDisplay	      "Port number"
-    }
-    Block {
-      BlockType		      Abs
-      Name		      "Abs"
-      SID		      "6"
-      Position		      [700, 165, 730, 195]
-      ZOrder		      18
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Buffer
-      Name		      "Buffer"
-      SID		      "61"
-      Position		      [290, 89, 340, 141]
-      ZOrder		      111
-      N			      "32768"
-      OutputFrames	      off
-    }
+    SIDHighWatermark	    "17"
     Block {
       BlockType		      ModelReference
-      Name		      "CAcode"
-      SID		      "12"
-      Ports		      [1, 1]
-      Position		      [190, 727, 330, 773]
-      ZOrder		      33
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      ModelNameDialog	      "CAcode.mdl"
-      SimulationMode	      "Normal"
-      Variant		      off
-      ModelReferenceVersion   "1.31"
-      List {
-	ListType		InputPortNames
-	port0			"In1"
-      }
-      List {
-	ListType		OutputPortNames
-	port0			"Out1"
-      }
-      List {
-	ListType		OutputPortOutputBusAsStructs
-	port0			"off"
-      }
-      List {
-	ListType		OutputPortSignalNames
-	port0			"g"
-      }
-      List {
-	ListType		InputPortLatchByCopyingInsideSignal
-	port0			"off"
-      }
-      List {
-	ListType		OutputPortUnitExprs
-	port0			"inherit"
-      }
-      List {
-	ListType		InputPortUnitExprs
-	port0			"inherit"
-      }
-      List {
-	ListType		InputPortLatchByDelayingOutsideSignal
-	port0			"off"
-      }
-    }
-    Block {
-      BlockType		      ComplexToRealImag
-      Name		      "Complex to\nReal-Imag"
-      SID		      "62"
-      Ports		      [1, 2]
-      Position		      [435, 38, 465, 67]
-      ZOrder		      112
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant1"
-      SID		      "33"
-      Position		      [330, 795, 360, 825]
-      ZOrder		      93
-      BlockRotation	      270
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant2"
-      SID		      "34"
-      Position		      [315, 575, 345, 605]
-      ZOrder		      97
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      Value		      "2"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant3"
-      SID		      "28"
-      Position		      [-245, 455, -215, 485]
-      ZOrder		      90
-      Value		      "0"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant4"
-      SID		      "29"
-      Position		      [-245, 620, -215, 650]
-      ZOrder		      92
-      Value		      "pi/2"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant5"
-      SID		      "30"
-      Position		      [-380, 525, -350, 555]
-      ZOrder		      89
-      Value		      "0"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant6"
-      SID		      "35"
-      Position		      [380, 690, 410, 720]
-      ZOrder		      98
-      BlockRotation	      270
-      Value		      "-1"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant7"
-      SID		      "40"
-      Position		      [-245, 150, -215, 180]
-      ZOrder		      100
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "FFT"
-      SID		      "2"
-      Ports		      [1, 1]
-      Position		      [355, 151, 395, 189]
-      ZOrder		      14
-      LibraryVersion	      "1.525"
-      SourceBlock	      "dspxfrm3/FFT"
-      SourceType	      "FFT"
-      SourceProductName	      "DSP System Toolbox"
-      SourceProductBaseCode   "DS"
-      FFTImplementation	      "Auto"
-      CompMethod	      "Table lookup"
-      TableOpt		      "NEW"
-      TableOptActive	      "Speed"
-      BitRevOrder	      off
-      Normalize		      off
-      InheritFFTLength	      on
-      FFTLength		      "64"
-      WrapInput		      on
-      roundingMode	      "Floor"
-      overflowMode	      off
-      firstCoeffMode	      "Same word length as input"
-      firstCoeffWordLength    "16"
-      firstCoeffFracLength    "15"
-      firstCoeffDataTypeStr   "Inherit: Same word length as input"
-      firstCoeffLastDataTypeStr	"Inherit: Same word length as input"
-      prodOutputMode	      "Inherit via internal rule"
-      prodOutputWordLength    "32"
-      prodOutputFracLength    "30"
-      prodOutputDataTypeStr   "Inherit: Inherit via internal rule"
-      prodOutputLastDataTypeStr	"Inherit: Inherit via internal rule"
-      accumMode		      "Inherit via internal rule"
-      accumWordLength	      "32"
-      accumFracLength	      "30"
-      accumDataTypeStr	      "Inherit: Inherit via internal rule"
-      accumLastDataTypeStr    "Inherit: Inherit via internal rule"
-      outputMode	      "Inherit via internal rule"
-      outputWordLength	      "16"
-      outputFracLength	      "15"
-      outputDataTypeStr	      "Inherit: Inherit via internal rule"
-      outputMin		      "[]"
-      outputMax		      "[]"
-      outputLastDataTypeStr   "Inherit: Inherit via internal rule"
-      LockScale		      off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "FFT1"
-      SID		      "3"
-      Ports		      [1, 1]
-      Position		      [401, 440, 439, 480]
-      ZOrder		      15
-      BlockRotation	      270
-      LibraryVersion	      "1.525"
-      SourceBlock	      "dspxfrm3/FFT"
-      SourceType	      "FFT"
-      SourceProductName	      "DSP System Toolbox"
-      SourceProductBaseCode   "DS"
-      FFTImplementation	      "Auto"
-      CompMethod	      "Table lookup"
-      TableOpt		      "NEW"
-      TableOptActive	      "Speed"
-      BitRevOrder	      off
-      Normalize		      off
-      InheritFFTLength	      on
-      FFTLength		      "64"
-      WrapInput		      on
-      roundingMode	      "Floor"
-      overflowMode	      off
-      firstCoeffMode	      "Same word length as input"
-      firstCoeffWordLength    "16"
-      firstCoeffFracLength    "15"
-      firstCoeffDataTypeStr   "Inherit: Same word length as input"
-      firstCoeffLastDataTypeStr	"Inherit: Same word length as input"
-      prodOutputMode	      "Inherit via internal rule"
-      prodOutputWordLength    "32"
-      prodOutputFracLength    "30"
-      prodOutputDataTypeStr   "Inherit: Inherit via internal rule"
-      prodOutputLastDataTypeStr	"Inherit: Inherit via internal rule"
-      accumMode		      "Inherit via internal rule"
-      accumWordLength	      "32"
-      accumFracLength	      "30"
-      accumDataTypeStr	      "Inherit: Inherit via internal rule"
-      accumLastDataTypeStr    "Inherit: Inherit via internal rule"
-      outputMode	      "Inherit via internal rule"
-      outputWordLength	      "16"
-      outputFracLength	      "15"
-      outputDataTypeStr	      "Inherit: Inherit via internal rule"
-      outputMin		      "[]"
-      outputMax		      "[]"
-      outputLastDataTypeStr   "Inherit: Inherit via internal rule"
-      LockScale		      off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "IFFT"
-      SID		      "5"
-      Ports		      [1, 1]
-      Position		      [570, 161, 610, 199]
-      ZOrder		      17
-      LibraryVersion	      "1.525"
-      SourceBlock	      "dspxfrm3/IFFT"
-      SourceType	      "IFFT"
-      SourceProductName	      "DSP System Toolbox"
-      SourceProductBaseCode   "DS"
-      FFTImplementation	      "Auto"
-      CompMethod	      "Table lookup"
-      TableOpt		      "NEW"
-      TableOptActive	      "Speed"
-      BitRevOrder	      off
-      cs_in		      off
-      Normalize		      on
-      InheritFFTLength	      on
-      FFTLength		      "64"
-      WrapInput		      on
-      mode		      "Complex"
-      outSamplingMode	      "Sample based"
-      roundingMode	      "Floor"
-      overflowMode	      off
-      firstCoeffMode	      "Same word length as input"
-      firstCoeffWordLength    "16"
-      firstCoeffFracLength    "15"
-      firstCoeffDataTypeStr   "Inherit: Same word length as input"
-      firstCoeffLastDataTypeStr	"Inherit: Same word length as input"
-      prodOutputMode	      "Inherit via internal rule"
-      prodOutputWordLength    "32"
-      prodOutputFracLength    "30"
-      prodOutputDataTypeStr   "Inherit: Inherit via internal rule"
-      prodOutputLastDataTypeStr	"Inherit: Inherit via internal rule"
-      accumMode		      "Inherit via internal rule"
-      accumWordLength	      "32"
-      accumFracLength	      "30"
-      accumDataTypeStr	      "Inherit: Inherit via internal rule"
-      accumLastDataTypeStr    "Inherit: Inherit via internal rule"
-      outputMode	      "Inherit via internal rule"
-      outputWordLength	      "16"
-      outputFracLength	      "15"
-      outputDataTypeStr	      "Inherit: Inherit via internal rule"
-      outputMin		      "[]"
-      outputMax		      "[]"
-      outputLastDataTypeStr   "Inherit: Inherit via internal rule"
-      LockScale		      off
-    }
-    Block {
-      BlockType		      Math
-      Name		      "Math\nFunction"
-      SID		      "4"
-      Ports		      [1, 1]
-      Position		      [405, 345, 435, 375]
-      ZOrder		      16
-      BlockRotation	      270
-      Operator		      "conj"
-    }
-    Block {
-      BlockType		      ModelReference
-      Name		      "Oscillator 0 shift"
-      SID		      "31"
-      Ports		      [2, 1]
-      Position		      [-35, 504, 105, 551]
-      ZOrder		      91
-      ModelNameDialog	      "Local_Oscillator.slx"
-      SimulationMode	      "Normal"
-      Variant		      off
-      ModelReferenceVersion   "1.15"
-      List {
-	ListType		InputPortNames
-	port0			"In1"
-	port1			"In2"
-      }
-      List {
-	ListType		OutputPortNames
-	port0			"Out1"
-      }
-      List {
-	ListType		OutputPortOutputBusAsStructs
-	port0			"off"
-      }
-      List {
-	ListType		OutputPortSignalNames
-	port0			"y"
-      }
-      List {
-	ListType		InputPortLatchByCopyingInsideSignal
-	port0			"off"
-	port1			"off"
-      }
-      List {
-	ListType		OutputPortUnitExprs
-	port0			"inherit"
-      }
-      List {
-	ListType		InputPortUnitExprs
-	port0			"inherit"
-	port1			"inherit"
-      }
-      List {
-	ListType		InputPortLatchByDelayingOutsideSignal
-	port0			"off"
-	port1			"off"
-      }
-    }
-    Block {
-      BlockType		      ModelReference
-      Name		      "Oscillator 90 shift"
-      SID		      "32"
-      Ports		      [2, 1]
-      Position		      [-155, 364, -15, 411]
-      ZOrder		      88
-      ModelNameDialog	      "Local_Oscillator.slx"
-      SimulationMode	      "Normal"
-      Variant		      off
-      ModelReferenceVersion   "1.15"
-      List {
-	ListType		InputPortNames
-	port0			"In1"
-	port1			"In2"
-      }
-      List {
-	ListType		OutputPortNames
-	port0			"Out1"
-      }
-      List {
-	ListType		OutputPortOutputBusAsStructs
-	port0			"off"
-      }
-      List {
-	ListType		OutputPortSignalNames
-	port0			"y"
-      }
-      List {
-	ListType		InputPortLatchByCopyingInsideSignal
-	port0			"off"
-	port1			"off"
-      }
-      List {
-	ListType		OutputPortUnitExprs
-	port0			"inherit"
-      }
-      List {
-	ListType		InputPortUnitExprs
-	port0			"inherit"
-	port1			"inherit"
-      }
-      List {
-	ListType		InputPortLatchByDelayingOutsideSignal
-	port0			"off"
-	port1			"off"
-      }
-    }
-    Block {
-      BlockType		      Product
-      Name		      "Product"
-      SID		      "21"
-      Ports		      [2, 1]
-      Position		      [140, 72, 170, 103]
-      ZOrder		      40
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Product
-      Name		      "Product1"
-      SID		      "22"
-      Ports		      [2, 1]
-      Position		      [-20, 157, 10, 188]
-      ZOrder		      41
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Product
-      Name		      "Product2"
-      SID		      "23"
-      Ports		      [2, 1]
-      Position		      [485, 162, 515, 193]
-      ZOrder		      42
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Product
-      Name		      "Product4"
-      SID		      "36"
-      Ports		      [2, 1]
-      Position		      [315, 627, 345, 663]
-      ZOrder		      95
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Puncture"
-      SID		      "25"
-      Ports		      [1, 1]
-      Position		      [398, 500, 442, 580]
-      ZOrder		      48
-      BlockRotation	      270
-      LibraryVersion	      "1.102"
-      SourceBlock	      "commsequence2/Puncture"
-      SourceType	      "Puncture"
-      SourceProductName	      "Communications System Toolbox"
-      SourceProductBaseCode   "CM"
-      punctureVector	      "[1;0]"
-    }
-    Block {
-      BlockType		      RateTransition
-      Name		      "RT"
-      SID		      "55"
-      Position		      [195, 160, 215, 180]
-      ZOrder		      -32
-      OutPortSampleTimeOpt    "Inherit"
-      OutPortSampleTime	      "0.000000001"
-    }
-    Block {
-      BlockType		      RateTransition
-      Name		      "RT1"
-      SID		      "63"
-      Position		      [450, 160, 470, 180]
-      ZOrder		      -35
-      OutPortSampleTime	      "1.28e-07"
-    }
-    Block {
-      BlockType		      RealImagToComplex
-      Name		      "Real-Imag to\nComplex"
-      SID		      "11"
-      Ports		      [2, 1]
-      Position		      [170, 153, 200, 182]
-      ZOrder		      32
-    }
-    Block {
-      BlockType		      Reshape
-      Name		      "Reshape"
-      SID		      "37"
-      Ports		      [1, 1]
-      Position		      [220, 643, 250, 667]
-      ZOrder		      94
-      OutputDimensionality    "Column vector (2-D)"
-    }
-    Block {
-      BlockType		      SpectrumAnalyzer
-      Name		      "Spectrum\nAnalyzer"
-      SID		      "57"
+      Name		      "Model"
+      SID		      "15"
       Ports		      [1]
-      Position		      [615, 64, 660, 116]
-      ZOrder		      108
-      ScopeSpecificationString "spbscopes.SpectrumAnalyzerBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(ext"
-      "mgr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('"
-      "Sources','WiredSimulink',true),extmgr.Configuration('Visuals','Spectrum',true,'AxesProperties',struct('Color',{["
-      "0 0 0],[0 0 0]},'XColor',{[0.686274509803922 0.686274509803922 0.686274509803922],[0.686274509803922 0.686274509"
-      "803922 0.686274509803922]},'YColor',{[0.686274509803922 0.686274509803922 0.686274509803922],[0.686274509803922 "
-      "0.686274509803922 0.686274509803922]},'ZColor',{[0.686274509803922 0.686274509803922 0.686274509803922],[0.68627"
-      "4509803922 0.686274509803922 0.686274509803922]},'XGrid',{'on','on'},'YGrid',{'on','on'},'ZGrid',{'off','off'},'"
-      "Box',{'on','on'},'XScale',{'linear','linear'},'YScale',{'linear','linear'},'ZScale',{'linear','linear'},'XDir',{"
-      "'normal','normal'},'YDir',{'normal','normal'},'ZDir',{'normal','normal'},'XTickMode',{'auto','auto'},'YTickMode'"
-      ",{'auto','auto'},'ZTickMode',{'auto','auto'},'XTickLabelMode',{'manual','auto'},'YTickLabelMode',{'auto','auto'}"
-      ",'ZTickLabelMode',{'manual','manual'},'XTickLabel',{['-500';'-400';'-300';'-200';'-100';'   0';' 100';' 200';' 3"
-      "00';' 400';' 500'],{'-5','-4','-3','-2','-1','0','1','2','3','4','5'}},'ZTickLabel',{'',''},'FontName',{'Helveti"
-      "ca','Helvetica'},'FontSize',{8.5,8.5},'FontUnits',{'points','points'},'FontWeight',{'normal','normal'},'Title',{"
-      "'',''},'XLabel',{'Frequency (MHz)',''},'YLabel',{' dBm',''},'ZLabel',{'',''}),'LineProperties',struct('DisplayNa"
-      "me','','Color',[1 1 0.0666666666666667],'LineStyle','-','LineWidth',0.5,'Marker','none','MarkerSize',6,'MarkerEd"
-      "geColor','auto','MarkerFaceColor','none','Visible','on'),'MinYLim','-199.94246599865656','MaxYLim','71.261922721"
-      "576013','SampleRate','1000000000','Span','1000000000','StartFrequency','-500000000','StopFrequency','500000000',"
-      "'IsSpanValuesValid',true,'FsEditBoxDirtyState',true,'IsSpanCFSettingDirty',true),extmgr.Configuration('Tools','P"
-      "lot Navigation',true,'AutoscaleMode','Manual','OnceAtStop',false,'PreviousZoomMode','ZoomX'),extmgr.Configuratio"
-      "n('Tools','Measurements',true,'Version','2017a')),'Version','2017a')"
-      NumInputPorts	      "1"
+      Position		      [230, 202, 370, 248]
+      ZOrder		      6
+      ModelNameDialog	      "Acquisition.mdl"
+      SimulationMode	      "Normal"
+      Variant		      off
+      ModelReferenceVersion   "1.16"
+      List {
+	ListType		InputPortNames
+	port0			"In1"
+      }
+      List {
+	ListType		InputPortLatchByCopyingInsideSignal
+	port0			"off"
+      }
+      List {
+	ListType		OutputPortUnitExprs
+      }
+      List {
+	ListType		InputPortUnitExprs
+	port0			"inherit"
+      }
+      List {
+	ListType		InputPortLatchByDelayingOutsideSignal
+	port0			"off"
+      }
     }
     Block {
-      BlockType		      Sum
-      Name		      "Sum"
-      SID		      "38"
-      Ports		      [2, 1]
-      Position		      [385, 620, 405, 640]
-      ZOrder		      96
-      ShowName		      off
-      IconShape		      "round"
-      Inputs		      "|++"
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
+      BlockType		      ModelReference
+      Name		      "Model1"
+      SID		      "16"
+      Ports		      []
+      Position		      [425, 203, 567, 248]
+      ZOrder		      7
+      ModelNameDialog	      "Tracking.mdl"
+      SimulationMode	      "Normal"
+      Variant		      off
+      ModelReferenceVersion   "1.0"
+      List {
+	ListType		OutputPortUnitExprs
+      }
+      List {
+	ListType		InputPortUnitExprs
+      }
     }
     Block {
-      BlockType		      ToWorkspace
-      Name		      "To Workspace"
-      SID		      "64"
-      Ports		      [1]
-      Position		      [530, 265, 590, 295]
-      ZOrder		      113
-      VariableName	      "arr"
-      MaxDataPoints	      "inf"
-      Save2DSignal	      "3-D array (concatenate along third dimension)"
-      FixptAsFi		      on
-      SampleTime	      "0.0000001"
-    }
-    Block {
-      BlockType		      ZeroOrderHold
-      Name		      "Zero-Order\nHold"
-      SID		      "49"
-      Position		      [230, 155, 265, 185]
-      ZOrder		      107
-      SampleTime	      "0.000000001"
-    }
-    Line {
-      ZOrder		      9
-      SrcBlock		      "FFT1"
-      SrcPort		      1
-      DstBlock		      "Math\nFunction"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      12
-      SrcBlock		      "IFFT"
-      SrcPort		      1
-      DstBlock		      "Abs"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      172
-      SrcBlock		      "Real-Imag to\nComplex"
-      SrcPort		      1
-      DstBlock		      "RT"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      83
-      SrcBlock		      "CAcode"
-      SrcPort		      1
-      Points		      [-34, 0; 0, -95]
-      DstBlock		      "Reshape"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      122
-      SrcBlock		      "Constant7"
-      SrcPort		      1
-      Points		      [174, 0]
-      Branch {
-	ZOrder			193
-	Points			[0, -85]
-	DstBlock		"Product"
-	DstPort			1
+      BlockType		      ModelReference
+      Name		      "Model2"
+      SID		      "17"
+      Ports		      []
+      Position		      [630, 203, 772, 248]
+      ZOrder		      8
+      ModelNameDialog	      "Pseudorange_and_Position_Calculation.slx"
+      SimulationMode	      "Normal"
+      Variant		      off
+      ModelReferenceVersion   "1.0"
+      List {
+	ListType		OutputPortUnitExprs
       }
-      Branch {
-	ZOrder			72
-	DstBlock		"Product1"
-	DstPort			1
+      List {
+	ListType		InputPortUnitExprs
       }
-    }
-    Line {
-      ZOrder		      45
-      SrcBlock		      "In1"
-      SrcPort		      1
-      Points		      [60, 0]
-    }
-    Line {
-      ZOrder		      63
-      SrcBlock		      "Product"
-      SrcPort		      1
-      Points		      [9, 0; 0, 58; -28, 0; 0, 12]
-      DstBlock		      "Real-Imag to\nComplex"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      190
-      SrcBlock		      "Product1"
-      SrcPort		      1
-      DstBlock		      "Real-Imag to\nComplex"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      71
-      SrcBlock		      "Product2"
-      SrcPort		      1
-      DstBlock		      "IFFT"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      85
-      SrcBlock		      "Puncture"
-      SrcPort		      1
-      DstBlock		      "FFT1"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      100
-      SrcBlock		      "Constant4"
-      SrcPort		      1
-      Points		      [13, 0; 0, -95]
-      DstBlock		      "Oscillator 0 shift"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      101
-      SrcBlock		      "Constant3"
-      SrcPort		      1
-      Points		      [25, 0; 0, -70]
-      DstBlock		      "Oscillator 90 shift"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      104
-      SrcBlock		      "Constant5"
-      SrcPort		      1
-      Points		      [45, 0; 0, -25]
-      Branch {
-	ZOrder			103
-	DstBlock		"Oscillator 0 shift"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			102
-	Points			[0, -140]
-	DstBlock		"Oscillator 90 shift"
-	DstPort			1
-      }
-    }
-    Line {
-      ZOrder		      105
-      SrcBlock		      "Oscillator 90 shift"
-      SrcPort		      1
-      Points		      [9, 0; 0, -176; -35, 0; 0, -34]
-      DstBlock		      "Product1"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      106
-      SrcBlock		      "Oscillator 0 shift"
-      SrcPort		      1
-      Points		      [13, 0; 0, -435]
-      DstBlock		      "Product"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      107
-      SrcBlock		      "Constant1"
-      SrcPort		      1
-      DstBlock		      "CAcode"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      117
-      SrcBlock		      "Product4"
-      SrcPort		      1
-      Points		      [15, 0; 0, -15]
-      DstBlock		      "Sum"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      116
-      SrcBlock		      "Constant6"
-      SrcPort		      1
-      DstBlock		      "Sum"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      111
-      SrcBlock		      "Constant2"
-      SrcPort		      1
-      Points		      [0, 6; -30, 0]
-      DstBlock		      "Product4"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      113
-      SrcBlock		      "Reshape"
-      SrcPort		      1
-      DstBlock		      "Product4"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      118
-      SrcBlock		      "Sum"
-      SrcPort		      1
-      Points		      [10, 0]
-      DstBlock		      "Puncture"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      195
-      SrcBlock		      "Math\nFunction"
-      SrcPort		      1
-      Points		      [0, -28; 38, 0; 0, -127]
-      DstBlock		      "Product2"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      213
-      SrcBlock		      "RT"
-      SrcPort		      1
-      DstBlock		      "Zero-Order\nHold"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      240
-      SrcBlock		      "Abs"
-      SrcPort		      1
-      Points		      [15, 0]
-    }
-    Line {
-      ZOrder		      241
-      SrcBlock		      "Buffer"
-      SrcPort		      1
-      Points		      [3, 0; 0, 55]
-      DstBlock		      "FFT"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      250
-      SrcBlock		      "Complex to\nReal-Imag"
-      SrcPort		      1
-      Points		      [13, 0; 0, 5; 27, 0]
-    }
-    Line {
-      ZOrder		      256
-      Points		      [603, 90]
-      DstBlock		      "Spectrum\nAnalyzer"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      267
-      SrcBlock		      "FFT"
-      SrcPort		      1
-      DstBlock		      "RT1"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      270
-      SrcBlock		      "RT1"
-      SrcPort		      1
-      DstBlock		      "Product2"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      191
-      SrcBlock		      "Zero-Order\nHold"
-      SrcPort		      1
-      Points		      [5, 0]
-      DstBlock		      "Buffer"
-      DstPort		      1
     }
   }
 }

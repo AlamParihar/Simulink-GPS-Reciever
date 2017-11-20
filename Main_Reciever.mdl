@@ -89,7 +89,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1322.0, 603.0]
 	ZoomFactor		[1.0]
-	Offset			[0.0, 0.0]
+	Offset			[0.0, -60.724993050098419]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -123,8 +123,8 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Alam"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Nov 18 16:51:12 2017"
-  RTWModifiedTimeStamp	  432843345
+  LastModifiedDate	  "Mon Nov 20 03:35:48 2017"
+  RTWModifiedTimeStamp	  433045066
   ModelVersionFormat	  "1.%<AutoIncrement:2>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
@@ -993,7 +993,7 @@ Model {
   System {
     Name		    "Main_Reciever"
     Location		    [-8, -8, 1368, 776]
-    Open		    on
+    Open		    off
     PortBlocksUseCompactNotation off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1012,18 +1012,31 @@ Model {
       BlockType		      ModelReference
       Name		      "Model"
       SID		      "15"
-      Ports		      []
-      Position		      [230, 203, 372, 248]
+      Ports		      [1]
+      Position		      [225, 202, 365, 248]
       ZOrder		      6
       ModelNameDialog	      "Acquisition.mdl"
       SimulationMode	      "Normal"
       Variant		      off
-      ModelReferenceVersion   "1.2"
+      ModelReferenceVersion   "1.16"
+      List {
+	ListType		InputPortNames
+	port0			"In1"
+      }
+      List {
+	ListType		InputPortLatchByCopyingInsideSignal
+	port0			"off"
+      }
       List {
 	ListType		OutputPortUnitExprs
       }
       List {
 	ListType		InputPortUnitExprs
+	port0			"inherit"
+      }
+      List {
+	ListType		InputPortLatchByDelayingOutsideSignal
+	port0			"off"
       }
     }
     Block {

@@ -1,26 +1,22 @@
 Model {
-  Name			  "CAcode"
+  Name			  "test_space"
   Version		  8.9
   SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
-    NumRootInports	    1
-    Inport {
-      Name		      "In1"
-      BusObject		      ""
-      OutputFunctionCall      "off"
-      UnitExpr		      "inherit"
-    }
-    NumRootOutports	    1
-    Outport {
-      Name		      "Out1"
-      BusObject		      ""
-      BusOutputAsStruct	      "off"
-      SignalName	      "g"
-      UnitExpr		      "inherit"
-    }
+    NumRootInports	    0
+    NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.27"
-    NumModelReferences	    0
+    ComputedModelVersion    "1.20"
+    NumModelReferences	    3
+    ModelReference {
+      ModelRefBlockPath	      "test_space/Model|CAcode"
+    }
+    ModelReference {
+      ModelRefBlockPath	      "test_space/Model1|Local_Oscillator"
+    }
+    ModelReference {
+      ModelRefBlockPath	      "test_space/Model2|Local_Oscillator"
+    }
     NumTestPointedSignals   0
     NumProvidedFunctions    0
     NumRequiredFunctions    0
@@ -31,7 +27,11 @@ Model {
     NumParameterArguments   0
     OrderedModelArguments   1
   }
-  LogicAnalyzerGraphicalSettings ""
+  LogicAnalyzerGraphicalSettings "{\n  \"cursors\" : {\n    \"activeCursor\" : 0,\n    \"lockedCursors\" : [\n\n    ],"
+  "\n    \"startingCursor\" : 0,\n    \"times\" : [\n      0,\n      0.0005130378096479791\n    ]\n  },\n  \"global\" :"
+  " {\n    \"format\" : \"digital\",\n    \"groupCount\" : 1,\n    \"radix\" : \"binary\"\n  },\n  \"panels\" : [\n    "
+  "{\n      \"height\" : 100,\n      \"startingTrace\" : 0,\n      \"traces\" : [\n\n      ],\n      \"yOffset\" : 0\n "
+  "   }\n  ],\n  \"timeAxis\" : {\n    \"displayUnits\" : \"u\",\n    \"pixelsPerSecond\" : 767000\n  }\n}"
   LogicAnalyzerPlugin	  "on"
   LogicAnalyzerSignalOrdering ""
   DiagnosticSuppressor	  "on"
@@ -80,45 +80,60 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1322.0, 603.0]
-	ZoomFactor		[1.0]
-	Offset			[0.0, 0.0]
+	Extents			[1322.0, 377.0]
+	ZoomFactor		[0.8]
+	Offset			[-370.55714285713861, 321.82813664525747]
       }
-      Object {
-	$PropName		"DockComponentsInfo"
-	$ObjectID		6
-	$ClassName		"Simulink.DockComponentInfo"
-	Type			"GLUE2:PropertyInspector"
-	ID			"Property Inspector"
-	Visible			[0]
-	CreateCallback		""
-	UserData		""
-	Floating		[0]
-	DockPosition		"Right"
-	Width			[640]
-	Height			[480]
+      Array {
+	Type			"Simulink.DockComponentInfo"
+	Dimension		2
+	Object {
+	  $ObjectID		  6
+	  Type			  "GLUE2:PropertyInspector"
+	  ID			  "Property Inspector"
+	  Visible		  [0]
+	  CreateCallback	  ""
+	  UserData		  ""
+	  Floating		  [0]
+	  DockPosition		  "Right"
+	  Width			  [640]
+	  Height		  [480]
+	}
+	Object {
+	  $ObjectID		  7
+	  Type			  "GLUE2:SpreadSheet"
+	  ID			  "ModelData"
+	  Visible		  [1]
+	  CreateCallback	  "DataView.createSpreadSheetComponent"
+	  UserData		  ""
+	  Floating		  [0]
+	  DockPosition		  "Bottom"
+	  Width			  [1356]
+	  Height		  [196]
+	}
+	PropName		"DockComponentsInfo"
       }
-      WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAAB+PwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
+      WindowState	      "AAAA/wAAAAD9AAAAAwAAAAAAAAC9AAAB+PwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
       "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABjAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAAKwD///8AAAVQAAAClAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
-      "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
-      "////wEAAAB5/////wAAAAAAAAAA/////wEAAADa/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFT/////wAAAAAAAAAA/"
-      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAL9/////wAAAAAAAAAA/"
-      "////wEAAAMs/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
+      "QBjAHQAbwByAAAAAAD/////AAAAKwD///8AAAADAAAFUAAAAN78AQAAAAH7/////wEAAAAAAAAFUAAAAP4A////AAAFUAAAAbIAAAABAAAAAgAAA"
+      "AEAAAAC/AAAAAEAAAACAAAAD/////8AAAAAAP////8AAAAAAAAAAP////8BAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP///"
+      "/8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8BAAAAef////8AAAAAAAAAAP////8BAAAA2v////8AAAAAAAAAAP///"
+      "/8AAAAAAP////8AAAAAAAAAAP////8BAAABU/////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP///"
+      "/8AAAAAAP////8AAAAAAAAAAP////8BAAAC/f////8AAAAAAAAAAP////8BAAADLP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAA=="
     }
   }
   HideAutomaticNames	  on
-  Created		  "Sat Nov 18 16:42:24 2017"
+  Created		  "Sun Nov 19 14:40:37 2017"
   Creator		  "Alam"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Alam"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Nov 19 18:48:22 2017"
-  RTWModifiedTimeStamp	  433018159
-  ModelVersionFormat	  "1.%<AutoIncrement:27>"
+  LastModifiedDate	  "Mon Nov 20 02:03:38 2017"
+  RTWModifiedTimeStamp	  433044254
+  ModelVersionFormat	  "1.%<AutoIncrement:20>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -168,14 +183,14 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    7
+    $ObjectID		    8
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "CAcode"
+    model_		    "test_space"
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "CAcode"
+      Cell		      "test_space"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -213,7 +228,7 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      8
+      $ObjectID		      9
       Version		      "1.17.0"
       DisabledProps	      []
       Description	      ""
@@ -221,12 +236,12 @@ Model {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  9
+	  $ObjectID		  10
 	  Version		  "1.17.0"
 	  DisabledProps		  []
 	  Description		  ""
 	  StartTime		  "0.0"
-	  StopTime		  "0.001"
+	  StopTime		  "0.000001"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -261,7 +276,7 @@ Model {
 	  SampleTimeProperty	  []
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  10
+	  $ObjectID		  11
 	  Version		  "1.17.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -302,7 +317,7 @@ Model {
 	  LoggingIntervals	  "[-inf, inf]"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  11
+	  $ObjectID		  12
 	  Version		  "1.17.0"
 	  Array {
 	    Type		    "Cell"
@@ -363,7 +378,7 @@ Model {
 	  BusAssignmentInplaceUpdate on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  12
+	  $ObjectID		  13
 	  Version		  "1.17.0"
 	  Array {
 	    Type		    "Cell"
@@ -473,7 +488,7 @@ Model {
 	  UnitDatabase		  ""
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  13
+	  $ObjectID		  14
 	  Version		  "1.17.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -521,7 +536,7 @@ Model {
 	  UseSimulinkCoderFeatures on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  14
+	  $ObjectID		  15
 	  Version		  "1.17.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -540,7 +555,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  15
+	  $ObjectID		  16
 	  Version		  "1.17.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -570,7 +585,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  16
+	  $ObjectID		  17
 	  Version		  "1.17.0"
 	  Array {
 	    Type		    "Cell"
@@ -653,7 +668,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      17
+	      $ObjectID		      18
 	      Version		      "1.17.0"
 	      Array {
 		Type			"Cell"
@@ -740,7 +755,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      18
+	      $ObjectID		      19
 	      Version		      "1.17.0"
 	      Array {
 		Type			"Cell"
@@ -836,7 +851,7 @@ Model {
 	  }
 	}
 	SlCovCC.ConfigComp {
-	  $ObjectID		  19
+	  $ObjectID		  20
 	  Version		  "1.17.0"
 	  DisabledProps		  []
 	  Description		  "Simulink Coverage Configuration Component"
@@ -886,11 +901,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    8
+    $ObjectID		    9
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    20
+    $ObjectID		    21
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -965,94 +980,71 @@ Model {
       PreserveConstantTs      off
     }
     Block {
-      BlockType		      Demux
-      Outputs		      "4"
-      DisplayOption	      "none"
-      BusSelectionMode	      off
-    }
-    Block {
-      BlockType		      Inport
-      Port		      "1"
-      OutputFunctionCall      off
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: auto"
-      LockScale		      off
-      BusOutputAsStruct	      off
-      Unit		      "inherit"
-      PortDimensions	      "-1"
-      VarSizeSig	      "Inherit"
-      SampleTime	      "-1"
-      SignalType	      "auto"
-      SamplingMode	      "auto"
-      LatchByDelayingOutsideSignal off
-      LatchInputForFeedbackSignals off
-      Interpolate	      on
-    }
-    Block {
-      BlockType		      Outport
-      Port		      "1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: auto"
-      LockScale		      off
-      BusOutputAsStruct	      off
-      Unit		      "inherit"
-      PortDimensions	      "-1"
-      VarSizeSig	      "Inherit"
-      SampleTime	      "-1"
-      SignalType	      "auto"
-      SamplingMode	      "auto"
-      EnsureOutportIsVirtual  off
-      SourceOfInitialOutputValue "Dialog"
-      OutputWhenDisabled      "held"
-      InitialOutput	      "[]"
-      MustResolveToSignalObject	off
-    }
-    Block {
-      BlockType		      S-Function
-      FunctionName	      "system"
-      SFunctionModules	      "''"
-      PortCounts	      "[]"
-    }
-    Block {
-      BlockType		      SubSystem
-      ShowPortLabels	      "FromPortIcon"
-      Permissions	      "ReadWrite"
-      PermitHierarchicalResolution "All"
-      TreatAsAtomicUnit	      off
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      SystemSampleTime	      "-1"
-      RTWSystemCode	      "Auto"
-      RTWFcnNameOpts	      "Auto"
-      RTWFileNameOpts	      "Auto"
-      FunctionInterfaceSpec   "void_void"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      SimViewingDevice	      off
-      DataTypeOverride	      "UseLocalSettings"
-      DataTypeOverrideAppliesTo	"AllNumericTypes"
-      MinMaxOverflowLogging   "UseLocalSettings"
-      Opaque		      off
-      MaskHideContents	      off
-      SFBlockType	      "NONE"
+      BlockType		      ModelReference
+      SimulationMode	      "Accelerator"
+      ShowModelInitializePort off
+      ShowModelResetPorts     off
+      ShowModelTerminatePort  off
+      CodeInterface	      "Model reference"
       GeneratePreprocessorConditionals off
-      PropagateVariantConditions off
-      TreatAsGroupedWhenPropagatingVariantConditions on
       ContentPreviewEnabled   off
-      IsWebBlock	      off
+      CopyOfModelProtected    off
     }
     Block {
-      BlockType		      Terminator
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Reshape
+      OutputDimensionality    "1-D array"
+      OutputDimensions	      "[1,1]"
+    }
+    Block {
+      BlockType		      Scope
+      DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
+      Floating		      off
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SaveFormat	      "Array"
+      Save2DSignal	      "Inherit from input (this choice will be removed - see release notes)"
+      FixptAsFi		      off
+      NumInputs		      "1"
+      SampleTime	      "0"
     }
   }
   System {
-    Name		    "CAcode"
+    Name		    "test_space"
     Location		    [-8, -8, 1368, 776]
     Open		    on
     PortBlocksUseCompactNotation off
@@ -1066,382 +1058,513 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "80"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "10"
-    Block {
-      BlockType		      Inport
-      Name		      "In1"
-      SID		      "9"
-      Position		      [265, 243, 295, 257]
-      ZOrder		      8
-      IconDisplay	      "Port number"
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "CA Code Generator"
-      SID		      "1"
-      Ports		      [2, 1]
-      Position		      [450, 239, 520, 286]
-      ZOrder		      1
-      ErrorFcn		      "Stateflow.Translate.translate"
-      PermitHierarchicalResolution "ExplicitOnly"
-      TreatAsAtomicUnit	      on
-      SystemSampleTime	      "0.002"
-      RequestExecContextInheritance off
-      SFBlockType	      "MATLAB Function"
-      Variant		      off
-      System {
-	Name			"CA Code Generator"
-	Location		[223, 338, 826, 833]
-	Open			off
-	PortBlocksUseCompactNotation off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	SIDHighWatermark	"22"
-	Block {
-	  BlockType		  Inport
-	  Name			  "sv"
-	  SID			  "1::1"
-	  Position		  [20, 101, 40, 119]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "fs"
-	  SID			  "1::22"
-	  Position		  [20, 136, 40, 154]
-	  ZOrder		  13
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  " Demux "
-	  SID			  "1::20"
-	  Ports			  [1, 1]
-	  Position		  [270, 230, 320, 270]
-	  ZOrder		  11
-	  Outputs		  "1"
-	}
-	Block {
-	  BlockType		  S-Function
-	  Name			  " SFunction "
-	  SID			  "1::19"
-	  Tag			  "Stateflow S-Function CAcode 2"
-	  Ports			  [2, 2]
-	  Position		  [180, 100, 230, 160]
-	  ZOrder		  10
-	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[2 2]"
-	  SFunctionDeploymentMode off
-	  EnableBusSupport	  on
-	  SFcnIsStateOwnerBlock	  off
-	  Port {
-	    PortNumber		    2
-	    Name		    "g"
-	  }
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  " Terminator "
-	  SID			  "1::21"
-	  Position		  [460, 241, 480, 259]
-	  ZOrder		  12
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "g"
-	  SID			  "1::5"
-	  Position		  [460, 101, 480, 119]
-	  ZOrder		  -5
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  ZOrder		  9
-	  SrcBlock		  "sv"
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  10
-	  SrcBlock		  "fs"
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  2
-	}
-	Line {
-	  Name			  "g"
-	  ZOrder		  11
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  2
-	  DstBlock		  "g"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  12
-	  SrcBlock		  " Demux "
-	  SrcPort		  1
-	  DstBlock		  " Terminator "
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  13
-	  SrcBlock		  " SFunction "
-	  SrcPort		  1
-	  DstBlock		  " Demux "
-	  DstPort		  1
-	}
-      }
-    }
+    SIDHighWatermark	    "62"
     Block {
       BlockType		      Constant
       Name		      "Constant"
       SID		      "3"
-      Position		      [285, 330, 315, 360]
-      ZOrder		      3
+      Position		      [370, 255, 400, 285]
+      ZOrder		      38
     }
     Block {
-      BlockType		      Outport
-      Name		      "Out1"
-      SID		      "10"
-      Position		      [740, 258, 770, 272]
-      ZOrder		      9
-      IconDisplay	      "Port number"
+      BlockType		      Constant
+      Name		      "Constant1"
+      SID		      "31"
+      Position		      [850, 200, 880, 230]
+      ZOrder		      56
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      Value		      "2"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant2"
+      SID		      "32"
+      Position		      [915, 185, 945, 215]
+      ZOrder		      57
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      Value		      "-1"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant3"
+      SID		      "59"
+      Position		      [285, 575, 315, 605]
+      ZOrder		      84
+      Value		      "pi/2"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant4"
+      SID		      "60"
+      Position		      [285, 740, 315, 770]
+      ZOrder		      87
+      Value		      "0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant5"
+      SID		      "52"
+      Position		      [285, 480, 315, 510]
+      ZOrder		      77
+      Value		      "0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant6"
+      SID		      "61"
+      Position		      [285, 645, 315, 675]
+      ZOrder		      86
+      Value		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "FFT1"
+      SID		      "24"
+      Ports		      [1, 1]
+      Position		      [921, 325, 959, 365]
+      ZOrder		      49
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      LibraryVersion	      "1.525"
+      SourceBlock	      "dspxfrm3/FFT"
+      SourceType	      "FFT"
+      SourceProductName	      "DSP System Toolbox"
+      SourceProductBaseCode   "DS"
+      FFTImplementation	      "Auto"
+      CompMethod	      "Table lookup"
+      TableOpt		      "NEW"
+      TableOptActive	      "Speed"
+      BitRevOrder	      off
+      Normalize		      off
+      InheritFFTLength	      on
+      FFTLength		      "64"
+      WrapInput		      on
+      roundingMode	      "Floor"
+      overflowMode	      off
+      firstCoeffMode	      "Same word length as input"
+      firstCoeffWordLength    "16"
+      firstCoeffFracLength    "15"
+      firstCoeffDataTypeStr   "Inherit: Same word length as input"
+      firstCoeffLastDataTypeStr	"Inherit: Same word length as input"
+      prodOutputMode	      "Inherit via internal rule"
+      prodOutputWordLength    "32"
+      prodOutputFracLength    "30"
+      prodOutputDataTypeStr   "Inherit: Inherit via internal rule"
+      prodOutputLastDataTypeStr	"Inherit: Inherit via internal rule"
+      accumMode		      "Inherit via internal rule"
+      accumWordLength	      "32"
+      accumFracLength	      "30"
+      accumDataTypeStr	      "Inherit: Inherit via internal rule"
+      accumLastDataTypeStr    "Inherit: Inherit via internal rule"
+      outputMode	      "Inherit via internal rule"
+      outputWordLength	      "16"
+      outputFracLength	      "15"
+      outputDataTypeStr	      "Inherit: Inherit via internal rule"
+      outputMin		      "[]"
+      outputMax		      "[]"
+      outputLastDataTypeStr   "Inherit: Inherit via internal rule"
+      LockScale		      off
+    }
+    Block {
+      BlockType		      ModelReference
+      Name		      "Model"
+      SID		      "25"
+      Ports		      [1, 1]
+      Position		      [465, 247, 605, 293]
+      ZOrder		      50
+      ModelNameDialog	      "CAcode.mdl"
+      SimulationMode	      "Normal"
+      Variant		      off
+      ModelReferenceVersion   "1.30"
+      List {
+	ListType		InputPortNames
+	port0			"In1"
+      }
+      List {
+	ListType		OutputPortNames
+	port0			"Out1"
+      }
+      List {
+	ListType		OutputPortOutputBusAsStructs
+	port0			"off"
+      }
+      List {
+	ListType		OutputPortSignalNames
+	port0			"g"
+      }
+      List {
+	ListType		InputPortLatchByCopyingInsideSignal
+	port0			"off"
+      }
+      List {
+	ListType		OutputPortUnitExprs
+	port0			"inherit"
+      }
+      List {
+	ListType		InputPortUnitExprs
+	port0			"inherit"
+      }
+      List {
+	ListType		InputPortLatchByDelayingOutsideSignal
+	port0			"off"
+      }
+    }
+    Block {
+      BlockType		      ModelReference
+      Name		      "Model1"
+      SID		      "62"
+      Ports		      [2, 1]
+      Position		      [350, 649, 490, 696]
+      ZOrder		      85
+      ModelNameDialog	      "Local_Oscillator.slx"
+      SimulationMode	      "Normal"
+      Variant		      off
+      ModelReferenceVersion   "1.14"
+      List {
+	ListType		InputPortNames
+	port0			"In1"
+	port1			"In2"
+      }
+      List {
+	ListType		OutputPortNames
+	port0			"Out1"
+      }
+      List {
+	ListType		OutputPortOutputBusAsStructs
+	port0			"off"
+      }
+      List {
+	ListType		OutputPortSignalNames
+	port0			"y"
+      }
+      List {
+	ListType		InputPortLatchByCopyingInsideSignal
+	port0			"off"
+	port1			"off"
+      }
+      List {
+	ListType		OutputPortUnitExprs
+	port0			"inherit"
+      }
+      List {
+	ListType		InputPortUnitExprs
+	port0			"inherit"
+	port1			"inherit"
+      }
+      List {
+	ListType		InputPortLatchByDelayingOutsideSignal
+	port0			"off"
+	port1			"off"
+      }
+    }
+    Block {
+      BlockType		      ModelReference
+      Name		      "Model2"
+      SID		      "49"
+      Ports		      [2, 1]
+      Position		      [350, 484, 490, 531]
+      ZOrder		      74
+      ModelNameDialog	      "Local_Oscillator.slx"
+      SimulationMode	      "Normal"
+      Variant		      off
+      ModelReferenceVersion   "1.14"
+      List {
+	ListType		InputPortNames
+	port0			"In1"
+	port1			"In2"
+      }
+      List {
+	ListType		OutputPortNames
+	port0			"Out1"
+      }
+      List {
+	ListType		OutputPortOutputBusAsStructs
+	port0			"off"
+      }
+      List {
+	ListType		OutputPortSignalNames
+	port0			"y"
+      }
+      List {
+	ListType		InputPortLatchByCopyingInsideSignal
+	port0			"off"
+	port1			"off"
+      }
+      List {
+	ListType		OutputPortUnitExprs
+	port0			"inherit"
+      }
+      List {
+	ListType		InputPortUnitExprs
+	port0			"inherit"
+	port1			"inherit"
+      }
+      List {
+	ListType		InputPortLatchByDelayingOutsideSignal
+	port0			"off"
+	port1			"off"
+      }
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product"
+      SID		      "29"
+      Ports		      [2, 1]
+      Position		      [850, 252, 880, 288]
+      ZOrder		      54
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Puncture"
+      SID		      "26"
+      Ports		      [1, 1]
+      Position		      [735, 248, 815, 292]
+      ZOrder		      51
+      LibraryVersion	      "1.102"
+      SourceBlock	      "commsequence2/Puncture"
+      SourceType	      "Puncture"
+      SourceProductName	      "Communications System Toolbox"
+      SourceProductBaseCode   "CM"
+      punctureVector	      "[1;0]"
+    }
+    Block {
+      BlockType		      Reshape
+      Name		      "Reshape"
+      SID		      "27"
+      Ports		      [1, 1]
+      Position		      [665, 258, 695, 282]
+      ZOrder		      52
+      OutputDimensionality    "Column vector (2-D)"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope"
+      SID		      "48"
+      Ports		      [2]
+      Position		      [785, 495, 815, 530]
+      ZOrder		      73
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'SampleTime','0.000000001'),extmgr.Configuration('Visuals','Time Domain',true,'Seri"
+      "alizedDisplays',{struct('MinYLimReal','-1.25','MaxYLimReal','1.25','YLabelReal','','MinYLimMag','0.00000','MaxYL"
+      "imMag','1.25','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTi"
+      "ckColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.07450980"
+      "39215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07450980"
+      "39215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'T"
+      "itle','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Mod"
+      "el2','Complex to Real-Imag/1'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal"
+      "','-1.25','MaxYLimReal','1.25','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','1.25','LegendVisibility','On"
+      "','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274"
+      "509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431"
+      "372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.074509"
+      "8039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot N"
+      "avigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2017a')),'Versio"
+      "n','2017a','Position',[1 5 1356 687],'VisibleAtModelOpen','on')"
+      NumInputPorts	      "2"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum"
+      SID		      "30"
+      Ports		      [2, 1]
+      Position		      [920, 245, 940, 265]
+      ZOrder		      55
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|++"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      SID		      "22"
+      Ports		      [1]
+      Position		      [650, 375, 710, 405]
+      ZOrder		      45
+      VariableName	      "rs"
+      MaxDataPoints	      "inf"
+      Save2DSignal	      "3-D array (concatenate along third dimension)"
+      FixptAsFi		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Vector\nScope"
+      SID		      "44"
+      Ports		      [1]
+      Position		      [1050, 270, 1085, 320]
+      ZOrder		      69
+      LibraryVersion	      "1.552"
+      SourceBlock	      "dspsnks4/Vector\nScope"
+      SourceType	      "Vector Scope"
+      SourceProductName	      "DSP System Toolbox"
+      SourceProductBaseCode   "DS"
+      ScopeProperties	      on
+      Domain		      "Time"
+      HorizSpan		      "1"
+      DisplayProperties	      off
+      AxisGrid		      on
+      Memory		      off
+      FrameNumber	      on
+      AxisLegend	      off
+      AxisZoom		      off
+      OpenScopeAtSimStart     on
+      OpenScopeImmediately    off
+      FigPos		      "get(0,'defaultfigureposition')"
+      AxisProperties	      off
+      XUnits		      "Hertz"
+      XRange		      "[0...Fs/2]"
+      InheritXIncr	      on
+      XIncr		      "1"
+      XLabel		      "Time"
+      XLimit		      "Auto"
+      XMin		      "0"
+      XMax		      "1"
+      XStart		      "0"
+      YUnits		      "dB"
+      YMin		      "-10"
+      YMax		      "10"
+      YLabel		      "Amplitude"
+      LineProperties	      off
+      ShowPortLabels	      off
+      XAxisParamsVer	      "6.9"
     }
     Line {
-      ZOrder		      11
-      SrcBlock		      "CA Code Generator"
+      ZOrder		      56
+      SrcBlock		      "Constant"
       SrcPort		      1
-      DstBlock		      "Out1"
+      DstBlock		      "Model"
       DstPort		      1
     }
     Line {
-      ZOrder		      5
-      SrcBlock		      "Constant"
+      ZOrder		      61
+      SrcBlock		      "Model"
       SrcPort		      1
-      Points		      [59, 0; 0, -70]
-      DstBlock		      "CA Code Generator"
+      DstBlock		      "Reshape"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      62
+      SrcBlock		      "Reshape"
+      SrcPort		      1
+      DstBlock		      "Puncture"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      89
+      SrcBlock		      "Puncture"
+      SrcPort		      1
+      Points		      [13, 0; 0, 10]
+      DstBlock		      "Product"
       DstPort		      2
     }
     Line {
-      ZOrder		      10
-      SrcBlock		      "In1"
+      ZOrder		      68
+      SrcBlock		      "Product"
       SrcPort		      1
-      DstBlock		      "CA Code Generator"
+      Points		      [45, 0]
+      DstBlock		      "Sum"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      88
+      SrcBlock		      "Constant1"
+      SrcPort		      1
+      Points		      [0, 6; -30, 0]
+      DstBlock		      "Product"
       DstPort		      1
     }
-  }
-}
-#Finite State Machines
-#
-#   Stateflow 80000011
-#
-#
-Stateflow {
-  machine {
-    id			    1
-    name		    "CAcode"
-    created		    "18-Nov-2017 16:42:52"
-    isLibrary		    0
-    sfVersion		    80000011
-    firstTarget		    10
-  }
-  chart {
-    id			    2
-    machine		    1
-    name		    "CA Code Generator"
-    windowPosition	    [422 539.941 189 413]
-    viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 3 0 0]
-    viewObj		    2
-    visible		    1
-    subviewS {
+    Line {
+      ZOrder		      74
+      SrcBlock		      "Constant2"
+      SrcPort		      1
+      Points		      [0, 10; -15, 0; 0, 25]
+      DstBlock		      "Sum"
+      DstPort		      1
     }
-    ssIdHighWaterMark	    6
-    decomposition	    CLUSTER_CHART
-    type		    EML_CHART
-    chartFileNumber	    2
-    disableImplicitCasting  1
-    eml {
-      name		      "CAcode"
-    }
-    firstData		    4
-    firstTransition	    8
-    firstJunction	    7
-  }
-  state {
-    id			    3
-    labelString		    "eML_blk_kernel()"
-    position		    [18 64.5 118 66]
-    fontSize		    12
-    chart		    2
-    treeNode		    [2 0 0 0]
-    superState		    SUBCHART
-    subviewer		    2
-    ssIdNumber		    1
-    type		    FUNC_STATE
-    decomposition	    CLUSTER_STATE
-    eml {
-      isEML		      1
-      script		      "function g=CAcode(sv,fs)\ncoder.extrinsic('warning')\n% function G=CACODE(SV,FS) \n% Generates 10"
-      "23 length C/A Codes for GPS PRNs 1-37\n%\n% \n% g: nx1023 matrix- with each PRN in each row with symbols 1 and 0"
-      "\n% sv: a row or column vector of the SV's to be generated\n% 	 valid entries are 1 to 37\n% fs: optional number"
-      " of samples per chip (defaults to 1), fractional samples allowed, must be 1 or greater.\n%\n% For multiple sampl"
-      "es per chip, function is a zero order hold. \n%\n%\n% For example to generate the C/A codes for PRN 6 and PRN 12"
-      " use:\n% g=cacode([6 12]),\n% and to generate the C/A codes for PRN 6 and PRN 12 at 5 MHz use\n% g=cacode([6 12]"
-      ",5/1.023)\n% \n%\n% For more information refer to the \"GPS SPS Signal Specification\"\n% http://www.navcen.uscg"
-      ".gov/pubs/gps/sigspec/default.htm\n%\n% Dan Boschen 12-30-2007\n% boschen@loglin.com\n\n% Revision History\n% re"
-      "v 1.0 Dan Boschen 4-15-2007  Initial Release\n%\n% rev 1.1 Dan Boschen 7-15-2007  Corrected error with taps for "
-      "PRN30, should be [2,7] was \n% 					incorrect as [1 7]. Thank you Jadah Zak for finding this.\n%\n%\n% rev 1.2 D"
-      "an Boschen 12-26-2007 Fixed column index error when ceil ~ L \n%				Thank you Jared Meadows for finding this.\n%"
-      "\n% rev 1.3 Dan Boschen 12-30-2007 Changed comment \"first order hold\" to\n% \"zero order hold\".\n%\n% rev 1.4"
-      " Dan Boschen 6-1-2010   Updated email address in comments\n\n\n\nif nargin<2\n	fs=1;\nend\n\n\nif (max(sv)>37) |"
-      "| (min(sv)<1) || (min(size(sv))~=1)\n	error('sv must be a row or column vector with integers between 1 and 37\\n"
-      "')\nend\n\nif fs<1\n	error('fs must be 1 or greater\\n')\nend	\n\n% force integers\ntestint=round(sv)-sv;\nif te"
-      "stint ~= 0 \n	warning('non-integer value entered for sv, rounding to closest integer\\n');\n	sv = round(sv);\nen"
-      "d\n\n\n% table of C/A Code Tap Selection (sets delay for G2 generator)\ntap=[2 6;\n    3 7;\n    4 8;\n    5 9;\n"
-      "    1 9;\n    2 10;\n    1 8;\n    2 9;\n    3 10;\n    2 3;\n    3 4;\n    5 6;\n    6 7;\n    7 8;\n    8 9;\n"
-      "    9 10;\n    1 4;\n    2 5;\n    3 6;\n    4 7;\n    5 8;\n    6 9;\n    1 3;\n    4 6;\n    5 7;\n    6 8;\n "
-      "   7 9;\n    8 10;\n    1 6;\n    2 7;\n    3 8;\n    4 9\n    5 10\n    4 10\n    1 7\n    2 8\n    4 10];\n\n%"
-      " G1 LFSR: x^10+x^3+1\ns=[0 0 1 0 0 0 0 0 0 1];\nn=length(s);\ng1=ones(1,n);	%initialization vector for G1\n\n%g="
-      "ones(1,38192);\n%g2=ones(1,38192);\n%gfs=ones(1,38192);\n\ng=ones(1,38192);\ng2=ones(1,38192);\ngfs=ones(1,38192"
-      ");\n\nL=2^n-1;\n\n% G2j LFSR: x^10+x^9+x^8+x^6+x^3+x^2+1\nt=[0 1 1 0 0 1 0 1 1 1];\nq=ones(1,n);	%initialization"
-      " vector for G2\n\n% generate C/A Code sequences:\ntap_sel=tap(sv,:);\nfor inc=1:L\n    g2(:,inc)=mod(sum(q(tap_s"
-      "el),2),2);\n    g(:,inc)=mod(g1(n)+g2(:,inc),2);\n   g1=[mod(sum(g1.*s),2) g1(1:n-1)];\n   q=[mod(sum(q.*t),2) q"
-      "(1:n-1)];\nend\n\n%upsample to desired rate\nif fs~=1\n	%fractional upsampling with zero order hold\n	index=0;\n"
-      "	for cnt = 1/fs:1/fs:L\n		index=index+1;\n		if ceil(cnt) > L   %traps a floating point error in index\n			gfs(:,"
-      "index)=g(:,L);\n		else\n			gfs(:,index)=g(:,ceil(cnt));\n		end\n	end \n	g=gfs;\nend"
-      editorLayout	      "100 M4x1[10 5 700 500]"
-    }
-  }
-  data {
-    id			    4
-    ssIdNumber		    4
-    name		    "sv"
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
+    Line {
+      ZOrder		      71
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      Points		      [20, 0; 0, 40]
+      Branch {
+	ZOrder			117
+	DstBlock		"Vector\nScope"
+	DstPort			1
       }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      unit {
-	name			"inherit"
+      Branch {
+	ZOrder			116
+	Points			[0, 15]
+	DstBlock		"FFT1"
+	DstPort			1
       }
     }
-    dataType		    "Inherit: Same as Simulink"
-    linkNode		    [2 0 5]
-  }
-  data {
-    id			    5
-    ssIdNumber		    5
-    name		    "g"
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-      unit {
-	name			"inherit"
-      }
+    Line {
+      ZOrder		      100
+      SrcBlock		      "FFT1"
+      SrcPort		      1
+      Points		      [0, 61; -305, 0]
+      DstBlock		      "To Workspace"
+      DstPort		      1
     }
-    dataType		    "Inherit: Same as Simulink"
-    linkNode		    [2 4 6]
-  }
-  data {
-    id			    6
-    ssIdNumber		    6
-    name		    "fs"
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-      unit {
-	name			"inherit"
-      }
+    Line {
+      ZOrder		      124
+      SrcBlock		      "Constant5"
+      SrcPort		      1
+      DstBlock		      "Model2"
+      DstPort		      1
     }
-    dataType		    "Inherit: Same as Simulink"
-    linkNode		    [2 5 0]
-  }
-  junction {
-    id			    7
-    position		    [23.5747 49.5747 7]
-    chart		    2
-    subviewer		    2
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
-    linkNode		    [2 0 0]
-  }
-  transition {
-    id			    8
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [28.125 13.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    Line {
+      ZOrder		      146
+      SrcBlock		      "Constant3"
+      SrcPort		      1
+      Points		      [15, 0]
+      DstBlock		      "Model2"
+      DstPort		      2
     }
-    dst {
-      id		      7
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    Line {
+      ZOrder		      147
+      SrcBlock		      "Constant4"
+      SrcPort		      1
+      Points		      [15, 0]
+      DstBlock		      "Model1"
+      DstPort		      2
     }
-    midPoint		    [23.5747 24.9468]
-    chart		    2
-    dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    2
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
+    Line {
+      ZOrder		      148
+      SrcBlock		      "Constant6"
+      SrcPort		      1
+      DstBlock		      "Model1"
+      DstPort		      1
     }
-    executionOrder	    1
-    ssIdNumber		    2
-    linkNode		    [2 0 0]
-  }
-  instance {
-    id			    9
-    machine		    1
-    name		    "CA Code Generator"
-    chart		    2
-  }
-  target {
-    id			    10
-    machine		    1
-    name		    "sfun"
-    description		    "Default Simulink S-Function Target."
-    linkNode		    [1 0 0]
+    Line {
+      ZOrder		      149
+      SrcBlock		      "Model1"
+      SrcPort		      1
+      Points		      [135, 0; 0, -170]
+      DstBlock		      "Scope"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      151
+      SrcBlock		      "Model2"
+      SrcPort		      1
+      Points		      [213, 0; 0, 10]
+      DstBlock		      "Scope"
+      DstPort		      2
+    }
   }
 }
