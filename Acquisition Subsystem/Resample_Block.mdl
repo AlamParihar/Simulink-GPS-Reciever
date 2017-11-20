@@ -19,7 +19,7 @@ Model {
       UnitExpr		      "inherit"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.10"
+    ComputedModelVersion    "1.19"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -116,9 +116,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Alam"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Nov 18 22:30:55 2017"
-  RTWModifiedTimeStamp	  432944480
-  ModelVersionFormat	  "1.%<AutoIncrement:10>"
+  LastModifiedDate	  "Sun Nov 19 15:19:44 2017"
+  RTWModifiedTimeStamp	  433005413
+  ModelVersionFormat	  "1.%<AutoIncrement:19>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -226,7 +226,7 @@ Model {
 	  DisabledProps		  []
 	  Description		  ""
 	  StartTime		  "0.0"
-	  StopTime		  "10.0"
+	  StopTime		  "0.001"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -1055,25 +1055,27 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "3"
+    SIDHighWatermark	    "8"
     Block {
       BlockType		      Inport
       Name		      "In1"
       SID		      "2"
-      Position		      [270, 258, 300, 272]
+      Position		      [265, 268, 295, 282]
       ZOrder		      2
       IconDisplay	      "Port number"
+      PortDimensions	      "[1 38192]"
     }
     Block {
       BlockType		      SubSystem
       Name		      "MATLAB Function"
       SID		      "1"
-      Ports		      [1, 1]
-      Position		      [420, 242, 490, 288]
+      Ports		      [3, 2]
+      Position		      [420, 254, 490, 306]
       ZOrder		      1
       ErrorFcn		      "Stateflow.Translate.translate"
       PermitHierarchicalResolution "ExplicitOnly"
       TreatAsAtomicUnit	      on
+      SystemSampleTime	      "0.002"
       RequestExecContextInheritance off
       SFBlockType	      "MATLAB Function"
       Variant		      off
@@ -1093,13 +1095,31 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"21"
+	SIDHighWatermark	"26"
 	Block {
 	  BlockType		  Inport
-	  Name			  "input_signal"
+	  Name			  "x"
 	  SID			  "1::1"
 	  Position		  [20, 101, 40, 119]
 	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "p"
+	  SID			  "1::24"
+	  Position		  [20, 136, 40, 154]
+	  ZOrder		  13
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "q"
+	  SID			  "1::25"
+	  Position		  [20, 171, 40, 189]
+	  ZOrder		  14
+	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
 	Block {
@@ -1116,17 +1136,21 @@ Model {
 	  Name			  " SFunction "
 	  SID			  "1::19"
 	  Tag			  "Stateflow S-Function Resample_Block 2"
-	  Ports			  [1, 2]
-	  Position		  [180, 100, 230, 160]
+	  Ports			  [3, 3]
+	  Position		  [180, 100, 230, 180]
 	  ZOrder		  10
 	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[1 2]"
+	  PortCounts		  "[3 3]"
 	  SFunctionDeploymentMode off
 	  EnableBusSupport	  on
 	  SFcnIsStateOwnerBlock	  off
 	  Port {
 	    PortNumber		    2
-	    Name		    "reSampled"
+	    Name		    "y"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "h"
 	  }
 	}
 	Block {
@@ -1138,37 +1162,69 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "reSampled"
+	  Name			  "y"
 	  SID			  "1::5"
 	  Position		  [460, 101, 480, 119]
 	  ZOrder		  -5
 	  IconDisplay		  "Port number"
 	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "h"
+	  SID			  "1::26"
+	  Position		  [460, 136, 480, 154]
+	  ZOrder		  15
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
 	Line {
-	  ZOrder		  5
-	  SrcBlock		  "input_signal"
+	  ZOrder		  49
+	  SrcBlock		  "x"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  1
 	}
 	Line {
-	  Name			  "reSampled"
-	  ZOrder		  6
+	  ZOrder		  50
+	  SrcBlock		  "p"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  51
+	  SrcBlock		  "q"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "y"
+	  ZOrder		  52
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  2
-	  DstBlock		  "reSampled"
+	  DstBlock		  "y"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  7
+	  Name			  "h"
+	  ZOrder		  53
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  3
+	  DstBlock		  "h"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  54
 	  SrcBlock		  " Demux "
 	  SrcPort		  1
 	  DstBlock		  " Terminator "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  8
+	  ZOrder		  55
 	  SrcBlock		  " SFunction "
 	  SrcPort		  1
 	  DstBlock		  " Demux "
@@ -1180,14 +1236,16 @@ Model {
       BlockType		      Outport
       Name		      "Out1"
       SID		      "3"
-      Position		      [625, 258, 655, 272]
+      Position		      [625, 263, 655, 277]
       ZOrder		      3
       IconDisplay	      "Port number"
+      PortDimensions	      "[1 32768]"
     }
     Line {
       ZOrder		      1
       SrcBlock		      "In1"
       SrcPort		      1
+      Points		      [105, 0]
       DstBlock		      "MATLAB Function"
       DstPort		      1
     }
@@ -1212,7 +1270,7 @@ Stateflow {
     created		    "18-Nov-2017 19:56:07"
     isLibrary		    0
     sfVersion		    80000011
-    firstTarget		    9
+    firstTarget		    12
   }
   chart {
     id			    2
@@ -1226,17 +1284,17 @@ Stateflow {
     visible		    1
     subviewS {
     }
-    ssIdHighWaterMark	    5
+    ssIdHighWaterMark	    10
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     chartFileNumber	    2
     disableImplicitCasting  1
     eml {
-      name		      "resample_block"
+      name		      "resampler"
     }
     firstData		    4
-    firstTransition	    7
-    firstJunction	    6
+    firstTransition	    10
+    firstJunction	    9
   }
   state {
     id			    3
@@ -1252,15 +1310,25 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function reSampled  = resample_block(input_signal)\ncoder.extrinsic('warning') \n\nfreqIn = 38192"
-      ";\nfreqOut = 32768;\nreSampled = resample(input_signal, freqOut, freqIn);\n"
+      script		      "function  [y, h] = resampler( x, p, q)\n\nbta = 5;  %--- design parameter for Kaiser window LPF\n"
+      "N = 10;\n\nvalidateResampleRatio(p, q);\n\n[p,q] = rat( p/q, 1e-12 );  %--- reduce to lowest terms \n   % (usual"
+      "ly exact, sometimes not; loses at most 1 second every 10^12 seconds)\nif (p==1) && (q==1)\n    y = x; \n    h = "
+      "1;\n    return\nend\npqmax = max(p,q);\nif length(N)>1      % use input filter\n   L = length(N);\n   h = N;\nel"
+      "se                % design filter\n   if( N>0 )\n      fc = 1/2/pqmax;\n      L = 2*N*pqmax + 1;\n      h = firl"
+      "s( L-1, [0 2*fc 2*fc 1], [1 1 0 0]).*kaiser(L,bta)' ;\n      h = p*h/sum(h);\n   else\n      L = p;\n      h = o"
+      "nes(1,p);\n   end\nend\n\nLhalf = (L-1)/2;\nisvect = any(size(x)==1);\nif isvect\n    Lx = length(x);\nelse\n   "
+      " Lx = size(x, 1);\nend\n\n% Need to delay output so that downsampling by q hits center tap of filter.\nnz = floo"
+      "r(q-mod(Lhalf,q));\nz = zeros(1,nz);\nh = [z h(:).'];  % ensure that h is a row vector.\nLhalf = Lhalf + nz;\n\n"
+      "% Number of samples removed from beginning of output sequence \n% to compensate for delay of linear phase filter"
+      ":\ndelay = floor(ceil(Lhalf)/q);\n\n% Need to zero-pad so output length is exactly ceil(Lx*p/q).\nnz1 = 0;\nwhil"
+      "e ceil( ((Lx-1)*p+length(h)+nz1 )/q ) - delay < ceil(Lx*p/q)\n    nz1 = nz1+1;\nend\nh = [h zeros(1,nz1)];"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
     id			    4
     ssIdNumber		    4
-    name		    "input_signal"
+    name		    "x"
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -1282,7 +1350,7 @@ Stateflow {
   data {
     id			    5
     ssIdNumber		    5
-    name		    "reSampled"
+    name		    "y"
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -1300,10 +1368,85 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [2 4 0]
+    linkNode		    [2 4 6]
+  }
+  data {
+    id			    6
+    ssIdNumber		    8
+    name		    "p"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [2 5 7]
+  }
+  data {
+    id			    7
+    ssIdNumber		    9
+    name		    "q"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [2 6 8]
+  }
+  data {
+    id			    8
+    ssIdNumber		    10
+    name		    "h"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [2 7 0]
   }
   junction {
-    id			    6
+    id			    9
     position		    [23.5747 49.5747 7]
     chart		    2
     subviewer		    2
@@ -1312,7 +1455,7 @@ Stateflow {
     linkNode		    [2 0 0]
   }
   transition {
-    id			    7
+    id			    10
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -1320,7 +1463,7 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      6
+      id		      9
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
@@ -1336,13 +1479,13 @@ Stateflow {
     linkNode		    [2 0 0]
   }
   instance {
-    id			    8
+    id			    11
     machine		    1
     name		    "MATLAB Function"
     chart		    2
   }
   target {
-    id			    9
+    id			    12
     machine		    1
     name		    "sfun"
     description		    "Default Simulink S-Function Target."

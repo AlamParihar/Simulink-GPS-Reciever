@@ -1,2 +1,2 @@
-x = CA(1,(37+1/3));
-y = RS(x)
+simOut = sim('CAcode', 'SaveOutput', 'on');
+results = simOut.get('yout')
