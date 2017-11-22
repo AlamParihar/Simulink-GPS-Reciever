@@ -19,7 +19,7 @@ Model {
       UnitExpr		      "inherit"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.31"
+    ComputedModelVersion    "1.38"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -116,9 +116,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Alam"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Nov 20 02:22:54 2017"
-  RTWModifiedTimeStamp	  433045369
-  ModelVersionFormat	  "1.%<AutoIncrement:31>"
+  LastModifiedDate	  "Wed Nov 22 05:38:15 2017"
+  RTWModifiedTimeStamp	  433229289
+  ModelVersionFormat	  "1.%<AutoIncrement:38>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1087,7 +1087,7 @@ Model {
       ErrorFcn		      "Stateflow.Translate.translate"
       PermitHierarchicalResolution "ExplicitOnly"
       TreatAsAtomicUnit	      on
-      SystemSampleTime	      "0.002"
+      SystemSampleTime	      "3.05175781e-8"
       RequestExecContextInheritance off
       SFBlockType	      "MATLAB Function"
       Variant		      off

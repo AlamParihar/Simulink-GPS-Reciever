@@ -89,7 +89,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1322.0, 603.0]
 	ZoomFactor		[1.0]
-	Offset			[0.0, 0.0]
+	Offset			[0.0, -60.724993050098419]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -123,8 +123,8 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Alam"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Nov 20 03:35:45 2017"
-  RTWModifiedTimeStamp	  432843345
+  LastModifiedDate	  "Mon Nov 20 03:35:48 2017"
+  RTWModifiedTimeStamp	  433045066
   ModelVersionFormat	  "1.%<AutoIncrement:2>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
@@ -993,7 +993,7 @@ Model {
   System {
     Name		    "Main_Reciever"
     Location		    [-8, -8, 1368, 776]
-    Open		    on
+    Open		    off
     PortBlocksUseCompactNotation off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1013,7 +1013,7 @@ Model {
       Name		      "Model"
       SID		      "15"
       Ports		      [1]
-      Position		      [230, 202, 370, 248]
+      Position		      [225, 202, 365, 248]
       ZOrder		      6
       ModelNameDialog	      "Acquisition.mdl"
       SimulationMode	      "Normal"

@@ -6,8 +6,8 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2"
-    NumModelReferences	    3
+    ComputedModelVersion    "1.3"
+    NumModelReferences	    4
     ModelReference {
       ModelRefBlockPath	      "Main_Reciever/Model|Acquisition"
     }
@@ -16,6 +16,9 @@ Model {
     }
     ModelReference {
       ModelRefBlockPath	      "Main_Reciever/Model2|Pseudorange_and_Position_Calculation"
+    }
+    ModelReference {
+      ModelRefBlockPath	      "Main_Reciever/Model3|Signal_Generator"
     }
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -123,9 +126,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Alam"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Nov 20 03:35:48 2017"
-  RTWModifiedTimeStamp	  433045066
-  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  LastModifiedDate	  "Wed Nov 22 15:04:06 2017"
+  RTWModifiedTimeStamp	  433263273
+  ModelVersionFormat	  "1.%<AutoIncrement:3>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -993,7 +996,7 @@ Model {
   System {
     Name		    "Main_Reciever"
     Location		    [-8, -8, 1368, 776]
-    Open		    off
+    Open		    on
     PortBlocksUseCompactNotation off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1007,7 +1010,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "17"
+    SIDHighWatermark	    "18"
     Block {
       BlockType		      ModelReference
       Name		      "Model"
@@ -1018,7 +1021,7 @@ Model {
       ModelNameDialog	      "Acquisition.mdl"
       SimulationMode	      "Normal"
       Variant		      off
-      ModelReferenceVersion   "1.16"
+      ModelReferenceVersion   "1.42"
       List {
 	ListType		InputPortNames
 	port0			"In1"
@@ -1074,6 +1077,40 @@ Model {
       List {
 	ListType		InputPortUnitExprs
       }
+    }
+    Block {
+      BlockType		      ModelReference
+      Name		      "Model3"
+      SID		      "18"
+      Ports		      [0, 1]
+      Position		      [50, 202, 150, 248]
+      ZOrder		      15
+      ModelNameDialog	      "Signal_Generator.slx"
+      SimulationMode	      "Normal"
+      Variant		      off
+      ModelReferenceVersion   "1.6"
+      List {
+	ListType		OutputPortNames
+	port0			"Out1"
+      }
+      List {
+	ListType		OutputPortOutputBusAsStructs
+	port0			"off"
+      }
+      List {
+	ListType		OutputPortUnitExprs
+	port0			"inherit"
+      }
+      List {
+	ListType		InputPortUnitExprs
+      }
+    }
+    Line {
+      ZOrder		      1
+      SrcBlock		      "Model3"
+      SrcPort		      1
+      DstBlock		      "Model"
+      DstPort		      1
     }
   }
 }

@@ -6,16 +6,16 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.21"
+    ComputedModelVersion    "1.25"
     NumModelReferences	    3
     ModelReference {
       ModelRefBlockPath	      "test_space/Model|CAcode"
     }
     ModelReference {
-      ModelRefBlockPath	      "test_space/Model1|Local_Oscillator"
+      ModelRefBlockPath	      "test_space/Model1|Acquisition"
     }
     ModelReference {
-      ModelRefBlockPath	      "test_space/Model2|Local_Oscillator"
+      ModelRefBlockPath	      "test_space/Model3|Signal_Generator"
     }
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -81,26 +81,14 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1322.0, 377.0]
-	ZoomFactor		[0.6]
-	Offset			[-793.89047619047051, 215.99480331192359]
+	ZoomFactor		[1.0]
+	Offset			[59.8205012697249, 226.33589342610838]
       }
       Array {
 	Type			"Simulink.DockComponentInfo"
 	Dimension		2
 	Object {
 	  $ObjectID		  6
-	  Type			  "GLUE2:PropertyInspector"
-	  ID			  "Property Inspector"
-	  Visible		  [0]
-	  CreateCallback	  ""
-	  UserData		  ""
-	  Floating		  [0]
-	  DockPosition		  "Right"
-	  Width			  [640]
-	  Height		  [480]
-	}
-	Object {
-	  $ObjectID		  7
 	  Type			  "GLUE2:SpreadSheet"
 	  ID			  "ModelData"
 	  Visible		  [1]
@@ -110,6 +98,18 @@ Model {
 	  DockPosition		  "Bottom"
 	  Width			  [1356]
 	  Height		  [196]
+	}
+	Object {
+	  $ObjectID		  7
+	  Type			  "GLUE2:PropertyInspector"
+	  ID			  "Property Inspector"
+	  Visible		  [0]
+	  CreateCallback	  ""
+	  UserData		  ""
+	  Floating		  [0]
+	  DockPosition		  "Right"
+	  Width			  [640]
+	  Height		  [480]
 	}
 	PropName		"DockComponentsInfo"
       }
@@ -131,9 +131,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Alam"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Nov 20 02:09:21 2017"
-  RTWModifiedTimeStamp	  433044316
-  ModelVersionFormat	  "1.%<AutoIncrement:21>"
+  LastModifiedDate	  "Wed Nov 22 15:03:59 2017"
+  RTWModifiedTimeStamp	  433263312
+  ModelVersionFormat	  "1.%<AutoIncrement:25>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1053,9 +1053,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "60"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "62"
+    SIDHighWatermark	    "65"
     Block {
       BlockType		      Constant
       Name		      "Constant"
@@ -1084,30 +1084,6 @@ Model {
       BlockMirror	      on
       NamePlacement	      "alternate"
       Value		      "-1"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant3"
-      SID		      "59"
-      Position		      [285, 575, 315, 605]
-      ZOrder		      84
-      Value		      "pi/2"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant4"
-      SID		      "60"
-      Position		      [285, 740, 315, 770]
-      ZOrder		      87
-      Value		      "0"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant5"
-      SID		      "52"
-      Position		      [150, 645, 180, 675]
-      ZOrder		      77
-      Value		      "0"
     }
     Block {
       BlockType		      Reference
@@ -1169,7 +1145,7 @@ Model {
       ModelNameDialog	      "CAcode.mdl"
       SimulationMode	      "Normal"
       Variant		      off
-      ModelReferenceVersion   "1.30"
+      ModelReferenceVersion   "1.38"
       List {
 	ListType		InputPortNames
 	port0			"In1"
@@ -1206,67 +1182,45 @@ Model {
     Block {
       BlockType		      ModelReference
       Name		      "Model1"
-      SID		      "62"
-      Ports		      [2, 1]
-      Position		      [350, 624, 490, 671]
-      ZOrder		      85
-      ModelNameDialog	      "Local_Oscillator.slx"
+      SID		      "64"
+      Ports		      [1]
+      Position		      [500, 527, 640, 573]
+      ZOrder		      89
+      ModelNameDialog	      "Acquisition.mdl"
       SimulationMode	      "Normal"
       Variant		      off
-      ModelReferenceVersion   "1.14"
+      ModelReferenceVersion   "1.42"
       List {
 	ListType		InputPortNames
 	port0			"In1"
-	port1			"In2"
-      }
-      List {
-	ListType		OutputPortNames
-	port0			"Out1"
-      }
-      List {
-	ListType		OutputPortOutputBusAsStructs
-	port0			"off"
-      }
-      List {
-	ListType		OutputPortSignalNames
-	port0			"y"
       }
       List {
 	ListType		InputPortLatchByCopyingInsideSignal
 	port0			"off"
-	port1			"off"
       }
       List {
 	ListType		OutputPortUnitExprs
-	port0			"inherit"
       }
       List {
 	ListType		InputPortUnitExprs
 	port0			"inherit"
-	port1			"inherit"
       }
       List {
 	ListType		InputPortLatchByDelayingOutsideSignal
 	port0			"off"
-	port1			"off"
       }
     }
     Block {
       BlockType		      ModelReference
-      Name		      "Model2"
-      SID		      "49"
-      Ports		      [2, 1]
-      Position		      [350, 484, 490, 531]
-      ZOrder		      74
-      ModelNameDialog	      "Local_Oscillator.slx"
+      Name		      "Model3"
+      SID		      "65"
+      Ports		      [0, 1]
+      Position		      [325, 527, 425, 573]
+      ZOrder		      90
+      ModelNameDialog	      "Signal_Generator.slx"
       SimulationMode	      "Normal"
       Variant		      off
-      ModelReferenceVersion   "1.14"
-      List {
-	ListType		InputPortNames
-	port0			"In1"
-	port1			"In2"
-      }
+      ModelReferenceVersion   "1.6"
       List {
 	ListType		OutputPortNames
 	port0			"Out1"
@@ -1276,27 +1230,11 @@ Model {
 	port0			"off"
       }
       List {
-	ListType		OutputPortSignalNames
-	port0			"y"
-      }
-      List {
-	ListType		InputPortLatchByCopyingInsideSignal
-	port0			"off"
-	port1			"off"
-      }
-      List {
 	ListType		OutputPortUnitExprs
 	port0			"inherit"
       }
       List {
 	ListType		InputPortUnitExprs
-	port0			"inherit"
-	port1			"inherit"
-      }
-      List {
-	ListType		InputPortLatchByDelayingOutsideSignal
-	port0			"off"
-	port1			"off"
       }
     }
     Block {
@@ -1361,48 +1299,6 @@ Model {
       FixptAsFi		      on
       SampleTime	      "-1"
     }
-    Block {
-      BlockType		      Reference
-      Name		      "Vector\nScope"
-      SID		      "44"
-      Ports		      [1]
-      Position		      [1050, 270, 1085, 320]
-      ZOrder		      69
-      LibraryVersion	      "1.552"
-      SourceBlock	      "dspsnks4/Vector\nScope"
-      SourceType	      "Vector Scope"
-      SourceProductName	      "DSP System Toolbox"
-      SourceProductBaseCode   "DS"
-      ScopeProperties	      on
-      Domain		      "Time"
-      HorizSpan		      "1"
-      DisplayProperties	      off
-      AxisGrid		      on
-      Memory		      off
-      FrameNumber	      on
-      AxisLegend	      off
-      AxisZoom		      off
-      OpenScopeAtSimStart     on
-      OpenScopeImmediately    off
-      FigPos		      "get(0,'defaultfigureposition')"
-      AxisProperties	      off
-      XUnits		      "Hertz"
-      XRange		      "[0...Fs/2]"
-      InheritXIncr	      on
-      XIncr		      "1"
-      XLabel		      "Time"
-      XLimit		      "Auto"
-      XMin		      "0"
-      XMax		      "1"
-      XStart		      "0"
-      YUnits		      "dB"
-      YMin		      "-10"
-      YMax		      "10"
-      YLabel		      "Amplitude"
-      LineProperties	      off
-      ShowPortLabels	      off
-      XAxisParamsVer	      "6.9"
-    }
     Line {
       ZOrder		      56
       SrcBlock		      "Constant"
@@ -1460,59 +1356,9 @@ Model {
       ZOrder		      71
       SrcBlock		      "Sum"
       SrcPort		      1
-      Points		      [20, 0; 0, 40]
-      Branch {
-	ZOrder			117
-	DstBlock		"Vector\nScope"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			116
-	Points			[0, 15]
-	DstBlock		"FFT1"
-	DstPort			1
-      }
-    }
-    Line {
-      ZOrder		      100
-      SrcBlock		      "FFT1"
-      SrcPort		      1
-      Points		      [0, 61; -305, 0]
-      DstBlock		      "To Workspace"
+      Points		      [20, 0; 0, 55]
+      DstBlock		      "FFT1"
       DstPort		      1
-    }
-    Line {
-      ZOrder		      146
-      SrcBlock		      "Constant3"
-      SrcPort		      1
-      Points		      [15, 0]
-      DstBlock		      "Model2"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      147
-      SrcBlock		      "Constant4"
-      SrcPort		      1
-      Points		      [13, 0; 0, -95]
-      DstBlock		      "Model1"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      124
-      SrcBlock		      "Constant5"
-      SrcPort		      1
-      Points		      [45, 0; 0, -25]
-      Branch {
-	ZOrder			153
-	DstBlock		"Model1"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			152
-	Points			[0, -140]
-	DstBlock		"Model2"
-	DstPort			1
-      }
     }
   }
 }
