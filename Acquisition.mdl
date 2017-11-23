@@ -12,7 +12,7 @@ Model {
     }
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.42"
+    ComputedModelVersion    "1.50"
     NumModelReferences	    2
     ModelReference {
       ModelRefBlockPath	      "Acquisition/CAcode|CAcode"
@@ -66,7 +66,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1376.0, 784.0]
+      Location		      [-8.0, -8.0, 1696.0, 1026.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -90,9 +90,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1322.0, 603.0]
+	Extents			[1642.0, 845.0]
 	ZoomFactor		[1.0]
-	Offset			[-526.28181616489633, 27.901066657124773]
+	Offset			[-303.64969057324424, 12.783333333333076]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -112,11 +112,11 @@ Model {
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
       "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABjAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAAKwD///8AAAVQAAAClAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAAKwD///8AAAaQAAADhgAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAB5/////wAAAAAAAAAA/////wEAAADa/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFT/////wAAAAAAAAAA/"
-      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAL9/////wAAAAAAAAAA/"
-      "////wEAAAMs/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
+      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAMr/////wAAAAAAAAAA/"
+      "////wEAAANa/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
     }
   }
   HideAutomaticNames	  on
@@ -124,11 +124,11 @@ Model {
   Creator		  "Alam"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Alam"
+  LastModifiedBy	  "aparih"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 22 14:53:59 2017"
-  RTWModifiedTimeStamp	  433263115
-  ModelVersionFormat	  "1.%<AutoIncrement:42>"
+  LastModifiedDate	  "Wed Nov 22 22:13:51 2017"
+  RTWModifiedTimeStamp	  433288713
+  ModelVersionFormat	  "1.%<AutoIncrement:50>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -982,15 +982,9 @@ Model {
   }
   BlockParameterDefaults {
     Block {
-      BlockType		      Abs
-      ZeroCross		      on
+      BlockType		      ComplexToMagnitudeAngle
+      Output		      "Magnitude and angle"
       SampleTime	      "-1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
     }
     Block {
       BlockType		      ComplexToRealImag
@@ -1009,6 +1003,16 @@ Model {
       SampleTime	      "inf"
       FramePeriod	      "inf"
       PreserveConstantTs      off
+    }
+    Block {
+      BlockType		      FromFile
+      FileName		      "untitled.mat"
+      OutDataTypeStr	      "Inherit: auto"
+      SampleTime	      "-1"
+      ExtrapolationBeforeFirstDataPoint	"Linear extrapolation"
+      InterpolationWithinTimeRange "Linear interpolation"
+      ExtrapolationAfterLastDataPoint "Linear extrapolation"
+      ZeroCross		      off
     }
     Block {
       BlockType		      Inport
@@ -1071,12 +1075,6 @@ Model {
       SampleTime	      "-1"
     }
     Block {
-      BlockType		      Quantizer
-      QuantizationInterval    "0.5"
-      LinearizeAsGain	      on
-      SampleTime	      "-1"
-    }
-    Block {
       BlockType		      RealImagToComplex
       Input		      "Real and imag"
       ConstantPart	      "0"
@@ -1086,10 +1084,6 @@ Model {
       BlockType		      Reshape
       OutputDimensionality    "1-D array"
       OutputDimensions	      "[1,1]"
-    }
-    Block {
-      BlockType		      SpectrumAnalyzer
-      DefaultConfigurationName "spbscopes.SpectrumAnalyzerBlockCfg"
     }
     Block {
       BlockType		      Sum
@@ -1107,10 +1101,22 @@ Model {
       SaturateOnIntegerOverflow	on
       SampleTime	      "-1"
     }
+    Block {
+      BlockType		      ToFile
+      Filename		      "untitled.mat"
+      MatrixName	      "ans"
+      SaveFormat	      "Array"
+      Decimation	      "1"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ZeroOrderHold
+      SampleTime	      "1"
+    }
   }
   System {
     Name		    "Acquisition"
-    Location		    [-8, -8, 1368, 776]
+    Location		    [-8, -8, 1688, 1018]
     Open		    on
     PortBlocksUseCompactNotation off
     ModelBrowserVisibility  off
@@ -1125,37 +1131,29 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "112"
+    SIDHighWatermark	    "138"
     Block {
       BlockType		      Inport
       Name		      "In1"
       SID		      "18"
-      Position		      [-405, 88, -375, 102]
+      Position		      [-405, 78, -375, 92]
       ZOrder		      37
       IconDisplay	      "Port number"
-    }
-    Block {
-      BlockType		      Abs
-      Name		      "Abs"
-      SID		      "6"
-      Position		      [730, 165, 760, 195]
-      ZOrder		      18
-      Commented		      "through"
-      SaturateOnIntegerOverflow	off
+      PortDimensions	      "65536"
     }
     Block {
       BlockType		      ModelReference
       Name		      "CAcode"
       SID		      "12"
       Ports		      [1, 1]
-      Position		      [190, 757, 330, 803]
+      Position		      [190, 767, 330, 813]
       ZOrder		      33
       BlockMirror	      on
       NamePlacement	      "alternate"
       ModelNameDialog	      "CAcode.mdl"
       SimulationMode	      "Normal"
       Variant		      off
-      ModelReferenceVersion   "1.38"
+      ModelReferenceVersion   "1.40"
       List {
 	ListType		InputPortNames
 	port0			"In1"
@@ -1190,20 +1188,28 @@ Model {
       }
     }
     Block {
+      BlockType		      ComplexToMagnitudeAngle
+      Name		      "Complex to\nMagnitude-Angle"
+      SID		      "133"
+      Ports		      [1, 2]
+      Position		      [720, 193, 750, 222]
+      ZOrder		      167
+    }
+    Block {
       BlockType		      ComplexToRealImag
       Name		      "Complex to\nReal-Imag1"
       SID		      "83"
       Ports		      [1, 2]
-      Position		      [0, 288, 30, 317]
+      Position		      [5, 358, 35, 387]
       ZOrder		      123
     }
     Block {
       BlockType		      ComplexToRealImag
       Name		      "Complex to\nReal-Imag2"
-      SID		      "99"
+      SID		      "130"
       Ports		      [1, 1]
-      Position		      [234, 210, 266, 240]
-      ZOrder		      138
+      Position		      [390, 310, 420, 340]
+      ZOrder		      165
       BlockRotation	      270
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -1213,15 +1219,16 @@ Model {
       BlockType		      Constant
       Name		      "Constant1"
       SID		      "33"
-      Position		      [330, 825, 360, 855]
+      Position		      [330, 835, 360, 865]
       ZOrder		      93
       BlockRotation	      270
+      Value		      "2"
     }
     Block {
       BlockType		      Constant
       Name		      "Constant2"
       SID		      "34"
-      Position		      [315, 605, 345, 635]
+      Position		      [315, 615, 345, 645]
       ZOrder		      97
       BlockRotation	      270
       BlockMirror	      on
@@ -1232,7 +1239,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant3"
       SID		      "86"
-      Position		      [-285, 265, -255, 295]
+      Position		      [-405, 335, -375, 365]
       ZOrder		      126
       Value		      "0"
     }
@@ -1240,24 +1247,45 @@ Model {
       BlockType		      Constant
       Name		      "Constant6"
       SID		      "35"
-      Position		      [380, 720, 410, 750]
+      Position		      [380, 730, 410, 760]
       ZOrder		      98
       BlockRotation	      270
       Value		      "-1"
     }
     Block {
       BlockType		      Reference
+      Name		      "Delay Line"
+      SID		      "113"
+      Ports		      [1, 1]
+      Position		      [-85, 307, -25, 363]
+      ZOrder		      148
+      LibraryVersion	      "1.421"
+      UserDataPersistent      on
+      UserData		      "DataTag0"
+      SourceBlock	      "dspbuff3/Delay Line"
+      SourceType	      "Delay Line"
+      SourceProductName	      "DSP System Toolbox"
+      SourceProductBaseCode   "DS"
+      siz		      "65536"
+      ic		      "0"
+      directfeed	      off
+      enable_output	      off
+      hold_output	      off
+      OutputFrames	      off
+    }
+    Block {
+      BlockType		      Reference
       Name		      "FFT"
       SID		      "2"
       Ports		      [1, 1]
-      Position		      [325, 151, 365, 189]
+      Position		      [315, 151, 355, 189]
       ZOrder		      14
       LibraryVersion	      "1.525"
       SourceBlock	      "dspxfrm3/FFT"
       SourceType	      "FFT"
       SourceProductName	      "DSP System Toolbox"
       SourceProductBaseCode   "DS"
-      FFTImplementation	      "Auto"
+      FFTImplementation	      "Radix-2"
       CompMethod	      "Table lookup"
       TableOpt		      "NEW"
       TableOptActive	      "Speed"
@@ -1297,7 +1325,7 @@ Model {
       Name		      "FFT1"
       SID		      "3"
       Ports		      [1, 1]
-      Position		      [401, 470, 439, 510]
+      Position		      [401, 480, 439, 520]
       ZOrder		      15
       BlockRotation	      270
       LibraryVersion	      "1.525"
@@ -1341,18 +1369,28 @@ Model {
       LockScale		      off
     }
     Block {
+      BlockType		      FromFile
+      Name		      "From File"
+      SID		      "117"
+      Position		      [-440, 118, -375, 142]
+      ZOrder		      152
+      FileName		      "test_sig.mat"
+      OutDataTypeStr	      "double"
+      SampleTime	      "1.52587891e-8"
+    }
+    Block {
       BlockType		      Reference
       Name		      "IFFT"
       SID		      "5"
       Ports		      [1, 1]
-      Position		      [600, 161, 640, 199]
+      Position		      [590, 161, 630, 199]
       ZOrder		      17
       LibraryVersion	      "1.525"
       SourceBlock	      "dspxfrm3/IFFT"
       SourceType	      "IFFT"
       SourceProductName	      "DSP System Toolbox"
       SourceProductBaseCode   "DS"
-      FFTImplementation	      "Auto"
+      FFTImplementation	      "Radix-2"
       CompMethod	      "Table lookup"
       TableOpt		      "NEW"
       TableOptActive	      "Speed"
@@ -1381,13 +1419,13 @@ Model {
       accumFracLength	      "30"
       accumDataTypeStr	      "Inherit: Inherit via internal rule"
       accumLastDataTypeStr    "Inherit: Inherit via internal rule"
-      outputMode	      "Inherit via internal rule"
+      outputMode	      "Same as input"
       outputWordLength	      "16"
       outputFracLength	      "15"
-      outputDataTypeStr	      "Inherit: Inherit via internal rule"
+      outputDataTypeStr	      "Inherit: Same as input"
       outputMin		      "[]"
       outputMax		      "[]"
-      outputLastDataTypeStr   "Inherit: Inherit via internal rule"
+      outputLastDataTypeStr   "Inherit: Same as input"
       LockScale		      off
     }
     Block {
@@ -1395,7 +1433,7 @@ Model {
       Name		      "Math\nFunction"
       SID		      "4"
       Ports		      [1, 1]
-      Position		      [405, 375, 435, 405]
+      Position		      [405, 385, 435, 415]
       ZOrder		      16
       BlockRotation	      270
       Operator		      "conj"
@@ -1405,7 +1443,7 @@ Model {
       Name		      "Oscillator 0 shift"
       SID		      "31"
       Ports		      [1, 1]
-      Position		      [-195, 281, -55, 329]
+      Position		      [-315, 351, -175, 399]
       ZOrder		      91
       ModelNameDialog	      "Local_Oscillator.slx"
       SimulationMode	      "Normal"
@@ -1449,7 +1487,7 @@ Model {
       Name		      "Product"
       SID		      "21"
       Ports		      [2, 1]
-      Position		      [140, 42, 170, 73]
+      Position		      [85, 27, 115, 58]
       ZOrder		      40
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -1461,7 +1499,7 @@ Model {
       Name		      "Product1"
       SID		      "22"
       Ports		      [2, 1]
-      Position		      [-50, 157, -20, 188]
+      Position		      [-60, 157, -30, 188]
       ZOrder		      41
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -1473,8 +1511,20 @@ Model {
       Name		      "Product2"
       SID		      "23"
       Ports		      [2, 1]
-      Position		      [515, 162, 545, 193]
+      Position		      [490, 122, 520, 153]
       ZOrder		      42
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product3"
+      SID		      "138"
+      Ports		      [2, 1]
+      Position		      [825, 227, 855, 258]
+      ZOrder		      172
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       RndMeth		      "Floor"
@@ -1485,7 +1535,7 @@ Model {
       Name		      "Product4"
       SID		      "36"
       Ports		      [2, 1]
-      Position		      [315, 657, 345, 693]
+      Position		      [315, 667, 345, 703]
       ZOrder		      95
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -1497,7 +1547,7 @@ Model {
       Name		      "Puncture"
       SID		      "25"
       Ports		      [1, 1]
-      Position		      [398, 530, 442, 610]
+      Position		      [398, 540, 442, 620]
       ZOrder		      48
       BlockRotation	      270
       LibraryVersion	      "1.102"
@@ -1508,18 +1558,25 @@ Model {
       punctureVector	      "[1;0]"
     }
     Block {
-      BlockType		      Quantizer
-      Name		      "Quantizer"
-      SID		      "100"
-      Position		      [200, 155, 230, 185]
-      ZOrder		      139
+      BlockType		      Reference
+      Name		      "Puncture1"
+      SID		      "115"
+      Ports		      [1, 1]
+      Position		      [200, 148, 280, 192]
+      ZOrder		      150
+      LibraryVersion	      "1.102"
+      SourceBlock	      "commsequence2/Puncture"
+      SourceType	      "Puncture"
+      SourceProductName	      "Communications System Toolbox"
+      SourceProductBaseCode   "CM"
+      punctureVector	      "[1;0]"
     }
     Block {
       BlockType		      RealImagToComplex
       Name		      "Real-Imag to\nComplex"
       SID		      "11"
       Ports		      [2, 1]
-      Position		      [140, 153, 170, 182]
+      Position		      [130, 153, 160, 182]
       ZOrder		      32
     }
     Block {
@@ -1527,58 +1584,16 @@ Model {
       Name		      "Reshape"
       SID		      "37"
       Ports		      [1, 1]
-      Position		      [220, 673, 250, 697]
+      Position		      [220, 683, 250, 707]
       ZOrder		      94
       OutputDimensionality    "Column vector (2-D)"
-    }
-    Block {
-      BlockType		      SpectrumAnalyzer
-      Name		      "Spectrum\nAnalyzer"
-      SID		      "106"
-      Ports		      [1]
-      Position		      [490, 279, 535, 331]
-      ZOrder		      145
-      Commented		      "on"
-      ScopeSpecificationString "spbscopes.SpectrumAnalyzerBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(ext"
-      "mgr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('"
-      "Sources','WiredSimulink',true),extmgr.Configuration('Visuals','Spectrum',true,'AxesProperties',struct('Color',{["
-      "0 0 0],[0 0 0]},'XColor',{[0.686274509803922 0.686274509803922 0.686274509803922],[0.686274509803922 0.686274509"
-      "803922 0.686274509803922]},'YColor',{[0.686274509803922 0.686274509803922 0.686274509803922],[0.686274509803922 "
-      "0.686274509803922 0.686274509803922]},'ZColor',{[0.686274509803922 0.686274509803922 0.686274509803922],[0.68627"
-      "4509803922 0.686274509803922 0.686274509803922]},'XGrid',{'on','on'},'YGrid',{'on','on'},'ZGrid',{'off','off'},'"
-      "Box',{'on','on'},'XScale',{'linear','linear'},'YScale',{'linear','linear'},'ZScale',{'linear','linear'},'XDir',{"
-      "'normal','normal'},'YDir',{'normal','normal'},'ZDir',{'normal','normal'},'XTickMode',{'auto','auto'},'YTickMode'"
-      ",{'auto','auto'},'ZTickMode',{'auto','auto'},'XTickLabelMode',{'manual','auto'},'YTickLabelMode',{'auto','auto'}"
-      ",'ZTickLabelMode',{'manual','manual'},'XTickLabel',{['-500';'-400';'-300';'-200';'-100';'   0';' 100';' 200';' 3"
-      "00';' 400';' 500'],{'-5','-4','-3','-2','-1','0','1','2','3','4','5'}},'ZTickLabel',{'',''},'FontName',{'Helveti"
-      "ca','Helvetica'},'FontSize',{8.5,8.5},'FontUnits',{'points','points'},'FontWeight',{'normal','normal'},'Title',{"
-      "'',''},'XLabel',{'Frequency (GHz)',''},'YLabel',{' dBm',''},'ZLabel',{'',''}),'LineProperties',struct('DisplayNa"
-      "me','','Color',[1 1 0.0666666666666667],'LineStyle','-','LineWidth',0.5,'Marker','none','MarkerSize',6,'MarkerEd"
-      "geColor','auto','MarkerFaceColor','none','Visible','on'),'MinYLim','-153.33321215013777','MaxYLim','62.173298528"
-      "126821','SampleRate','1073741824879.61','Span','1073741824879.61','StartFrequency','-536870912439.805','StopFreq"
-      "uency','536870912439.805','IsSpanValuesValid',true),extmgr.Configuration('Tools','Plot Navigation',true,'Autosca"
-      "leMode','Manual','OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2017a'),extmgr."
-      "Configuration('Visuals','Constellation',false),extmgr.Configuration('Visuals','Eye Diagram',false),extmgr.Config"
-      "uration('Visuals','Array Plot',false),extmgr.Configuration('Sources','Simulink',false),extmgr.Configuration('Sou"
-      "rces','File',false),extmgr.Configuration('Sources','Workspace',false),extmgr.Configuration('Sources','Streaming'"
-      ",false),extmgr.Configuration('Visuals','Time Domain',false),extmgr.Configuration('Visuals','Matrix',false),extmg"
-      "r.Configuration('Tools','Instrumentation Sets',false),extmgr.Configuration('Sources','SPTool',false),extmgr.Conf"
-      "iguration('Tools','Image Tool',false),extmgr.Configuration('Tools','Pixel Region',false),extmgr.Configuration('T"
-      "ools','Image Navigation Tools',false),extmgr.Configuration('Visuals','Video',false),extmgr.Configuration('Source"
-      "s','SimulinkEvent',false),extmgr.Configuration('Visuals','TimeVisual',false),extmgr.Configuration('Tools','Requi"
-      "rement viewer',false),extmgr.Configuration('Tools','Check block zoom',false),extmgr.Configuration('Visuals','Bod"
-      "eVisual',false),extmgr.Configuration('Visuals','PZMapVisual',false),extmgr.Configuration('Visuals','NicholsVisua"
-      "l',false),extmgr.Configuration('Visuals','MarginsVisual',false),extmgr.Configuration('Visuals','SigmaVisual',fal"
-      "se),extmgr.Configuration('Visuals','LinearStepVisual',false),extmgr.Configuration('Tools','Response Optimization"
-      "',false)),'Version','2017a','VisibleAtModelOpen','on')"
-      NumInputPorts	      "1"
     }
     Block {
       BlockType		      Sum
       Name		      "Sum"
       SID		      "38"
       Ports		      [2, 1]
-      Position		      [385, 650, 405, 670]
+      Position		      [385, 660, 405, 680]
       ZOrder		      96
       ShowName		      off
       IconShape		      "round"
@@ -1588,65 +1603,23 @@ Model {
       SaturateOnIntegerOverflow	off
     }
     Block {
-      BlockType		      Reference
-      Name		      "Tapped Delay"
-      SID		      "104"
-      Ports		      [1, 1]
-      Position		      [290, 67, 325, 103]
-      ZOrder		      143
-      LibraryVersion	      "1.391"
-      SourceBlock	      "simulink/Discrete/Tapped Delay"
-      SourceType	      "Tapped Delay Line"
-      SourceProductName	      "Simulink"
-      SourceProductBaseCode   "SL"
-      vinit		      "0.0"
-      samptime		      "3.05175781e-8"
-      NumDelays		      "32768"
-      DelayOrder	      "Oldest"
-      includeCurrent	      off
+      BlockType		      ToFile
+      Name		      "To File"
+      SID		      "137"
+      Ports		      [1]
+      Position		      [965, 165, 1025, 195]
+      ZOrder		      171
+      Filename		      "corr2"
+      MatrixName	      "correlation2"
+      SampleTime	      "0.001"
     }
     Block {
-      BlockType		      Reference
-      Name		      "Vector\nScope"
-      SID		      "105"
-      Ports		      [1]
-      Position		      [325, 240, 360, 290]
-      ZOrder		      144
-      Commented		      "on"
-      LibraryVersion	      "1.552"
-      SourceBlock	      "dspsnks4/Vector\nScope"
-      SourceType	      "Vector Scope"
-      SourceProductName	      "DSP System Toolbox"
-      SourceProductBaseCode   "DS"
-      ScopeProperties	      on
-      Domain		      "Time"
-      HorizSpan		      "1"
-      DisplayProperties	      off
-      AxisGrid		      on
-      Memory		      off
-      FrameNumber	      on
-      AxisLegend	      off
-      AxisZoom		      off
-      OpenScopeAtSimStart     on
-      OpenScopeImmediately    off
-      FigPos		      "get(0,'defaultfigureposition')"
-      AxisProperties	      off
-      XUnits		      "Hertz"
-      XRange		      "[0...Fs/2]"
-      InheritXIncr	      on
-      XIncr		      "1"
-      XLabel		      "Time"
-      XLimit		      "Auto"
-      XMin		      "0"
-      XMax		      "1"
-      XStart		      "0"
-      YUnits		      "dB"
-      YMin		      "-10"
-      YMax		      "10"
-      YLabel		      "Amplitude"
-      LineProperties	      off
-      ShowPortLabels	      off
-      XAxisParamsVer	      "6.9"
+      BlockType		      ZeroOrderHold
+      Name		      "Zero-Order\nHold"
+      SID		      "114"
+      Position		      [-140, 360, -105, 390]
+      ZOrder		      149
+      SampleTime	      "1.52587891e-8"
     }
     Line {
       ZOrder		      9
@@ -1656,44 +1629,11 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      12
-      SrcBlock		      "IFFT"
-      SrcPort		      1
-      Points		      [19, 0]
-      Branch {
-	ZOrder			458
-	Points			[0, 188; -197, 0; 0, -63]
-	DstBlock		"Spectrum\nAnalyzer"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			457
-	DstBlock		"Abs"
-	DstPort			1
-      }
-    }
-    Line {
       ZOrder		      83
       SrcBlock		      "CAcode"
       SrcPort		      1
       Points		      [-34, 0; 0, -95]
       DstBlock		      "Reshape"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      499
-      SrcBlock		      "In1"
-      SrcPort		      1
-      Points		      [157, 0; 0, 70]
-      DstBlock		      "Product1"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      63
-      SrcBlock		      "Product"
-      SrcPort		      1
-      Points		      [13, 0; 0, 160; -73, 0; 0, -60]
-      DstBlock		      "Real-Imag to\nComplex"
       DstPort		      1
     }
     Line {
@@ -1707,8 +1647,18 @@ Model {
       ZOrder		      71
       SrcBlock		      "Product2"
       SrcPort		      1
-      DstBlock		      "IFFT"
-      DstPort		      1
+      Points		      [45, 0; 0, 40]
+      Branch {
+	ZOrder			630
+	Points			[0, 115]
+	DstBlock		"Complex to\nReal-Imag2"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			629
+	DstBlock		"IFFT"
+	DstPort			1
+      }
     }
     Line {
       ZOrder		      85
@@ -1763,48 +1713,24 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      432
+      ZOrder		      526
       SrcBlock		      "Real-Imag to\nComplex"
       SrcPort		      1
-      DstBlock		      "Quantizer"
+      DstBlock		      "Puncture1"
       DstPort		      1
     }
     Line {
-      ZOrder		      356
-      SrcBlock		      "Math\nFunction"
-      SrcPort		      1
-      Points		      [0, -185]
-      DstBlock		      "Product2"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      443
-      SrcBlock		      "Tapped Delay"
-      SrcPort		      1
-      Points		      [19, 0; 0, 48; -63, 0; 0, 37]
-      DstBlock		      "FFT"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      383
+      ZOrder		      531
       SrcBlock		      "Oscillator 0 shift"
       SrcPort		      1
-      DstBlock		      "Complex to\nReal-Imag1"
+      DstBlock		      "Zero-Order\nHold"
       DstPort		      1
-    }
-    Line {
-      ZOrder		      385
-      SrcBlock		      "Complex to\nReal-Imag1"
-      SrcPort		      1
-      Points		      [38, 0; 0, -230]
-      DstBlock		      "Product"
-      DstPort		      2
     }
     Line {
       ZOrder		      386
       SrcBlock		      "Complex to\nReal-Imag1"
       SrcPort		      2
-      Points		      [17, 0; 0, 45; -261, 0; 0, -175]
+      Points		      [17, 0; 0, 37; -147, 0; 0, -237]
       DstBlock		      "Product1"
       DstPort		      2
     }
@@ -1817,38 +1743,125 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      431
-      SrcBlock		      "Quantizer"
+      ZOrder		      530
+      SrcBlock		      "Zero-Order\nHold"
       SrcPort		      1
-      Points		      [21, 0; 0, -85]
-      DstBlock		      "Tapped Delay"
+      Points		      [5, 0; 0, -40]
+      DstBlock		      "Delay Line"
       DstPort		      1
     }
     Line {
-      ZOrder		      422
+      ZOrder		      529
+      SrcBlock		      "Delay Line"
+      SrcPort		      1
+      Points		      [9, 0; 0, 40]
+      DstBlock		      "Complex to\nReal-Imag1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      532
+      SrcBlock		      "Puncture1"
+      SrcPort		      1
+      DstBlock		      "FFT"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      546
+      SrcBlock		      "Complex to\nReal-Imag1"
+      SrcPort		      1
+      Points		      [20, 0; 0, -315]
+      DstBlock		      "Product"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      547
+      SrcBlock		      "Product"
+      SrcPort		      1
+      Points		      [3, 0; 0, 115]
+      DstBlock		      "Real-Imag to\nComplex"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      551
+      SrcBlock		      "From File"
+      SrcPort		      1
+      Points		      [157, 0]
+      Branch {
+	ZOrder			621
+	Points			[0, 35]
+	DstBlock		"Product1"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			553
+	Points			[0, -95]
+	DstBlock		"Product"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      584
       SrcBlock		      "FFT"
       SrcPort		      1
-      Points		      [25, 0]
+      Points		      [62, 0; 0, -40]
+      DstBlock		      "Product2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      636
+      SrcBlock		      "IFFT"
+      SrcPort		      1
+      Points		      [40, 0; 0, 30]
+      DstBlock		      "Complex to\nMagnitude-Angle"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      618
+      SrcBlock		      "Math\nFunction"
+      SrcPort		      1
+      Points		      [0, -17; 52, 0; 0, -218]
+      DstBlock		      "Product2"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      628
+      SrcBlock		      "Complex to\nReal-Imag2"
+      SrcPort		      1
+      Points		      [0, 23; -77, 0; 0, -63; 22, 0]
+    }
+    Line {
+      ZOrder		      643
+      SrcBlock		      "Complex to\nMagnitude-Angle"
+      SrcPort		      1
+      Points		      [40, 0]
       Branch {
-	ZOrder			450
-	Points			[0, 36; -145, 0]
-	DstBlock		"Complex to\nReal-Imag2"
-	DstPort			1
+	ZOrder			647
+	Points			[0, 50]
+	DstBlock		"Product3"
+	DstPort			2
       }
       Branch {
-	ZOrder			449
-	Points			[110, 0]
-	DstBlock		"Product2"
+	ZOrder			646
+	Points			[16, 0; 0, 35]
+	DstBlock		"Product3"
 	DstPort			1
       }
     }
     Line {
-      ZOrder		      451
-      SrcBlock		      "Complex to\nReal-Imag2"
+      ZOrder		      649
+      SrcBlock		      "Product3"
       SrcPort		      1
-      Points		      [0, 20]
-      DstBlock		      "Vector\nScope"
+      Points		      [50, 0; 0, -65]
+      DstBlock		      "To File"
       DstPort		      1
     }
+  }
+}
+MatData {
+  NumRecords		  1
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    @     8    (     @         %    \"     $    !     0         %  0 #P    $    /    :&%S34"
+    "-H86Y/<'1I;VX   X    P    !@    @    ) @        4    (     0    $    !          (  0 !    "
   }
 }

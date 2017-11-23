@@ -6,16 +6,10 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.25"
-    NumModelReferences	    3
-    ModelReference {
-      ModelRefBlockPath	      "test_space/Model|CAcode"
-    }
+    ComputedModelVersion    "1.26"
+    NumModelReferences	    1
     ModelReference {
       ModelRefBlockPath	      "test_space/Model1|Acquisition"
-    }
-    ModelReference {
-      ModelRefBlockPath	      "test_space/Model3|Signal_Generator"
     }
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -56,7 +50,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1376.0, 784.0]
+      Location		      [-8.0, -8.0, 1696.0, 1026.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -80,27 +74,15 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1322.0, 377.0]
-	ZoomFactor		[1.0]
-	Offset			[59.8205012697249, 226.33589342610838]
+	Extents			[1642.0, 619.0]
+	ZoomFactor		[1.25]
+	Offset			[-15.446165396941979, 379.40000000000003]
       }
       Array {
 	Type			"Simulink.DockComponentInfo"
 	Dimension		2
 	Object {
 	  $ObjectID		  6
-	  Type			  "GLUE2:SpreadSheet"
-	  ID			  "ModelData"
-	  Visible		  [1]
-	  CreateCallback	  "DataView.createSpreadSheetComponent"
-	  UserData		  ""
-	  Floating		  [0]
-	  DockPosition		  "Bottom"
-	  Width			  [1356]
-	  Height		  [196]
-	}
-	Object {
-	  $ObjectID		  7
 	  Type			  "GLUE2:PropertyInspector"
 	  ID			  "Property Inspector"
 	  Visible		  [0]
@@ -111,17 +93,29 @@ Model {
 	  Width			  [640]
 	  Height		  [480]
 	}
+	Object {
+	  $ObjectID		  7
+	  Type			  "GLUE2:SpreadSheet"
+	  ID			  "ModelData"
+	  Visible		  [1]
+	  CreateCallback	  "DataView.createSpreadSheetComponent"
+	  UserData		  ""
+	  Floating		  [0]
+	  DockPosition		  "Bottom"
+	  Width			  [1676]
+	  Height		  [196]
+	}
 	PropName		"DockComponentsInfo"
       }
       WindowState	      "AAAA/wAAAAD9AAAAAwAAAAAAAAC9AAAB+PwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
       "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABjAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAAKwD///8AAAADAAAFUAAAAN78AQAAAAH7/////wEAAAAAAAAFUAAAAP4A////AAAFUAAAAbIAAAABAAAAAgAAA"
+      "QBjAHQAbwByAAAAAAD/////AAAAKwD///8AAAADAAAGkAAAAN78AQAAAAH7/////wEAAAAAAAAGkAAAAP4A////AAAGkAAAAqQAAAABAAAAAgAAA"
       "AEAAAAC/AAAAAEAAAACAAAAD/////8AAAAAAP////8AAAAAAAAAAP////8BAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP///"
       "/8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8BAAAAef////8AAAAAAAAAAP////8BAAAA2v////8AAAAAAAAAAP///"
       "/8AAAAAAP////8AAAAAAAAAAP////8BAAABU/////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP///"
-      "/8AAAAAAP////8AAAAAAAAAAP////8BAAAC/f////8AAAAAAAAAAP////8BAAADLP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAA=="
+      "/8AAAAAAP////8AAAAAAAAAAP////8BAAADK/////8AAAAAAAAAAP////8BAAADWv////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAA=="
     }
   }
   HideAutomaticNames	  on
@@ -129,11 +123,11 @@ Model {
   Creator		  "Alam"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Alam"
+  LastModifiedBy	  "aparih"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 22 15:03:59 2017"
-  RTWModifiedTimeStamp	  433263312
-  ModelVersionFormat	  "1.%<AutoIncrement:25>"
+  LastModifiedDate	  "Wed Nov 22 21:39:17 2017"
+  RTWModifiedTimeStamp	  433284135
+  ModelVersionFormat	  "1.%<AutoIncrement:26>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -967,19 +961,6 @@ Model {
   }
   BlockParameterDefaults {
     Block {
-      BlockType		      Constant
-      Value		      "1"
-      VectorParams1D	      on
-      SamplingMode	      "Sample based"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
-      LockScale		      off
-      SampleTime	      "inf"
-      FramePeriod	      "inf"
-      PreserveConstantTs      off
-    }
-    Block {
       BlockType		      ModelReference
       SimulationMode	      "Accelerator"
       ShowModelInitializePort off
@@ -991,56 +972,26 @@ Model {
       CopyOfModelProtected    off
     }
     Block {
-      BlockType		      Product
-      Inputs		      "2"
-      Multiplication	      "Element-wise(.*)"
-      CollapseMode	      "All dimensions"
-      CollapseDim	      "1"
-      InputSameDT	      on
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as first input"
-      LockScale		      off
-      RndMeth		      "Zero"
-      SaturateOnIntegerOverflow	on
-      SampleTime	      "-1"
+      BlockType		      Scope
+      DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
+      Floating		      off
     }
     Block {
-      BlockType		      Reshape
-      OutputDimensionality    "1-D array"
-      OutputDimensions	      "[1,1]"
+      BlockType		      SpectrumAnalyzer
+      DefaultConfigurationName "spbscopes.SpectrumAnalyzerBlockCfg"
     }
     Block {
-      BlockType		      Sum
-      IconShape		      "rectangular"
-      Inputs		      "++"
-      CollapseMode	      "All dimensions"
-      CollapseDim	      "1"
-      InputSameDT	      on
-      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as first input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      ToWorkspace
-      VariableName	      "simulink_output"
-      MaxDataPoints	      "1000"
-      Decimation	      "1"
+      BlockType		      ToFile
+      Filename		      "untitled.mat"
+      MatrixName	      "ans"
       SaveFormat	      "Array"
-      Save2DSignal	      "Inherit from input (this choice will be removed - see release notes)"
-      FixptAsFi		      off
-      NumInputs		      "1"
-      SampleTime	      "0"
+      Decimation	      "1"
+      SampleTime	      "-1"
     }
   }
   System {
     Name		    "test_space"
-    Location		    [-8, -8, 1368, 776]
+    Location		    [-8, -8, 1688, 1018]
     Open		    on
     PortBlocksUseCompactNotation off
     ModelBrowserVisibility  off
@@ -1053,132 +1004,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "65"
-    Block {
-      BlockType		      Constant
-      Name		      "Constant"
-      SID		      "3"
-      Position		      [370, 255, 400, 285]
-      ZOrder		      38
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant1"
-      SID		      "31"
-      Position		      [850, 200, 880, 230]
-      ZOrder		      56
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      Value		      "2"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant2"
-      SID		      "32"
-      Position		      [915, 185, 945, 215]
-      ZOrder		      57
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      Value		      "-1"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "FFT1"
-      SID		      "24"
-      Ports		      [1, 1]
-      Position		      [921, 325, 959, 365]
-      ZOrder		      49
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      LibraryVersion	      "1.525"
-      SourceBlock	      "dspxfrm3/FFT"
-      SourceType	      "FFT"
-      SourceProductName	      "DSP System Toolbox"
-      SourceProductBaseCode   "DS"
-      FFTImplementation	      "Auto"
-      CompMethod	      "Table lookup"
-      TableOpt		      "NEW"
-      TableOptActive	      "Speed"
-      BitRevOrder	      off
-      Normalize		      off
-      InheritFFTLength	      on
-      FFTLength		      "64"
-      WrapInput		      on
-      roundingMode	      "Floor"
-      overflowMode	      off
-      firstCoeffMode	      "Same word length as input"
-      firstCoeffWordLength    "16"
-      firstCoeffFracLength    "15"
-      firstCoeffDataTypeStr   "Inherit: Same word length as input"
-      firstCoeffLastDataTypeStr	"Inherit: Same word length as input"
-      prodOutputMode	      "Inherit via internal rule"
-      prodOutputWordLength    "32"
-      prodOutputFracLength    "30"
-      prodOutputDataTypeStr   "Inherit: Inherit via internal rule"
-      prodOutputLastDataTypeStr	"Inherit: Inherit via internal rule"
-      accumMode		      "Inherit via internal rule"
-      accumWordLength	      "32"
-      accumFracLength	      "30"
-      accumDataTypeStr	      "Inherit: Inherit via internal rule"
-      accumLastDataTypeStr    "Inherit: Inherit via internal rule"
-      outputMode	      "Inherit via internal rule"
-      outputWordLength	      "16"
-      outputFracLength	      "15"
-      outputDataTypeStr	      "Inherit: Inherit via internal rule"
-      outputMin		      "[]"
-      outputMax		      "[]"
-      outputLastDataTypeStr   "Inherit: Inherit via internal rule"
-      LockScale		      off
-    }
-    Block {
-      BlockType		      ModelReference
-      Name		      "Model"
-      SID		      "25"
-      Ports		      [1, 1]
-      Position		      [465, 247, 605, 293]
-      ZOrder		      50
-      ModelNameDialog	      "CAcode.mdl"
-      SimulationMode	      "Normal"
-      Variant		      off
-      ModelReferenceVersion   "1.38"
-      List {
-	ListType		InputPortNames
-	port0			"In1"
-      }
-      List {
-	ListType		OutputPortNames
-	port0			"Out1"
-      }
-      List {
-	ListType		OutputPortOutputBusAsStructs
-	port0			"off"
-      }
-      List {
-	ListType		OutputPortSignalNames
-	port0			"g"
-      }
-      List {
-	ListType		InputPortLatchByCopyingInsideSignal
-	port0			"off"
-      }
-      List {
-	ListType		OutputPortUnitExprs
-	port0			"inherit"
-      }
-      List {
-	ListType		InputPortUnitExprs
-	port0			"inherit"
-      }
-      List {
-	ListType		InputPortLatchByDelayingOutsideSignal
-	port0			"off"
-      }
-    }
+    SIDHighWatermark	    "70"
     Block {
       BlockType		      ModelReference
       Name		      "Model1"
@@ -1189,7 +1017,7 @@ Model {
       ModelNameDialog	      "Acquisition.mdl"
       SimulationMode	      "Normal"
       Variant		      off
-      ModelReferenceVersion   "1.42"
+      ModelReferenceVersion   "1.48"
       List {
 	ListType		InputPortNames
 	port0			"In1"
@@ -1211,153 +1039,137 @@ Model {
       }
     }
     Block {
-      BlockType		      ModelReference
-      Name		      "Model3"
-      SID		      "65"
-      Ports		      [0, 1]
-      Position		      [325, 527, 425, 573]
-      ZOrder		      90
-      ModelNameDialog	      "Signal_Generator.slx"
-      SimulationMode	      "Normal"
-      Variant		      off
-      ModelReferenceVersion   "1.6"
-      List {
-	ListType		OutputPortNames
-	port0			"Out1"
-      }
-      List {
-	ListType		OutputPortOutputBusAsStructs
-	port0			"off"
-      }
-      List {
-	ListType		OutputPortUnitExprs
-	port0			"inherit"
-      }
-      List {
-	ListType		InputPortUnitExprs
-      }
+      BlockType		      Scope
+      Name		      "Scope"
+      SID		      "68"
+      Ports		      [1]
+      Position		      [585, 449, 615, 481]
+      ZOrder		      93
+      Commented		      "on"
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'SampleTime','1.52587891e-8'),extmgr.Configuration('Visuals','Time Domain',true,'In"
+      "putProcessing','FrameProcessing','SerializedDisplays',{struct('MinYLimReal','-1.00000','MaxYLimReal','1.00000','"
+      "YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','1.00000','LegendVisibility','Off','XGrid',true,'YGrid',true,"
+      "'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922]"
+      ",'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.1607843137254"
+      "9;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.058823529411764"
+      "7 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedCh"
+      "annelNames',{{}},'NumLines',1,'LineNames',{{'Model1'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaul"
+      "ts',struct('MinYLimReal','-1.00000','MaxYLimReal','1.00000','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag',"
+      "'1.00000','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickC"
+      "olor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706"
+      " 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862"
+      "745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),ext"
+      "mgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','20"
+      "17a')),'Version','2017a','Position',[162 -17 560 420])"
+      NumInputPorts	      "1"
     }
     Block {
-      BlockType		      Product
-      Name		      "Product"
-      SID		      "29"
-      Ports		      [2, 1]
-      Position		      [850, 252, 880, 288]
-      ZOrder		      54
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
+      BlockType		      SpectrumAnalyzer
+      Name		      "Spectrum\nAnalyzer"
+      SID		      "67"
+      Ports		      [1]
+      Position		      [680, 434, 725, 486]
+      ZOrder		      92
+      ScopeSpecificationString "spbscopes.SpectrumAnalyzerBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(ext"
+      "mgr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('"
+      "Sources','WiredSimulink',true),extmgr.Configuration('Visuals','Spectrum',true,'AxesProperties',struct('Color',{["
+      "0 0 0],[0 0 0]},'XColor',{[0.686274509803922 0.686274509803922 0.686274509803922],[0.686274509803922 0.686274509"
+      "803922 0.686274509803922]},'YColor',{[0.686274509803922 0.686274509803922 0.686274509803922],[0.686274509803922 "
+      "0.686274509803922 0.686274509803922]},'ZColor',{[0.686274509803922 0.686274509803922 0.686274509803922],[0.68627"
+      "4509803922 0.686274509803922 0.686274509803922]},'XGrid',{'on','on'},'YGrid',{'on','on'},'ZGrid',{'off','off'},'"
+      "Box',{'on','on'},'XScale',{'linear','linear'},'YScale',{'linear','linear'},'ZScale',{'linear','linear'},'XDir',{"
+      "'normal','normal'},'YDir',{'normal','normal'},'ZDir',{'normal','normal'},'XTickMode',{'auto','auto'},'YTickMode'"
+      ",{'auto','auto'},'ZTickMode',{'auto','auto'},'XTickLabelMode',{'manual','auto'},'YTickLabelMode',{'auto','auto'}"
+      ",'ZTickLabelMode',{'manual','manual'},'XTickLabel',{['-15';'-10';' -5';'  0';'  5';' 10';' 15'],{'-1.5','-1','-0"
+      ".5','0','0.5','1','1.5'}},'ZTickLabel',{'',''},'FontName',{'Helvetica','Helvetica'},'FontSize',{8.5,8.5},'FontUn"
+      "its',{'points','points'},'FontWeight',{'normal','normal'},'Title',{'',''},'XLabel',{'Frequency (MHz)',''},'YLabe"
+      "l',{' dBm',''},'ZLabel',{'',''}),'LineProperties',struct('DisplayName','','Color',[1 1 0.0666666666666667],'Line"
+      "Style','-','LineWidth',0.5,'Marker','none','MarkerSize',6,'MarkerEdgeColor','auto','MarkerFaceColor','none','Vis"
+      "ible','on'),'MinYLim','-4203.0621534311576','MaxYLim','-2203.0621534311581','SampleRate','32768000','Span','3276"
+      "8000','StartFrequency','-16384000','StopFrequency','16384000','IsSpanValuesValid',true),extmgr.Configuration('To"
+      "ols','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2017a'),extmgr.Configur"
+      "ation('Visuals','Constellation',false),extmgr.Configuration('Visuals','Eye Diagram',false),extmgr.Configuration("
+      "'Visuals','Array Plot',false),extmgr.Configuration('Tools','Image Tool',false),extmgr.Configuration('Tools','Pix"
+      "el Region',false),extmgr.Configuration('Tools','Image Navigation Tools',false),extmgr.Configuration('Visuals','V"
+      "ideo',false),extmgr.Configuration('Visuals','PhasedMatrix',false),extmgr.Configuration('Visuals','IntensityVisua"
+      "l',false),extmgr.Configuration('Visuals','ScenarioVisual',false),extmgr.Configuration('Sources','SimulinkEvent',"
+      "false),extmgr.Configuration('Visuals','TimeVisual',false),extmgr.Configuration('Tools','Requirement viewer',fals"
+      "e),extmgr.Configuration('Tools','Check block zoom',false),extmgr.Configuration('Sources','Simulink',false),extmg"
+      "r.Configuration('Sources','File',false),extmgr.Configuration('Sources','Workspace',false),extmgr.Configuration('"
+      "Sources','Streaming',false),extmgr.Configuration('Visuals','Time Domain',false),extmgr.Configuration('Visuals','"
+      "Matrix',false),extmgr.Configuration('Tools','Instrumentation Sets',false),extmgr.Configuration('Sources','SPTool"
+      "',false),extmgr.Configuration('Visuals','BodeVisual',false),extmgr.Configuration('Visuals','PZMapVisual',false),"
+      "extmgr.Configuration('Visuals','NicholsVisual',false),extmgr.Configuration('Visuals','MarginsVisual',false),extm"
+      "gr.Configuration('Visuals','SigmaVisual',false),extmgr.Configuration('Visuals','LinearStepVisual',false),extmgr."
+      "Configuration('Tools','Response Optimization',false)),'Version','2017a','Position',[503 173 800 450],'VisibleAtM"
+      "odelOpen','on')"
+      NumInputPorts	      "1"
+    }
+    Block {
+      BlockType		      ToFile
+      Name		      "To File"
+      SID		      "70"
+      Ports		      [1]
+      Position		      [880, 580, 940, 610]
+      ZOrder		      95
+      Commented		      "on"
+      SaveFormat	      "Timeseries"
     }
     Block {
       BlockType		      Reference
-      Name		      "Puncture"
-      SID		      "26"
-      Ports		      [1, 1]
-      Position		      [735, 248, 815, 292]
-      ZOrder		      51
-      LibraryVersion	      "1.102"
-      SourceBlock	      "commsequence2/Puncture"
-      SourceType	      "Puncture"
-      SourceProductName	      "Communications System Toolbox"
-      SourceProductBaseCode   "CM"
-      punctureVector	      "[1;0]"
-    }
-    Block {
-      BlockType		      Reshape
-      Name		      "Reshape"
-      SID		      "27"
-      Ports		      [1, 1]
-      Position		      [665, 258, 695, 282]
-      ZOrder		      52
-      OutputDimensionality    "Column vector (2-D)"
-    }
-    Block {
-      BlockType		      Sum
-      Name		      "Sum"
-      SID		      "30"
-      Ports		      [2, 1]
-      Position		      [920, 245, 940, 265]
-      ZOrder		      55
-      ShowName		      off
-      IconShape		      "round"
-      Inputs		      "|++"
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      ToWorkspace
-      Name		      "To Workspace"
-      SID		      "22"
+      Name		      "Vector\nScope"
+      SID		      "69"
       Ports		      [1]
-      Position		      [650, 375, 710, 405]
-      ZOrder		      45
-      VariableName	      "rs"
-      MaxDataPoints	      "inf"
-      Save2DSignal	      "3-D array (concatenate along third dimension)"
-      FixptAsFi		      on
-      SampleTime	      "-1"
+      Position		      [810, 435, 845, 485]
+      ZOrder		      94
+      Commented		      "on"
+      LibraryVersion	      "1.552"
+      SourceBlock	      "dspsnks4/Vector\nScope"
+      SourceType	      "Vector Scope"
+      SourceProductName	      "DSP System Toolbox"
+      SourceProductBaseCode   "DS"
+      ScopeProperties	      on
+      Domain		      "Time"
+      HorizSpan		      "1"
+      DisplayProperties	      off
+      AxisGrid		      on
+      Memory		      off
+      FrameNumber	      on
+      AxisLegend	      off
+      AxisZoom		      off
+      OpenScopeAtSimStart     on
+      OpenScopeImmediately    off
+      FigPos		      "get(0,'defaultfigureposition')"
+      AxisProperties	      off
+      XUnits		      "Hertz"
+      XRange		      "[0...Fs/2]"
+      InheritXIncr	      on
+      XIncr		      "1"
+      XLabel		      "Time"
+      XLimit		      "Auto"
+      XMin		      "0"
+      XMax		      "1"
+      XStart		      "0"
+      YUnits		      "dB"
+      YMin		      "-10"
+      YMax		      "10"
+      YLabel		      "Amplitude"
+      LineProperties	      off
+      ShowPortLabels	      off
+      XAxisParamsVer	      "6.9"
     }
     Line {
-      ZOrder		      56
-      SrcBlock		      "Constant"
-      SrcPort		      1
-      DstBlock		      "Model"
+      ZOrder		      94
+      Points		      [405, 550]
+      DstBlock		      "Model1"
       DstPort		      1
     }
     Line {
-      ZOrder		      61
-      SrcBlock		      "Model"
-      SrcPort		      1
-      DstBlock		      "Reshape"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      62
-      SrcBlock		      "Reshape"
-      SrcPort		      1
-      DstBlock		      "Puncture"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      89
-      SrcBlock		      "Puncture"
-      SrcPort		      1
-      Points		      [13, 0; 0, 10]
-      DstBlock		      "Product"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      68
-      SrcBlock		      "Product"
-      SrcPort		      1
-      Points		      [45, 0]
-      DstBlock		      "Sum"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      88
-      SrcBlock		      "Constant1"
-      SrcPort		      1
-      Points		      [0, 6; -30, 0]
-      DstBlock		      "Product"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      74
-      SrcBlock		      "Constant2"
-      SrcPort		      1
-      Points		      [0, 10; -15, 0; 0, 25]
-      DstBlock		      "Sum"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      71
-      SrcBlock		      "Sum"
-      SrcPort		      1
-      Points		      [20, 0; 0, 55]
-      DstBlock		      "FFT1"
+      ZOrder		      98
+      Points		      [645, 550; 15, 0; 0, -90]
+      DstBlock		      "Spectrum\nAnalyzer"
       DstPort		      1
     }
   }
