@@ -1,0 +1,22 @@
+<!-- saved from url=(0014)about:internet -->
+<html>
+<body>
+<script src="resources/eml_report_loadable_data.js"></script>
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="1,1" id="srcline1"> 1</a></span><span class="line"><span class="keyword">function</span> <span class="var type1" id="S2T1U3">y</span> = fcn()</span></span>
+<span class="srcline"><span class="lineno"><a href="1,2" id="srcline2"> 2</a></span><span class="line"><span class="keyword">persistent</span> <span class="var type1" id="S3T2U7">test_count</span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,3" id="srcline3"> 3</a></span><span class="line"><span class="keyword">persistent</span> <span class="var type1" id="S4T1U9">out</span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,4" id="srcline4"> 4</a></span><span class="line"><span class="keyword">if</span> <span class="mxinfo " id="T3:U4">isempty(<span class="var type0" id="S3T0U14">test_count</span>)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,5" id="srcline5"> 5</a></span><span class="line">    <span class="mxinfo " id="T2:U5"><span class="var type1" id="S3T2U17">test_count</span>=<span class="mxinfo " id="T2:U7">0</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,6" id="srcline6"> 6</a></span><span class="line"><span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,7" id="srcline7"> 7</a></span><span class="line"><span class="keyword">if</span> <span class="mxinfo " id="T3:U8">isempty(<span class="var type0" id="S4T0U23">out</span>)</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,8" id="srcline8"> 8</a></span><span class="line">    <span class="mxinfo " id="T1:U9"><span class="var type1" id="S4T1U26">out</span>=<span class="mxinfo " id="T1:U11">zeros(<span class="mxinfo " id="T2:U12">6</span>,<span class="mxinfo " id="T2:U13">4</span>)</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,9" id="srcline9"> 9</a></span><span class="line"><span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,10" id="srcline10">10</a></span><span class="line"><span class="keyword">if</span> <span class="mxinfo " id="T3:U14"><span class="var type1" id="S3T2U34">test_count</span>==<span class="mxinfo " id="T2:U16">0</span></span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,11" id="srcline11">11</a></span><span class="line">    <span class="var type0" id="S4T0U38">out</span> = load(<span class="message error" id="M1F1C">SV_Test_Vector</span>.mat, SV_Test_Vector);</span></span>
+<span class="srcline"><span class="lineno"><a href="1,12" id="srcline12">12</a></span><span class="line">    <span class="mxinfo " id="T2:U17"><span class="var type1" id="S3T2U48">test_count</span>=<span class="mxinfo " id="T2:U19">1</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="1,13" id="srcline13">13</a></span><span class="line"><span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="1,14" id="srcline14">14</a></span><span class="line"><span class="mxinfo " id="T1:U20"><span class="var type1" id="S2T1U52">y</span>=<span class="var type1" id="S4T1U53">out</span></span>;</span></span>
+</pre>
+</body>
+</html>
